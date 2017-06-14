@@ -25,6 +25,7 @@ body {
   padding: 20px 40px 0;
   overflow: auto;
   word-wrap: break-word;
+  background-color: rgba(49,195,129,0.3);
 }
 .main-footer {
   padding: 20px 0;
