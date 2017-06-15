@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-14T10:41:30.000Z</updated>
+  <updated>2017-06-15T11:45:42.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,12 +17,14 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/06/14/hello-world/"/>
-    <id>http://yoursite.com/2017/06/14/hello-world/</id>
-    <published>2017-06-14T17:45:42.447Z</published>
-    <updated>2017-06-14T10:41:30.000Z</updated>
+    <link href="http://yoursite.com/2017/06/15/hello-world/"/>
+    <id>http://yoursite.com/2017/06/15/hello-world/</id>
+    <published>2017-06-15T11:49:43.060Z</published>
+    <updated>2017-06-15T11:45:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
+
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -43,41 +45,160 @@
   </entry>
   
   <entry>
+    <title>QQ空间说说（四）</title>
+    <link href="http://yoursite.com/2017/06/15/QQmood4/"/>
+    <id>http://yoursite.com/2017/06/15/QQmood4/</id>
+    <published>2017-06-15T11:12:02.000Z</published>
+    <updated>2017-06-15T11:45:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>从QQ空间说说搬运过来的日常感想 </strong></p>
+<a id="more"></a>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
+
+
+<hr>
+<font size="4"><br>June 15, 2017 7:21 PM<br>大多数人宁可相信美丽的谎言，而不愿意直面丑陋的真相。—-佚名。所谓选择性失察。<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 7:21 PM<br>目前来看，并没有出现一种去中心化的社交网络，可能是个人见识浅薄吧。但是，一旦出现这种社交网络，新浪微博上的那种删帖销号（即阻碍信息流动的招术），便不能硬生生套用在这种社交网络上。<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 7:22 PM<br>去中心化，应当作为互联网发展的大趋势，单一的中心服务器容易造成互联网的信息垄断。只有化整为零，才可以避免任何组织机构有目的地去操控网络。形成人人的网络既可以作客户端也能作服务器。中国网络要想打破现在的封闭状态。必须普及去中心化的网络概念。普及推广去中心化软件的使用。<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 7:22 PM<br>在Linux上实现了代理。看来无GUI的shadowsocks也不是很难用嘛，带GUI的shadowsocks是用QT5设计的界面，里面的库文件依赖关系实在是太复杂了，总是会提示依赖关系破损，没办法，没UI就没UI吧。现在，总算可以不用凭借CHROME上的Shadowsocks来代理了。然而，Linux 全局代理比较头疼，尝试过给虚拟机加代理，没成功。<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 7:23 PM<br> Give a man a fish, he eats for a day. Teach him how to fish, he eats for life.<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 7:25 PM<br>Shadowsocks是个大杀器啊，哈哈。它本是一个在Github上的开源项目，影响力巨大，为此这个项目的作者clawwindy还被请去喝茶了。不过，这种技术已经在互联网上生了根。只要在部署一个在海外的服务器，就有了大长腿，可以跨过长城。よし，再添一件利器。可以丢掉百度云开车咯。【互联网时代，程序员是改变世界的先锋，真牛逼。脱缰野马在雁门关外畅快驰骋，哈哈，开源的世界是自由，开放，共享，共同进步的世界】<br></font>
+
+<hr>
+<font size="4"><br>May 23, 2016 7:26 PM<br>【百度关闭三千文学类贴吧】今天上午，多名网友爆料称，鬼吹灯、盗墓笔记、龙王传说、斗罗大陆等多个网络文学小说贴吧接连被封。。。。。【求证实。。。。我好像听说初音吧被封了，不过，什么是初音？】<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 7:26 PM<br>有些文章的风格真是不合己意啊，有些东西实在写得露骨浮夸，便会让我觉得恶心。就想着，把它改改，换成比较不恶心的。比较符合自己风格的。【拿出几个词来：一直高标准吧啦吧啦……深深意识到吧啦吧啦……始终能够……不敢松懈……热爱吧啦吧啦……拥吧啦吧啦……认真学习……讲话精神吧啦吧啦】哎哟，不知道在说什么了。<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 7:27 PM<br>【做做调查研究，得出自己的结论，别把任何人的话当成圣经。】新闻、广告、文章、宣传、学术。。。。一切的信息流都需要思考质疑，才能决定采不采信。对权威的信任也是一种迷信，谁也没办法确信这一级的权威是可靠的，更高一级的权威会不会为了暴利而说谎？在社会拼命向钱看的时候，权威难道就不会拜金？让人如何相信？因而，权威归权威，自己归自己，别人不能代替自己的思考，这种现象的存在应当破除。<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 7:28 PM<br>从个人职务及其背景来判断一个人的立场观点可不可信。举例：【白剑峰（有重名者不必在意），1969年10月出生，人民日报高级记者、经济社会部主编，先后兼任清华大学医疗管理研究中心学术顾问、中国医院协会常务理事、中国医院协会疾病与健康管理分会副主任委员、中国医师协会人文医学专业委员会专家、首都医科大学附属北京友谊医院理事。代表著作有：《谁在妖魔化医生》（中国协和医科大学出版社）、《中国式医患关系》（红旗出版社）等，被誉为广大医务工作者的“心灵鸡汤”和“人文读本”。】好的，从此人的背景可以看出此人是医生的代表者，代理发言人，其写的文章不可避免地是站在医生的立场上说话，为其辩护，在采信一个人的发言时，必须考虑的作者背景的因素，看他代表何人的利益。<br></font>
+
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;从QQ空间说说搬运过来的日常感想 &lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="http://yoursite.com/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QQ空间说说（三）</title>
+    <link href="http://yoursite.com/2017/06/15/QQmood3/"/>
+    <id>http://yoursite.com/2017/06/15/QQmood3/</id>
+    <published>2017-06-15T10:11:20.000Z</published>
+    <updated>2017-06-15T11:45:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>从QQ空间说说搬运过来的日常感想 </strong></p>
+<a id="more"></a>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
+
+
+<hr>
+<font size="4"><br>June 15, 2017 6:30 PM<br>最该抵制的，不是萨德或乐天，而是朝鲜核弹。为什么愤青毫无顾忌地抵制乐天，因为这与官方立场好不冲突，不会有危险，这些人都精得很。<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 6:32 PM<br>常用联系方式： mailto: do_note@hotmail.com 或 mailto: 6donote4@gmail.com 放弃使用QQ<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 6:32 PM<br>对百度云与腾讯微云的绞杀也不远了。。。。。。所以说，中国的网盘没有数据安全保障。。。而国外的网盘被墙。。。看来只有p2p一途了。<br><img src="/pictures/killclouddisk.png" alt="剿灭云盘"><br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 6:35 PM<br>。。。。。。<br><img src="/pictures/doctorandpatient.jpg" alt="医疗体制问题"><br><img src="/pictures/doctorandpatient2.jpg" alt="斯德哥尔摩患者"><br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 6:41 PM<br>。。。。。。<br><img src="/pictures/zhique.png" alt="社会问题"><br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 6:42 PM<br>iOS10 云笔记 notes会闪退。。。。。。是bug？<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 6:42 PM<br>。。。。。。<br><img src="/pictures/nuyi.png" alt="奴役"><br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 6:45 PM<br>我在simplesite上的站点。<br><a href="http://www.dzcsite.simplesite.com/" target="_blank" rel="external">http://www.dzcsite.simplesite.com/</a><br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 6:46 PM<br>好想搞台vps来玩玩啊，debian的系统消耗256mb内存完全够用，也用不到10gb的硬盘空间。搬瓦工一个月3美刀，差不多18块，500GB流量够用，真想部署一个属于自己的梯子。<br><img src="/pictures/ssvps.jpg" alt="关于VPS的想法"><img src="/pictures/ssvps2.jpg" alt="关于VPS的想法"><img src="/pictures/ssvps3.jpg" alt="关于VPS的想法"><br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 6:52 PM<br>简简单单才是真。。。。其实是运行内存不足，只有134MB,可怜一下穷逼吧，精简一下APP,又不会怀上。<br><img src="/pictures/android.jpg" alt="吐槽安卓"><img src="/pictures/android2.jpg" alt="吐槽安卓"><img src="/pictures/android3.jpg" alt="吐槽安卓"><img src="/pictures/android4.jpg" alt="吐槽安卓"><img src="/pictures/android5.jpg" alt="吐槽安卓"><img src="/pictures/android6.jpg" alt="吐槽安卓"><img src="/pictures/android7.jpg" alt="吐槽安卓"><br></font>
+
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;从QQ空间说说搬运过来的日常感想 &lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="http://yoursite.com/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="http://yoursite.com/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>QQ空间说说（二）</title>
     <link href="http://yoursite.com/2017/06/14/QQmood2/"/>
     <id>http://yoursite.com/2017/06/14/QQmood2/</id>
     <published>2017-06-14T08:48:13.000Z</published>
-    <updated>2017-06-14T17:41:39.000Z</updated>
+    <updated>2017-06-15T11:45:42.000Z</updated>
     
-    <content type="html"><![CDATA[<p>从QQ空间说说搬运过来的日常感想</p>
+    <content type="html"><![CDATA[<p><strong>从QQ空间说说搬运过来的日常感想 </strong></p>
 <a id="more"></a>
-<hr>
-<font size="3"><br>June 15, 2017 12:11 AM<br>一日千里，中國貪腐官員的荒淫尺度遠超民眾之想象，這是性資源的壟斷，要求民眾禁慾，那些冠冕堂皇的政客卻荒淫無度。<br></font>
-
-<hr>
-<font size="3"><br>June 15, 2017 12:12 AM<br>美國要打金三胖了，這次應該沒人願意當炮灰援朝吧？朝鮮半島快要統一了。<br>![美国打朝鲜](/pictures/usvsnk.jpg<br></font>
-
-<hr>
-<font size="3"><br>June 15, 2017 12:58 AM<br>关于雄安新区，那些在北京买了学区房的人会有什么想法？<br></font>
-
-<hr>
-<font size="3"><br>June 15, 2017 12:59 AM<br>暴秦天下销兵，筑长城；可终究还是亡了啊。可见，灭秦者，秦也，非六国也。仁义不施而攻守之势易也。秦人不暇自哀而后人哀之，后人哀之而不鉴之，亦使后人复哀后人也。窃以为，后人无须哀之，应是：快哉！暴秦终亡矣。<br></font>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
 
 
 <hr>
-<font size="3"><br>June 15, 2017 1:01 AM<br>GPG是一款用于保护个人隐私的开源加密签名软件。它的加密系统是一对密匙对和加密算法构成，密匙对是软件随机生成且具备唯一性。公匙公开给其他人，用于给别人加密文件，别人把加密好的文件发送过来，用与公匙匹配的私匙来解密文件，使用私匙还得输入密码，也就是锁上加锁，这个私匙一定要保存好，并且不要让任何人拿到手，尤其不要上传到网盘服务器，若真有必要也一定要给密匙文件加密。最好电脑内不要有任何可联网的国产软件，原因在于国人的隐私意识不强，所以这些国内互联网公司的软件有可能会获取到个人硬盘上的密匙文件，比如借硬盘扫毒之名上传文件，甚至用后台程序扫描硬盘。使用GPG的目的是让自己的文件不暴露给互联网公司的服务器，因为面对被4096位的密匙加密的文档，进行暴力破解已毫无意义。如果有什么需要传送的不想让腾讯、百度公司服务器管理员知道的文件都可以使用这个软件。Win可以上 网页链接 官网上下载，不过是洋文的，需要会点单词。我这里有四个文件，fingerprint 为公匙指纹，别人验证公匙比对我公开的密匙指纹就可以确定这公匙确实是我的，pub 为公匙文件，pri为私匙文件，revoke 为密匙撤销文件，如果私匙被盗，则将撤销文件上传到公匙服务器，就可以销毁这个公匙。附上我的GPG公匙，将其贴到文本上保存即可导入到你的GPG公匙库，当然公匙服务器上已有我的公匙文件，也可用do_note@hotmail.com 查找导入。<br><code style="max-width:220px;font-size:15px"><br><div><br>—–BEGIN PGP PUBLIC KEY BLOCK—–<br>Version: GnuPG v1<br>mQINBFjjxuYBEAD1Gl7SfJAoLOBYbPzoQN4+wScqkUUalO9uu32dQ6Fmch3EHaoT<br>7yyOiVYUQLeDhLGKbGotXQbiiHHLUfC8sbSd9LkdZt/NslXdMfL7zkxwz2PoS9/W<br>4KWL5UKvvlAAxG3biOFKBru9BtXr4dJLr+FAwVB3axL1N+EvQElqnTLRJfOaQa8S<br>syTVN5Jp+oFFNe/pjnZzZI4xM9sob0FHHknzxDn+pMGrAlZke4TNciOhwAFJGjAF<br>xUJh3CYqhUU2IRRwBwvb87fobe4V2DTX2MGdu+m9aHArv6yOrONNnma+PNsSg8g7<br>JZ+rfREjkOl5i00VUjjN3E8lfEf+Dq/jmuAM7S5NdkdGkxG+Vzug9EMG9FbqFVbC<br>dmAPBL69GHENVWY/2hr/lCcfzI5W46nXYCdl4MeJImwAT8+3kxPGnDfI8UYD73Km<br>WOjdFt9nf73rpq3psyc2VU2rkaiAaYWnCFqzSqzr4bHTdrmxNWr/P5Z+qx4eHLkC<br>Jeov1Gv0Ltz8gkUB5CmISGKQgwOhiNlBmXXPcNW1jQTtmARq/ySlt9YYVeKspFb4<br>zOphDg9nYpSvJJW73t+S5O2whVQKZ3A73fUX5AQ4IP60xl1w4VWCYpCZaA4Yp53p<br>GKnV5FLSXX9vSiFENdHsqs9STtdQ74Vz+1sNMnQqe6gmJtApQsZAze/ytQARAQAB<br>tDRkdXpoaWNoYW8gKEEgY2l0aXplbiBpbiBDaGluYSkgPGRvX25vdGVAaG90bWFp<br>bC5jb20+iQI4BBMBAgAiBQJY48bmAhsDBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIX<br>gAAKCRCT/Og9CteWHaCJD/9j0zh88C/kGoZdGw4b4q4Q5JxF+e0p++sbe1PZD3UT<br>TNUZYgj74c36rpBq1afd8a4CFHuc7DGZwASLifIx7m8PDLaNTgZCz+wz8Wjp1XIi<br>QRdXja/0weBKLbe7hQKkK0Q9HkT7UGAV2eX8v1V5C92/nv17gtS1G3ceCmsgcQTk<br>AVWlBvI4CgG+ROCreROOL7YB3dl510Fj0Fbvy1+B+46zNpqhPnMV6co/7QxmkrMS<br>1yx/AKHMDHZSPupjtmKHBGaSPOsjiIL0/85VU7WCU+QzMwyVq2fz6O8x3z06RUPA<br>mFIvlu7UI2VHPK3ahRkvymNnko2V6s6yCMK6RCPsrzlFtFwE2q9CkSiR9ni5QoDy<br>SfTe07bOJIn7FGd6UD3J1w24ZYIzHsnC6Y5Epc68xXBE1QHBQ+e7JMPbOWwjhrxj<br>I33CEIBXXNDOPiJjTZofiQFM44gw65og1xAall79jT+5LpduJ0mNJ25ItBhI16aQ<br>I40MYLKK8GQ1WERBB0NyVKOroAiiDHaHzlHLyljSnQtcZxHlRasj4nnoFyj6wo9U<br>CkeFdz9pqLVqTJdpQ0G1M1KozJc46FqUoFFmYQpHG37toaHB6+xXPVS6siDeX62d<br>ik9rhOsiiy4txIHhleuDoOsxPscSii9isKBABTLV2LcPMdsdDlXRGGsVieHuBblI<br>BrkCDQRY48bmARAAq6D2OPqEJK8aHXdYqaQZlxASWgzGIcCpOYpbgNtLZfdHr96D<br>lVmkU7TKGJ0FtM2ixcH/Xrm+w283RkKiuBBCW2ZSve1wxvzwXPZXFeeMfYGcI9Jx<br>yaKYrEYDwCWJWqRKA+MZdw/RMlKDqArPxgOmc29APpzu6NESIP2w216Sk8Ll+RtT<br>eulLzRyW4NTOP1E0HJ5VtXjATD5A10kuuaNC16MM28KqEN/mJ2jAKoJ2YhOO0sQL<br>DL8QsO4TvZTaOSb3HaBPMjzfwAOoU1sqUcaHRtCVcKg1KHCm00Dpe63NT/RkebBZ<br>WprBTR9qbZiSG0POd81pDIRXBL8G5l2bLw02o15zpZ/tPjlmdKNUAAIBkroxZLz/<br>iMwhiL41ijIAhTiXSrm+qDbiL/STYPJ/V3BQVU/0F/kdVG3B7MwGCglGD8IzHSQ/<br>CWrUBsTPCnCnUeLuy9BZeN3+h1aePCpl7RNlnQnmg1fLbfZRf1qqHdiFdlBF/uUi<br>Wz3CU5cryMathLcYs+JPl4e0sZcZk/zdBvb2pH2/bJE7RYyc8b2UF5kRqTE6jrLN<br>FzAEBa63aNUSqKkuIHQwgPhs4FOtK6GIAdAnBLPVNLBzUfEORwu5KQdjdOr/6Pqu<br>bEAJ2jFWWZxbR/3c8Tb4XdGc+NWgSgzWKs7cs5virn7URBLi0wbl+5LL6TMAEQEA<br>AYkCHwQYAQIACQUCWOPG5gIbDAAKCRCT/Og9CteWHaOID/9pGcrjmgFrJvmVAquk<br>xMkKiox7mQN5waYD6T1e1HnRqbYl3w8H18htDHZI5d40CoHFKfWdQtetPl7Zjtin<br>8oFKZqsI2wgHG7kSvRO2qR23hkl6tjPrmKObChYs6+LWmLdP/Lms2T/BX/0ZNLLh<br>mrpBAztZQ+Jm0NmHit6IXxScGc0cI9Mbv67oPJ67Nt9WiXiqRLlCPE5FeyGmijDF<br>rN00Ar9K3BvBgL/fNDWPqUThRFjMACQcqizy7sIhBEnS+dgccXDjrgdsKc64Np2T<br>c3ndFbrNur7WRVc9d/FC609uxdEB+y12GqhBMmsgd8e8welraaYkFeG6IgQ8GfVq<br>5yVOVhQ+MKu28GPQPU5q6B8zzhXgc+9oMo5uUm349N5GDxYmZhHuSsytPOdiiU99<br>cbQOPcPKgmETf/840Lf/961gZZd+797fLWi37D3xEJhffga8WStVlGan9TGPQTbb<br>/nrtUlsUsGUxRED6IK7vZfMMozMMrXSjen3+EBBVo9vNjUplwTQP3/JJ3WBLCKtO<br>ormNQu4i20I/XAhUK2HgmhOML1OtrvAvgJoIe5HPbnnB9RANGsPkHZElS/pOlOSV<br>rXoZeOqLV46H0i6IRc/dFGyyeMGff1LX7pOV2layKgAqJHDnN2U+GP/5EoGg/t01<br>n4rKqUfisvgmilPiyjsHzwDKPQ==<br>=eMR2<br>—–END PGP PUBLIC KEY BLOCK—–<br></div><br></code><br></font>
+<font size="4"><br>June 15, 2017 12:11 AM<br>一日千里，中國貪腐官員的荒淫尺度遠超民眾之想象，這是性資源的壟斷，要求民眾禁慾，那些冠冕堂皇的政客卻荒淫無度。<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 12:12 AM<br>美國要打金三胖了，這次應該沒人願意當炮灰援朝吧？朝鮮半島快要統一了。<br><img src="/pictures/usvsnk.jpg" alt="美国打朝鲜"><br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 12:58 AM<br>关于雄安新区，那些在北京买了学区房的人会有什么想法？<br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 12:59 AM<br>暴秦天下销兵，筑长城；可终究还是亡了啊。可见，灭秦者，秦也，非六国也。仁义不施而攻守之势易也。秦人不暇自哀而后人哀之，后人哀之而不鉴之，亦使后人复哀后人也。窃以为，后人无须哀之，应是：快哉！暴秦终亡矣。<br></font>
 
 
 <hr>
-<font size="3"><br>June 15, 2017 1:23 AM<br>关于在天朝组建个人网站的看法，应当明白的是天朝是一个信息受严格管控和审查的社会，所以，虽然树莓派也能作服务器，但是天朝的网络是不会让可分享型的私人服务器存在的，分享意味着信息传播，私人意味着不受控制。所以，宽带用户的IP分配方式是动态的，一个IP可变化的服务器只能自嗨而无法分享、固定IP才具备可操作性和推广性。于是分享型的私有服务器难以生存，个人网站要用私有服务器来建可操作性不大。如果要做，只能向电信运营商申请固定IP（不会同意个人拥有固定IP吧？）要么，向阿里巴巴或腾讯云主机投诚（即用别人的受管控的服务器），要么用国外的云主机（即用别人的却不受官方管控的服务器）。当然，服务器系统首选Linux。要在上面部署Nginx服务，如果要建论坛还需要数据库，还需要HTML网页框架，CSS提供外观布局，JaveScript提供给用户良好的交互体验。<br><img src="/picture/gpg1.jpg" alt="GPnuG"><img src="/picture/gpg1.jpg" alt="GPnuG"><img src="/pictures/gpg1.jpg" alt="GPnuG"><img src="/pictures/gpg1.jpg" alt="GPnuG"><br></font>
+<font size="4"><br>June 15, 2017 1:01 AM<br>GPG是一款用于保护个人隐私的开源加密签名软件。它的加密系统是一对密匙对和加密算法构成，密匙对是软件随机生成且具备唯一性。公匙公开给其他人，用于给别人加密文件，别人把加密好的文件发送过来，用与公匙匹配的私匙来解密文件，使用私匙还得输入密码，也就是锁上加锁，这个私匙一定要保存好，并且不要让任何人拿到手，尤其不要上传到网盘服务器，若真有必要也一定要给密匙文件加密。最好电脑内不要有任何可联网的国产软件，原因在于国人的隐私意识不强，所以这些国内互联网公司的软件有可能会获取到个人硬盘上的密匙文件，比如借硬盘扫毒之名上传文件，甚至用后台程序扫描硬盘。使用GPG的目的是让自己的文件不暴露给互联网公司的服务器，因为面对被4096位的密匙加密的文档，进行暴力破解已毫无意义。如果有什么需要传送的不想让腾讯、百度公司服务器管理员知道的文件都可以使用这个软件。Win可以上 网页链接 官网上下载，不过是洋文的，需要会点单词。我这里有四个文件，fingerprint 为公匙指纹，别人验证公匙比对我公开的密匙指纹就可以确定这公匙确实是我的，pub 为公匙文件，pri为私匙文件，revoke 为密匙撤销文件，如果私匙被盗，则将撤销文件上传到公匙服务器，就可以销毁这个公匙。附上我的GPG公匙，将其贴到文本上保存即可导入到你的GPG公匙库，当然公匙服务器上已有我的公匙文件，也可用do_note@hotmail.com 查找导入。<br><code style="max-width:220px;font-size:15px"><br><div><br>—–BEGIN PGP PUBLIC KEY BLOCK—–<br>Version: GnuPG v1<br>mQINBFjjxuYBEAD1Gl7SfJAoLOBYbPzoQN4+wScqkUUalO9uu32dQ6Fmch3EHaoT<br>7yyOiVYUQLeDhLGKbGotXQbiiHHLUfC8sbSd9LkdZt/NslXdMfL7zkxwz2PoS9/W<br>4KWL5UKvvlAAxG3biOFKBru9BtXr4dJLr+FAwVB3axL1N+EvQElqnTLRJfOaQa8S<br>syTVN5Jp+oFFNe/pjnZzZI4xM9sob0FHHknzxDn+pMGrAlZke4TNciOhwAFJGjAF<br>xUJh3CYqhUU2IRRwBwvb87fobe4V2DTX2MGdu+m9aHArv6yOrONNnma+PNsSg8g7<br>JZ+rfREjkOl5i00VUjjN3E8lfEf+Dq/jmuAM7S5NdkdGkxG+Vzug9EMG9FbqFVbC<br>dmAPBL69GHENVWY/2hr/lCcfzI5W46nXYCdl4MeJImwAT8+3kxPGnDfI8UYD73Km<br>WOjdFt9nf73rpq3psyc2VU2rkaiAaYWnCFqzSqzr4bHTdrmxNWr/P5Z+qx4eHLkC<br>Jeov1Gv0Ltz8gkUB5CmISGKQgwOhiNlBmXXPcNW1jQTtmARq/ySlt9YYVeKspFb4<br>zOphDg9nYpSvJJW73t+S5O2whVQKZ3A73fUX5AQ4IP60xl1w4VWCYpCZaA4Yp53p<br>GKnV5FLSXX9vSiFENdHsqs9STtdQ74Vz+1sNMnQqe6gmJtApQsZAze/ytQARAQAB<br>tDRkdXpoaWNoYW8gKEEgY2l0aXplbiBpbiBDaGluYSkgPGRvX25vdGVAaG90bWFp<br>bC5jb20+iQI4BBMBAgAiBQJY48bmAhsDBgsJCAcDAgYVCAIJCgsEFgIDAQIeAQIX<br>gAAKCRCT/Og9CteWHaCJD/9j0zh88C/kGoZdGw4b4q4Q5JxF+e0p++sbe1PZD3UT<br>TNUZYgj74c36rpBq1afd8a4CFHuc7DGZwASLifIx7m8PDLaNTgZCz+wz8Wjp1XIi<br>QRdXja/0weBKLbe7hQKkK0Q9HkT7UGAV2eX8v1V5C92/nv17gtS1G3ceCmsgcQTk<br>AVWlBvI4CgG+ROCreROOL7YB3dl510Fj0Fbvy1+B+46zNpqhPnMV6co/7QxmkrMS<br>1yx/AKHMDHZSPupjtmKHBGaSPOsjiIL0/85VU7WCU+QzMwyVq2fz6O8x3z06RUPA<br>mFIvlu7UI2VHPK3ahRkvymNnko2V6s6yCMK6RCPsrzlFtFwE2q9CkSiR9ni5QoDy<br>SfTe07bOJIn7FGd6UD3J1w24ZYIzHsnC6Y5Epc68xXBE1QHBQ+e7JMPbOWwjhrxj<br>I33CEIBXXNDOPiJjTZofiQFM44gw65og1xAall79jT+5LpduJ0mNJ25ItBhI16aQ<br>I40MYLKK8GQ1WERBB0NyVKOroAiiDHaHzlHLyljSnQtcZxHlRasj4nnoFyj6wo9U<br>CkeFdz9pqLVqTJdpQ0G1M1KozJc46FqUoFFmYQpHG37toaHB6+xXPVS6siDeX62d<br>ik9rhOsiiy4txIHhleuDoOsxPscSii9isKBABTLV2LcPMdsdDlXRGGsVieHuBblI<br>BrkCDQRY48bmARAAq6D2OPqEJK8aHXdYqaQZlxASWgzGIcCpOYpbgNtLZfdHr96D<br>lVmkU7TKGJ0FtM2ixcH/Xrm+w283RkKiuBBCW2ZSve1wxvzwXPZXFeeMfYGcI9Jx<br>yaKYrEYDwCWJWqRKA+MZdw/RMlKDqArPxgOmc29APpzu6NESIP2w216Sk8Ll+RtT<br>eulLzRyW4NTOP1E0HJ5VtXjATD5A10kuuaNC16MM28KqEN/mJ2jAKoJ2YhOO0sQL<br>DL8QsO4TvZTaOSb3HaBPMjzfwAOoU1sqUcaHRtCVcKg1KHCm00Dpe63NT/RkebBZ<br>WprBTR9qbZiSG0POd81pDIRXBL8G5l2bLw02o15zpZ/tPjlmdKNUAAIBkroxZLz/<br>iMwhiL41ijIAhTiXSrm+qDbiL/STYPJ/V3BQVU/0F/kdVG3B7MwGCglGD8IzHSQ/<br>CWrUBsTPCnCnUeLuy9BZeN3+h1aePCpl7RNlnQnmg1fLbfZRf1qqHdiFdlBF/uUi<br>Wz3CU5cryMathLcYs+JPl4e0sZcZk/zdBvb2pH2/bJE7RYyc8b2UF5kRqTE6jrLN<br>FzAEBa63aNUSqKkuIHQwgPhs4FOtK6GIAdAnBLPVNLBzUfEORwu5KQdjdOr/6Pqu<br>bEAJ2jFWWZxbR/3c8Tb4XdGc+NWgSgzWKs7cs5virn7URBLi0wbl+5LL6TMAEQEA<br>AYkCHwQYAQIACQUCWOPG5gIbDAAKCRCT/Og9CteWHaOID/9pGcrjmgFrJvmVAquk<br>xMkKiox7mQN5waYD6T1e1HnRqbYl3w8H18htDHZI5d40CoHFKfWdQtetPl7Zjtin<br>8oFKZqsI2wgHG7kSvRO2qR23hkl6tjPrmKObChYs6+LWmLdP/Lms2T/BX/0ZNLLh<br>mrpBAztZQ+Jm0NmHit6IXxScGc0cI9Mbv67oPJ67Nt9WiXiqRLlCPE5FeyGmijDF<br>rN00Ar9K3BvBgL/fNDWPqUThRFjMACQcqizy7sIhBEnS+dgccXDjrgdsKc64Np2T<br>c3ndFbrNur7WRVc9d/FC609uxdEB+y12GqhBMmsgd8e8welraaYkFeG6IgQ8GfVq<br>5yVOVhQ+MKu28GPQPU5q6B8zzhXgc+9oMo5uUm349N5GDxYmZhHuSsytPOdiiU99<br>cbQOPcPKgmETf/840Lf/961gZZd+797fLWi37D3xEJhffga8WStVlGan9TGPQTbb<br>/nrtUlsUsGUxRED6IK7vZfMMozMMrXSjen3+EBBVo9vNjUplwTQP3/JJ3WBLCKtO<br>ormNQu4i20I/XAhUK2HgmhOML1OtrvAvgJoIe5HPbnnB9RANGsPkHZElS/pOlOSV<br>rXoZeOqLV46H0i6IRc/dFGyyeMGff1LX7pOV2layKgAqJHDnN2U+GP/5EoGg/t01<br>n4rKqUfisvgmilPiyjsHzwDKPQ==<br>=eMR2<br>—–END PGP PUBLIC KEY BLOCK—–<br></div><br></code><br></font>
 
 
 <hr>
-<font size="3"><br>June 15, 2017 1:27 AM<br> 已成功搭建树莓派下载机，小派正在跑着，要下载340多个文件，大概有200GB的数据吧，跑个三四天之后再来看看下好没，这东西功耗只有4W，10天只用1度电，顶级司机飙车的好工具，如果配上BTsync，那速度简直是狂飙啊。哪天管子要是撸废了就惨了，不管了，先忙去，让小派自己跑。<br><img src="/picture2/nas1.jpg" alt="下载机"><img src="/pictures/nas2.jpg" alt="下载机"><br></font>
+<font size="4"><br>June 15, 2017 1:23 AM<br>关于在天朝组建个人网站的看法，应当明白的是天朝是一个信息受严格管控和审查的社会，所以，虽然树莓派也能作服务器，但是天朝的网络是不会让可分享型的私人服务器存在的，分享意味着信息传播，私人意味着不受控制。所以，宽带用户的IP分配方式是动态的，一个IP可变化的服务器只能自嗨而无法分享、固定IP才具备可操作性和推广性。于是分享型的私有服务器难以生存，个人网站要用私有服务器来建可操作性不大。如果要做，只能向电信运营商申请固定IP（不会同意个人拥有固定IP吧？）要么，向阿里巴巴或腾讯云主机投诚（即用别人的受管控的服务器），要么用国外的云主机（即用别人的却不受官方管控的服务器）。当然，服务器系统首选Linux。要在上面部署Nginx服务，如果要建论坛还需要数据库，还需要HTML网页框架，CSS提供外观布局，JaveScript提供给用户良好的交互体验。<br><img src="/pictures/gpg1.jpg" alt="GPnuG"><img src="/pictures/gpg2.jpg" alt="GPnuG"><img src="/pictures/gpg3.jpg" alt="GPnuG"><img src="/pictures/gpg4.jpg" alt="GPnuG"><br></font>
 
 
 <hr>
-<font size="3"><br>June 15, 2017 1:33 AM<br>搞了個樹莓派。。。。有空的時候折騰，目前打算做下載機，全天候下載資源。。。<br><img src="/pictures/rasp1.jpg" alt="树莓派"> <img src="/pictures/rasp2.jpg" alt="树莓派"> <img src="/pictures/rasp3.jpg" alt="树莓派"><br></font>
+<font size="4"><br>June 15, 2017 1:27 AM<br> 已成功搭建树莓派下载机，小派正在跑着，要下载340多个文件，大概有200GB的数据吧，跑个三四天之后再来看看下好没，这东西功耗只有4W，10天只用1度电，顶级司机飙车的好工具，如果配上BTsync，那速度简直是狂飙啊。哪天管子要是撸废了就惨了，不管了，先忙去，让小派自己跑。<br><img src="/pictures/nas1.jpg" alt="下载机"><img src="/pictures/nas2.jpg" alt="下载机"><br></font>
+
+
+<hr>
+<font size="4"><br>June 15, 2017 1:33 AM<br>搞了個樹莓派。。。。有空的時候折騰，目前打算做下載機，全天候下載資源。。。<br><img src="/pictures/rasp1.jpg" alt="树莓派"> <img src="/pictures/rasp2.jpg" alt="树莓派"> <img src="/pictures/rasp3.jpg" alt="树莓派"><br></font>
 
 
 <hr>
@@ -85,7 +206,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;从QQ空间说说搬运过来的日常感想&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;从QQ空间说说搬运过来的日常感想 &lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -101,46 +222,48 @@
     <link href="http://yoursite.com/2017/06/14/QQmood/"/>
     <id>http://yoursite.com/2017/06/14/QQmood/</id>
     <published>2017-06-14T08:46:26.000Z</published>
-    <updated>2017-06-14T17:40:07.000Z</updated>
+    <updated>2017-06-15T11:45:42.000Z</updated>
     
-    <content type="html"><![CDATA[<p>从空间说说中搬运过来的日常感想</p>
+    <content type="html"><![CDATA[<p><strong>从空间说说中搬运过来的日常感想</strong> **</p>
 <a id="more"></a>
-<hr>
-<font size="3"><br>June 14, 2017 11:30 PM<br>在VPS上搭了个博客 并绑定了域名<a href="http://www.donote.tk" target="_blank" rel="external">点击这里进入VPS上的博客</a> 【吐槽一下，腾讯屏蔽外链的说】 麻，说不定哪天VPS续命失败了呢？于是，将博客代码托管在GitHub上，然后在Github上建了个相同的博客， <a href="https://6donote4.github.io/2017/06/12/Welcome-to-my-blog/" target="_blank" rel="external">点击这里进入GirHub上的博客</a> 这是我的博客，欢迎撒。评论功能使用国外的 Disqus, 国内的？？？ 封口了，多说平台变成闭嘴平台了。添加视频跟音乐的话，博客站会过于庞大，不利于备份数据，还是以图片 文字为主。把空间里的文字搬运到自己的独立博客上。<br> 上面的超链接是用MakeDown语法写就的。<br></font>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
 
 <hr>
-<font size="3"><br>June 14, 2017 11:32 PM<br>坐了好久的公交车，今天终于搭了个私人的梯子。一个月35块，人民币贬值了，要是早点弄的话，这个配置就只要30块。不过，云服务器拿来搭梯子太浪费了吧，1000GB的流量，25GB的SSD，１GB内存，用不完的说，不过不用和人挤，youtube 1080p随便看，只有5秒甚至没有广告欸。vultr家的主机应该还不错吧。比国内的阿里云，腾讯微云良心多了。<br><img src="/pictures/vps1.png" alt="关于VPS"><img src="/pictures/vps2.png" alt="关于VPS"><img src="/pictures/vps3.jpg" alt="关于VPS"><img src="/pictures/vps4.png" alt="关于VPS"><img src="/pictures/vps5.png" alt="关于VPS"><img src="/pictures/vps6.png" alt="关于VPS"><br></font>
-
+<font size="4"><br>June 14, 2017 11:30 PM<br>在VPS上搭了个博客 并绑定了域名<a href="http://www.donote.tk" target="_blank" rel="external">点击这里进入VPS上的博客</a> 【吐槽一下，腾讯屏蔽外链的说】 麻，说不定哪天VPS续命失败了呢？于是，将博客代码托管在GitHub上，然后在Github上建了个相同的博客， <a href="https://6donote4.github.io/2017/06/12/Welcome-to-my-blog/" target="_blank" rel="external">点击这里进入GirHub上的博客</a> 这是我的博客，欢迎撒。评论功能使用国外的 Disqus, 国内的？？？ 封口了，多说平台变成闭嘴平台了。添加视频跟音乐的话，博客站会过于庞大，不利于备份数据，还是以图片 文字为主。把空间里的文字搬运到自己的独立博客上。<br> 上面的超链接是用MakeDown语法写就的。<br></font>
 
 <hr>
-<font size="3"><br>June 14, 2017 11:54 PM<br>しないでください和やめで(だめ)其实是一个意思，只不过しないでください是敬体，老司机们应该知道我说的是什么了。<br></font>
+<font size="4"><br>June 14, 2017 11:32 PM<br>坐了好久的公交车，今天终于搭了个私人的梯子。一个月35块，人民币贬值了，要是早点弄的话，这个配置就只要30块。不过，云服务器拿来搭梯子太浪费了吧，1000GB的流量，25GB的SSD，１GB内存，用不完的说，不过不用和人挤，youtube 1080p随便看，只有5秒甚至没有广告欸。vultr家的主机应该还不错吧。比国内的阿里云，腾讯微云良心多了。<br><img src="/pictures/vps1.png" alt="关于VPS"><img src="/pictures/vps2.png" alt="关于VPS"><img src="/pictures/vps3.jpg" alt="关于VPS"><img src="/pictures/vps4.png" alt="关于VPS"><img src="/pictures/vps5.png" alt="关于VPS"><img src="/pictures/vps6.png" alt="关于VPS"><br></font>
 
 
 <hr>
-<font size="3"><br>June 14, 2017 11:57 PM<br> 沉默的证据常常导致一种思维偏误：幸存者偏误。古罗马思想家西塞罗的一则故事能够形象地说明这对因果关系：有人给一位无神论者看一幅画，画上是一群正在祈祷的人。他告诉无神论者，这些人在随后的沉船事故中都活了下来。无神论者淡淡地问，我想看看那些祈祷完被淹死的人的画像在哪儿？<br></font>
+<font size="4"><br>June 14, 2017 11:54 PM<br>しないでください和やめで(だめ)其实是一个意思，只不过しないでください是敬体，老司机们应该知道我说的是什么了。<br></font>
 
 
 <hr>
-<font size="3"><br>June 14, 2017 11:58 PM<br>金钱有时候也是会失效的；那就是发生恶性通胀的时候，货币变成废纸，这种事民国时期就发生过了。所以千万不要迷信金钱的力量。问题的关键在于：普通人该如何应对恶性通胀呢？<br></font>
+<font size="4"><br>June 14, 2017 11:57 PM<br> 沉默的证据常常导致一种思维偏误：幸存者偏误。古罗马思想家西塞罗的一则故事能够形象地说明这对因果关系：有人给一位无神论者看一幅画，画上是一群正在祈祷的人。他告诉无神论者，这些人在随后的沉船事故中都活了下来。无神论者淡淡地问，我想看看那些祈祷完被淹死的人的画像在哪儿？<br></font>
 
 
 <hr>
-<font size="3"><br>June 15, 2017 12:25 AM<br>呵呵，我使用ZeroNet，我使用BTsync，我使用推特，我使用Google公司的搜索服务并尽可能使用英文搜索。网络实名制能耐我何？<br><img src="/pictures/realnamerule.jpg" alt="实名制"><br></font>
-
-<hr>
-<font size="3"><br>June 15, 2017 12:02 AM<br>續命失敗了？<br></font>
+<font size="4"><br>June 14, 2017 11:58 PM<br>金钱有时候也是会失效的；那就是发生恶性通胀的时候，货币变成废纸，这种事民国时期就发生过了。所以千万不要迷信金钱的力量。问题的关键在于：普通人该如何应对恶性通胀呢？<br></font>
 
 
 <hr>
-<font size="3"><br>June 15, 2017 12:05 AM<br>既然是商品經濟，那就要遵守經濟價值規律，房子作為商品不能逃脫其價格圍繞其真實價值上下波動的規律，如果人為的施加影響，加槓桿使之泡沫劇增，當泡沫破裂的時候，就是回歸其真實價值的時候。到時候，守房人要麼坦然接受，要麽就與泡沫同滅。<br></font>
+<font size="4"><br>June 15, 2017 12:25 AM<br>呵呵，我使用ZeroNet，我使用BTsync，我使用推特，我使用Google公司的搜索服务并尽可能使用英文搜索。网络实名制能耐我何？<br><img src="/pictures/realnamerule.jpg" alt="实名制"><br></font>
+
+<hr>
+<font size="4"><br>June 15, 2017 12:02 AM<br>續命失敗了？<br></font>
 
 
 <hr>
-<font size="3"><br>June 15, 2017 12:05 AM<br> 房產不能變現，那麼注定這只能是名義上的資產。不管樓市如何，房貸終須要還的。即便房子價格漲到頂天了，你也不能將其變現移民。 在這之前，尚可以這麼做，現在路堵死了。<br> <img src="/pictures/estate.jpg" alt="房产"><br></font>
+<font size="4"><br>June 15, 2017 12:05 AM<br>既然是商品經濟，那就要遵守經濟價值規律，房子作為商品不能逃脫其價格圍繞其真實價值上下波動的規律，如果人為的施加影響，加槓桿使之泡沫劇增，當泡沫破裂的時候，就是回歸其真實價值的時候。到時候，守房人要麼坦然接受，要麽就與泡沫同滅。<br></font>
 
 
 <hr>
-<font size="3"><br>June 15, 2017 12:09 AM<br>如何看待郭文貴爆料這一事件？這件事還未終結，慢慢看現代版宮斗大戲，會比電視劇更精彩。<br></font>
+<font size="4"><br>June 15, 2017 12:05 AM<br> 房產不能變現，那麼注定這只能是名義上的資產。不管樓市如何，房貸終須要還的。即便房子價格漲到頂天了，你也不能將其變現移民。 在這之前，尚可以這麼做，現在路堵死了。<br> <img src="/pictures/estate.jpg" alt="房产"><br></font>
+
+
+<hr>
+<font size="4"><br>June 15, 2017 12:09 AM<br>如何看待郭文貴爆料這一事件？這件事還未終結，慢慢看現代版宮斗大戲，會比電視劇更精彩。<br></font>
 
 
 <hr>
@@ -148,7 +271,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;从空间说说中搬运过来的日常感想&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt;从空间说说中搬运过来的日常感想&lt;/strong&gt; **&lt;/p&gt;
     
     </summary>
     
@@ -164,9 +287,10 @@
     <link href="http://yoursite.com/2017/06/14/Picture/"/>
     <id>http://yoursite.com/2017/06/14/Picture/</id>
     <published>2017-06-14T02:47:05.000Z</published>
-    <updated>2017-06-14T14:49:13.000Z</updated>
+    <updated>2017-06-15T11:45:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>该博文用于嵌入图片<br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
 ]]></content>
     
     <summary type="html">
@@ -187,7 +311,7 @@
     <link href="http://yoursite.com/2017/06/14/Music/"/>
     <id>http://yoursite.com/2017/06/14/Music/</id>
     <published>2017-06-14T02:46:06.000Z</published>
-    <updated>2017-06-14T14:47:35.000Z</updated>
+    <updated>2017-06-15T11:45:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>该博文用于进行嵌入音乐的测试<br> <a id="more"></a> </p>
 <div><br><audio controls="controls" name="media" style="width:150px" autoplay loop="true"> <source src="/musics/lovelovelove.mp3"> </audio><strong>爱爱爱</strong><br><audio controls="controls" name="media" style="width:150px" loop="true"> <source src="/musics/qianban.mp3"> </audio><strong>牵绊</strong><audio controls="controls" name="media" style="width:150px" loop="true"><br><source src="/musics/wish.mp3"><br></audio><strong>心愿</strong><br></div>
@@ -211,7 +335,7 @@
     <link href="http://yoursite.com/2017/06/14/Video/"/>
     <id>http://yoursite.com/2017/06/14/Video/</id>
     <published>2017-06-14T02:44:43.000Z</published>
-    <updated>2017-06-14T14:47:02.000Z</updated>
+    <updated>2017-06-15T11:45:42.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong> 该博文用于嵌入视频 </strong><br><a id="more"></a></p>
 <video controls="controls" autoplay loop="true"> <source src="/videos/liuzaonianwuyu.mp4"> </video>
@@ -235,10 +359,13 @@
     <link href="http://yoursite.com/2017/06/12/Welcome-to-my-blog/"/>
     <id>http://yoursite.com/2017/06/12/Welcome-to-my-blog/</id>
     <published>2017-06-12T19:21:55.000Z</published>
-    <updated>2017-06-14T14:48:38.000Z</updated>
+    <updated>2017-06-15T11:45:42.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h3><a id="more"></a>
-<p><font size="3"><br>        研究了几天，终于在VPS上搭建了一个属于自己的博客，没有广告，十分简洁。现在功能还比较简单，只能后续在添加了。这是使用Hexo搭出来的博客框架。<br>        域名使用的是免费的 tk 域名，只是有12个月的使用限制，如果vps到期了，那么就无法正常访问网页了，但是我的博客代码托管在GitHub上，那里有一个我的个人博客 <a href="https://6donote4.github.io" target="_blank" rel="external">点击这里</a> 。届时，若没有为VPS续命的话，将会把域名绑到github上。<br>    关于评论功能，我使用的是Disqus, 本来有一个国内的多说的，然而，现在网络管控越来越严厉，2017年6月起实施网络实名制与网络新闻传播的规定，于是多说评论平台被关闭了。因而只能使用国外的评论平台了。</font></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
+
+<hr>
+<p><font size="4"><br>        研究了几天，终于在VPS上搭建了一个属于自己的博客，没有广告，十分简洁。现在功能还比较简单，只能后续在添加了。这是使用Hexo搭出来的博客框架。<br>        域名使用的是免费的 tk 域名，只是有12个月的使用限制，如果vps到期了，那么就无法正常访问网页了，但是我的博客代码托管在GitHub上，那里有一个我的个人博客 <a href="https://6donote4.github.io" target="_blank" rel="external">点击这里</a> 。届时，若没有为VPS续命的话，将会把域名绑到github上。<br>    关于评论功能，我使用的是Disqus, 本来有一个国内的多说的，然而，现在网络管控越来越严厉，2017年6月起实施网络实名制与网络新闻传播的规定，于是多说评论平台被关闭了。因而只能使用国外的评论平台了。</font></p>
 <p></p>
 ]]></content>
     
