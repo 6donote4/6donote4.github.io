@@ -17,9 +17,9 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2017/07/17/hello-world/"/>
-    <id>http://yoursite.com/2017/07/17/hello-world/</id>
-    <published>2017-07-17T15:02:08.870Z</published>
+    <link href="http://yoursite.com/2017/08/20/hello-world/"/>
+    <id>http://yoursite.com/2017/08/20/hello-world/</id>
+    <published>2017-08-20T04:42:13.713Z</published>
     <updated>2017-07-08T06:09:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
@@ -41,6 +41,33 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>「原创」基于树莓派配合Shadowsocks-libev和Privoxy搭建透明网关</title>
+    <link href="http://yoursite.com/2017/08/20/HowToCreatHttpProxyOnPi/"/>
+    <id>http://yoursite.com/2017/08/20/HowToCreatHttpProxyOnPi/</id>
+    <published>2017-08-20T01:30:00.000Z</published>
+    <updated>2017-08-20T04:36:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br><br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><strong><em>
+
+</em></strong><br><br><font size="4"><br>之前，曾经尝试过网上的教程去建立透明网关，但是没有成功。最近开始深入了解Privoxy这个软件，它是一款开源软件，能够进行端口转发。能够让Socks代理转换为大多数设备支持的http代理协议，即透明代理。今天稍稍说明一下，利用这个软件结合SS，在树莓派上搭建透明网关。个人认为，这种方法还算简单，配置也不复杂。当然，树莓派也可以配置成翻墙路由，只是要更折腾一些了，配置成网关相对来说，就不需要整双网卡和iptables的配置，以及各种服务文件。总之，我是被网上的各种教程整晕了。今天，换了个方法，算是成功了。不说废话了。进入正题。<br><br>这里，仅提供透明代理建立的过程说明。树莓派系统及测试设备的配置不在讨论范畴。请自行搜索。<br><br><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh pi@192.168.1.252</div></pre></td></tr></table></figure><br><br>登录树莓派，Win下使用Putty登录。<br><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install　shadowsocks-libev privoxy</div><div class="line">cp /etc/privoxy/config /home/pi</div><div class="line">touch config.json</div></pre></td></tr></table></figure><br><br>安装shadowsocks-libev和privoxy,把Privoxy的配置文件从/etc目录复制到用户的家目录。创建SS配置文件，用文本编辑器打开config.json,将SS分享站上的SS配置贴到这个文本中。<br><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#vim config</span></div><div class="line">listen-address 0.0.0.0:8118</div><div class="line">forward-socks5 / 127.0.0.1:1080 .</div></pre></td></tr></table></figure><br><br>打开privoxy的配置文件，在末尾加入上述信息，0.0.0.0:8118表示树莓派系统内的任意软件以及外部的设备都可以通过树莓派地址及端口访问到Privoxy提供的数据转发服务。注意forward-socks5语句末尾有<font color="red"> <b>一个小数点</b></font>。如果你想要再加一层http代理，可以用搜索到的代理服务器的地址及端口替换掉小数点。这样,你的访问请求就会从浏览器到Privoxy,再从Privoxy通过Socks5协议到达SS服务器，最后从SS服务器到达目标网站。网站的响应则沿着这个路线反向发送数据。<br>附图:<br><img width="600" src="/pictures/post_1106_ss_pi_privoxy_2.png"><br><img width="600" src="/pictures/post_1106_ss_pi_privoxy_3.png"><br><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ss-local -c /home/pi/config.json</div><div class="line">privoxy config</div></pre></td></tr></table></figure><br><br>运行Shadowsocks和Privoxy。<br><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -anp | grep LISTEN</div></pre></td></tr></table></figure><br><br>查看1080和8118端口是否启用。如果两个都启用了，说明建立成功。<br><br>设备测试状况：<br>Linux(PC):<br><img width="600" src="/pictures/post_1106_ss_pi_privoxy.png"><br>iOS:<br><img width="600" src="/pictures/post_1106_ss_pi_privoxy_4.png"><br><img width="600" src="/pictures/post_1106_ss_pi_privoxy_5.png"><br>3DS:<br><img width="600" src="/pictures/post_1106_ss_pi_privoxy_6.JPG"><br><img width="600" src="/pictures/post_1106_ss_pi_privoxy_7.JPG"><br><br>其实如果路由器能将树莓派设置为网关的话，那么所有连接到路由器信号的设备就不必设置代理，就能摆脱大局域网了。<br></font>
+
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="原创博文" scheme="http://yoursite.com/categories/%E5%8E%9F%E5%88%9B%E5%8D%9A%E6%96%87/"/>
+    
+    
+      <category term="RaspberryPi Shadowsocks-libev Privoxy 透明代理" scheme="http://yoursite.com/tags/RaspberryPi-Shadowsocks-libev-Privoxy-%E9%80%8F%E6%98%8E%E4%BB%A3%E7%90%86/"/>
     
   </entry>
   
@@ -165,7 +192,7 @@
     <link href="http://yoursite.com/2017/07/12/QQmood8/"/>
     <id>http://yoursite.com/2017/07/12/QQmood8/</id>
     <published>2017-07-12T14:51:00.000Z</published>
-    <updated>2017-07-12T15:24:37.000Z</updated>
+    <updated>2017-08-20T04:36:26.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>从QQ空间说说搬运过来的日常感想 </strong></p>
 <p><font size="4"><br>翻墙后，可评论博文。<br></font><br><a id="more"></a></p>
@@ -175,7 +202,7 @@
 <hr>
 <p><font size="4"><br>2017-07-12 22:51<br>我们不知道什么时候会出现新的证据，或许就会推翻我们现在所相信的事实。<br></font></p>
 <hr>
-<p><font size="4"><br>2017-07-12 22:52<br>我已经说了，不要推新闻，不要推兴趣圈，为何还推！老实说qq的功能过于臃肿，如果每个app的干吧所有功能集成一身的事儿，那手机就放不了几个app了。最好的用户体验是没有广告，没有多余的功能（多余的功能耗流量）没有流氓行为。。。<br><img src="/pictures/post_1008TencentAD.jpeg" alt="TencentAD"><br></font></p>
+<p><font size="4"><br>2017-07-12 22:52<br>我已经说了，不要推新闻，不要推兴趣圈，为何还推！老实说qq的功能过于臃肿，如果每个app的干吧所有功能集成一身的事儿，那手机就放不了几个app了。最好的用户体验是没有广告，没有多余的功能（多余的功能耗流量）没有流氓行为。。。<br><img width="600" src="/pictures/post_1008TencentAD.jpeg"><br></font></p>
 <hr>
 <p><font size="4"><br>2017-07-12 22:54<br>教育的价值在于训练思维，而不在于传授事实——爱因斯坦<br></font></p>
 <hr>
@@ -217,7 +244,7 @@
     <link href="http://yoursite.com/2017/07/12/QQmood7/"/>
     <id>http://yoursite.com/2017/07/12/QQmood7/</id>
     <published>2017-07-12T14:24:00.000Z</published>
-    <updated>2017-07-12T15:24:37.000Z</updated>
+    <updated>2017-08-20T04:36:26.000Z</updated>
     
     <content type="html"><![CDATA[<p><strong>从QQ空间说说搬运过来的日常感想 </strong></p>
 <p><font size="4"><br>翻墙后，可评论博文。<br></font><br><a id="more"></a></p>
@@ -227,11 +254,11 @@
 <hr>
 <p><font size="4"><br>2017-07-12 22:28<br>如果网盘没有了，我们还有p2p，也就是分布式技术，这种技术不依赖于某一个公司的服务器，做到了去中心化，避免了单点故障。目前来看，网盘的前景很不妙，有司如果做得太绝，网民便不得不做技术升级。封掉服务器的做法在p2p上可就不会有效了。审查的成本将比现在提升得更多。<br></font></p>
 <hr>
-<p><font size="4"><br>2017-07-12 22:28<br>漫游2年意味着所有人的聊天记录在腾讯服务器上的保存期是2年，一般，只要是会员就给你开通同步权限。也就是说2年里面的聊天内容其实是可以让人看到的。<br><img src="/pictures/post_1007TencentRecord.jpeg" alt="TencentRecord"><br></font></p>
+<p><font size="4"><br>2017-07-12 22:28<br>漫游2年意味着所有人的聊天记录在腾讯服务器上的保存期是2年，一般，只要是会员就给你开通同步权限。也就是说2年里面的聊天内容其实是可以让人看到的。<br><img width="600" src="/pictures/post_1007TencentRecord.jpeg"><br></font></p>
 <hr>
-<p><font size="4"><br>2017-07-12 22:31<br>好像不是第一次了，血友病好像没过多久吧。从此拒绝使用百度社交平台。。。。。减少使用该引擎的使用频率。。。宁愿多麻烦一些。<br><img src="/pictures/post_1007BaiduDoEvil.png" alt="百度与莆田系"><br></font></p>
+<p><font size="4"><br>2017-07-12 22:31<br>好像不是第一次了，血友病好像没过多久吧。从此拒绝使用百度社交平台。。。。。减少使用该引擎的使用频率。。。宁愿多麻烦一些。<br><img width="600" src="/pictures/post_1007BaiduDoEvil.png"><br></font></p>
 <hr>
-<p><font size="4"><br>2017-07-12 22:34<br>这些图很珍贵，微博应该是搜不到了<br><img src="/pictures/post_1007PuTian1.jpeg" alt="莆田系"> <img src="/pictures/post_1007PuTian2.jpeg" alt="莆田系"> <img src="/pictures/post_1007PuTian3.jpeg" alt="莆田系"> <img src="/pictures/post_1007PuTian4.jpeg" alt="莆田系"><br></font></p>
+<p><font size="4"><br>2017-07-12 22:34<br>这些图很珍贵，微博应该是搜不到了<br><img width="600" src="/pictures/post_1007PuTian1.jpeg"> <img width="600" src="/pictures/post_1007PuTian2.jpeg"> <img src="/pictures/post_1007PuTian3.jpeg" alt="莆田系"> <img src="/pictures/post_1007PuTian4.jpeg" alt="莆田系"><br></font></p>
 <hr>
 <p><font size="4"><br>2017-07-12 22:40<br>小伙子，快滚回来好好建设社会主义，跑外面瞎撩妹！<br><img src="/pictures/post_1007Society.png" alt="Society"><br></font></p>
 <hr>
