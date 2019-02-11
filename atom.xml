@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.donote.tk/BBS/"/>
-  <updated>2018-10-03T20:17:47.937Z</updated>
+  <updated>2019-02-11T13:24:13.085Z</updated>
   <id>https://www.donote.tk/BBS/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://www.donote.tk/BBS/2018/10/03/hello-world/"/>
-    <id>https://www.donote.tk/BBS/2018/10/03/hello-world/</id>
-    <published>2018-10-03T20:17:47.937Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <link href="https://www.donote.tk/BBS/2019/02/11/hello-world/"/>
+    <id>https://www.donote.tk/BBS/2019/02/11/hello-world/</id>
+    <published>2019-02-11T13:24:13.085Z</published>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
 <audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
@@ -45,11 +45,149 @@
   </entry>
   
   <entry>
+    <title>「原创」OpenWRT路由系统虚拟机搭建记录</title>
+    <link href="https://www.donote.tk/BBS/2019/02/11/HowToCreateOpenWRT_KVM/"/>
+    <id>https://www.donote.tk/BBS/2019/02/11/HowToCreateOpenWRT_KVM/</id>
+    <published>2019-02-11T10:40:00.000Z</published>
+    <updated>2019-02-11T13:33:36.272Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文.<br>放假这几天，把大把的时间都投入到OpenWRT虚拟机及其网络的搭建之研究中，现在已初现成果，物理设备均可连接到虚拟网络之中，也实现了物理设备的出国。趁着还没忘记搭建过程，写下这篇记录，以备虚拟机文件丢失的时候，又得花大把时间重新再搭建一遍，费时费力。把走过的路记下来，下次就不会迷路咯。<br></font><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/qianban.mp3"><br></audio>
+
+<hr>
+<h1 id="OpenWRT-虚拟机路由系统搭建说明"><a href="#OpenWRT-虚拟机路由系统搭建说明" class="headerlink" title="OpenWRT 虚拟机路由系统搭建说明"></a>OpenWRT 虚拟机路由系统搭建说明</h1><p><font size="4"><br>本记录使用的是KOOLSHARE社区的LEDE x86_64版本镜像，因其配备非常适合中国用户使用的插件，并且有着极易配置的Web UI界面，之前使用过原版镜像，奈何搭建出国插件的过程实在漫长又低效，索性用现成的了。能用就可以了。</font></p>
+<h4 id="安装必备的软件包"><a href="#安装必备的软件包" class="headerlink" title="安装必备的软件包"></a>安装必备的软件包</h4> <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install libvirt qemu brctl -y <span class="comment">#debian类的发行版软件包，目前测试成功的网络接口管理程序是networking,需要使用配置文件，NetworkManager测试失败，暂时不用NetworkManager.</span></div><div class="line">pacman -S libivrt qemu <span class="comment">#arch类发行版依赖包。</span></div></pre></td></tr></table></figure>
+<h4 id="配置网络环境"><a href="#配置网络环境" class="headerlink" title="配置网络环境"></a>配置网络环境</h4><ul>
+<li>ARCH:使用NetworkManager创建桥接接口br0(wan),br1(lan),<strong>br1接口必须配置静态ip，br0保持DHCP，后面会在提及</strong>.向br0添加连接外网的接口eth1或者enp1s0,视实际情况而定,<del>若是无线网卡,可先创建一vlan隧道,在vlan上添加无线接口，经测试，未成效</del></li>
+<li>br1直接添加内网以太接口eth2,enp2s0,是具体情况而定，接口名可使用<code>ip link</code>进行查看，<strong>br1接口必须设置静态ip,后面虚拟机内部的网卡设置lan口的静态地址必须与该处ip处于同一网段，比如192.168.2.x</strong>                                               </li>
+<li>Debian:需配置interface文件,<del>也可使用NetworkManager进行配置,已失败</del>             </li>
+<li>给连接外网的桥接网口br0设置DHCP客户端模式,添加域名解析地址也可不加,给内网桥接接口设置静态地址 </li>
+</ul>
+<h4 id="配置防火墙转发规则，设置内核参数允许转发"><a href="#配置防火墙转发规则，设置内核参数允许转发" class="headerlink" title="配置防火墙转发规则，设置内核参数允许转发"></a>配置防火墙转发规则，设置内核参数允许转发</h4><p> 内核参数设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"1"</span>&gt;/proc/sys/net/ipv4/ip_forward                                </div><div class="line">sysctl -p</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> 防火墙规则:                                                             </div><div class="line">iptables -t nat -A POSTROUTING -o wlp4s0 -j MASQUERADE                </div><div class="line">iptables-save</div></pre></td></tr></table></figure>
+<h4 id="刻写虚拟机镜像"><a href="#刻写虚拟机镜像" class="headerlink" title="刻写虚拟机镜像"></a>刻写虚拟机镜像</h4><ul>
+<li>完整安装一个debian基础系统环境，使用libvirt图形管理工具，创建系统盘，挂载安装镜像img文件。</li>
+<li>进入debian虚拟机，使用dd命令刻写镜像到系统盘<br><code>dd if=/dev/sda of=/dev/sdb</code> sda为镜像文件，sdb为系统盘                </li>
+<li>创建虚拟机，添加系统盘，网卡两张，连接外网的设备可使用共享设备，填入桥接接口名称br0,如果是使用无线网卡作为出口，则在虚拟机中做一个NAT到无线网卡的网络</li>
+<li>内网网卡必须使用共享设备网络模式,填入桥接接口名br1                    </li>
+<li>wan口使用NAT 模式须设置虚拟机自身DHCP,                                </li>
+</ul>
+<h4 id="虚拟机路由初始配置"><a href="#虚拟机路由初始配置" class="headerlink" title="虚拟机路由初始配置"></a>虚拟机路由初始配置</h4><ul>
+<li><p>变更防火墙规则，允许外网访问                                          </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">vim /etc/config/firewall                                               </div><div class="line">/wan <span class="comment">#搜索wan口区，将option input 设为ACCEPT</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>设置network文件，变更lan口地址，不可与主路由同一网段<br><code>vim /etc/config/network</code><br><code>/etc/init.d/firewall restart</code><br><code>/etc/init.d/network restart</code>                                           </p>
+</li>
+<li>安装所有带luci界面的软件包<br><code>./OpenWRT_PACK_Installation.sh</code>                                        </li>
+</ul>
+<h4 id="进入Web浏览器界面添加额外插件"><a href="#进入Web浏览器界面添加额外插件" class="headerlink" title="进入Web浏览器界面添加额外插件"></a>进入Web浏览器界面添加额外插件</h4><h4 id="相关配置文件位置"><a href="#相关配置文件位置" class="headerlink" title="相关配置文件位置"></a>相关配置文件位置</h4><p>debian 网口配置文件interface、OpenWRT软件包安装脚本在笔者的debian-scripts仓库中的qemu目录中</p>
+<h4 id="附上效果图"><a href="#附上效果图" class="headerlink" title="附上效果图"></a>附上效果图</h4><p><img width="600" src="/pictures/POST_1117_OpenWRT1.png"></p>
+<p><img width="600" src="/pictures/POST_1117_OpenWRT2.png"></p>
+<p><img width="600" src="/pictures/POST_1117_OpenWRT3.png"></p>
+<p><img width="600" src="/pictures/POST_1117_OpenWRT4.png"></p>
+<p><img width="600" src="/pictures/POST_1117_OpenWRT5.png"></p>
+<p><img width="600" src="/pictures/POST_1117_OpenWRT6.png"></p>
+<p><img width="600" src="/pictures/POST_1117_OpenWRT7.png"></p>
+<p><img width="600" src="/pictures/POST_1117_OpenWRT8.png"><br></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文.&lt;br&gt;放假这几天，把大把的时间都投入到OpenWRT虚拟机及其网络的搭建之研究中，现在已初现成果，物理设备均可连接到虚拟网络之中，也实现了物理设备的出国。趁着还没忘记搭建过程，写下这篇记录，以备虚拟机文件丢失的时候，又得花大把时间重新再搭建一遍，费时费力。把走过的路记下来，下次就不会迷路咯。&lt;br&gt;&lt;/font&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="原创博文" scheme="https://www.donote.tk/BBS/categories/%E5%8E%9F%E5%88%9B%E5%8D%9A%E6%96%87/"/>
+    
+    
+      <category term="OpenWRT KOOLSHARE QEMU KVM 虚拟机" scheme="https://www.donote.tk/BBS/tags/OpenWRT-KOOLSHARE-QEMU-KVM-%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QQ空间说说（十）</title>
+    <link href="https://www.donote.tk/BBS/2018/11/25/QQmood10/"/>
+    <id>https://www.donote.tk/BBS/2018/11/25/QQmood10/</id>
+    <published>2018-11-25T05:25:00.000Z</published>
+    <updated>2019-02-11T13:24:13.085Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
+
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>「原创」Linux Shell 简易脚本编写之记录</title>
     <link href="https://www.donote.tk/BBS/2018/09/09/MyShellScripts/"/>
     <id>https://www.donote.tk/BBS/2018/09/09/MyShellScripts/</id>
     <published>2018-09-09T15:26:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>最近,手头上已有三个主机了,并且都配置了frp内网穿透服务以实现远程控制,随着主机的增多,便萌生了编写交互式Shell脚本来更新和登录主机的需求,以及在Linux上进行文件处理的需求。<br>登录主机的脚本是建立在内网穿透服务搭建完成之后实现的，这里的脚本并未将搭建过程编写在内，而是另外写了个服务文件，让其主机启动时自动运行，并连接远程主机。frp配置服务见<a href="https://github.com/6donote4/debian-scripts" target="_blank" rel="external">我的debian-scripts</a>中的myfrp压缩文件包，可搜索网上资料进行frp服务的搭建。<br></font><br><a id="more"></a></p>
 <audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
@@ -79,7 +217,7 @@
     <link href="https://www.donote.tk/BBS/2018/02/04/car-navigation-systems-apps/"/>
     <id>https://www.donote.tk/BBS/2018/02/04/car-navigation-systems-apps/</id>
     <published>2018-02-04T14:47:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br>文章来源于纽约时报网站 : <a href="https://www.nytimes.com/2018/02/01/business/car-navigation-systems-apps.html?rref=collection%2Fsectioncollection%2Fbusiness&amp;action=click&amp;contentCollection=business&amp;region=stream&amp;module=stream_unit&amp;version=latest&amp;contentPlacement=1&amp;pgtype=sectionfront" target="_blank" rel="external">点击查看原文</a><br>必需要翻墙才能查阅。<br>作者:Eric A. Taub<br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><font size="4"><br><br>图片描述：新出品的Porsche Cayenne（应该是保时捷吧）使用来自HERE的新一代导航系统，奥迪、宝马和Daimler拥有这套系统。HERE从世界各地的50万辆车里收集道路数据，以此改善它的地图服务。通过Getty图片授权予Gerlach Delissen/Corbis。<br><br>当大多数人在口袋里已有更好的产品时，要如何让人付上数百美元购买较次的产品呢？<br><br>这是汽车制造们在有更好的替代品（比如苹果地图、谷歌地图和Waze）可供任何带有智能手机的人（几乎是所有人）免费获得的情况下，尝试销售内建导航系统所要面对的问题。<br><br>大多数内建并不像你的手机那样智能，可能会缺乏交通流量数据或者偏好信息，而且会陷入麻烦的更新步骤。而像苹果CarPlay及安卓Auto，这些在根本上将你的手机镜像到你的汽车终端的显示屏幕App迫使汽车制造商交出重要的驱动开发经验给第三方。<br><br>但是改善近在眼前。内建导航系统将更加智能，不仅能了解你的偏好，还能从评估交通问题与道路状况且被连接的车辆分发传感信息。甚至你给你指出哪个地方刚刚出了个深坑。<br><br>新一代导航系统是汽车制造商与司机们交互的重要方法。他们也是自动驾驶汽车研究的重要步骤。<br><br>Garmin和TomTom，这两家以嵌入到汽车仪表板上的GPS单元而闻名的公司，同时也是地图数据及汽车制造商内建用户接口的主要供应商。<br><br>TomTom“正在大规模收集数据，了解如将数据整合成实时交通趋势，供自动驾驶汽车使用。”其首席执行官Harold Goddijn说道。“所有的汽车制造商会需要共享这些数据。<br><br>但现在，许多汽车制造商将他们的导航系统与其他功能捆绑起来，为他们实际想要的东西，强迫买家一并购买。<br><br>你是否想要你的仪表以数字显示而非标准仪表出现在你的新车上？一些奥迪和沃尔沃轻量车型的买家可能不得不购买包括导航在内的捆绑产品。沃尔沃在它的XC60多要价1400美元，而奥迪依据车型，可能要耗费3000美元。那些想要Sirius XM卫星广播的Alfa Romeo基础版Giulia的买家也带有导航系统，耗费1900美元。<br><br>“这样的商业模式并不可持续，”Don Butler，福特互联汽车与服务的执行主任谈道。<br><br>尽管有其限制，但是内建系统也有一些优势。他们方便且简约。不必为了找路而暂停智能手机且没有充电线悬挂在仪表盘上。他们用汽车的内建控制且没有耗尽电源的风险。<br><br>但是内建系统仪表是将数据保存在本地，这意味着信息可能是不准确的且是过时的。升级系统可能是困难的，甚至不能升级。即便能够做到上述条件，把新数据下载到闪存并传送到汽车，这可能是多道步骤。<br><br>在最近的，2015汽车年会中的测验中，内建导航系统在15年中并未取得成功。而苹果地图和谷歌地图则在分水岭中取得好成绩。这是因为智能手机导航App是基于云端的，可持续与新信息保持更新。<br><br>但是内建系统正在缩小差距。其连接到云端且轻易通过空中数据连接升级的产品出现了。特斯拉公司使用它的空中更新来随时它的地图，而福特公司已经使用这样的更新将CarPlay和安卓Auto的功能添加到带有且Sync3系统的车型中。<br><br>很快，地图将不在依赖存储的信息，而是不断来自汽车摄像头及传感器的数据和其他汽车的数据。<br><br>“来自谷歌地图和苹果地图的压力让汽车制造商认识到他们必须采用云端更新他们的地图和软件，”Goddijn先生说。<br><br>许多制造商从第三方获取他们的接口数据，然后创建自己的用户设计接口。奥迪，宝马和Daimler所拥有的HERE也向福特提供数据。Garmin和TomTom提供用户接口与地图数据给苹果地图和汽车制造商，包括丰田和特斯拉。<br><br>HERE的下一代仪表导航技术将会在今年奥迪新A8及2019Porsche Cayenne中首次登场，这款A8将会使用HERE技术去了解驾驶员的路径偏好，然后给出更多路径建议的通知。<br><br>司机可以在家使用HERE智能手机App去规划线路，同时自动发送到汽车系统。当司机到达目的地时，这款App提示步行或公开的行走方向。<br><br>HERE服务器会处理导航路径，它会将离规划道路较远，可能依旧会影响导航的交通条件，考虑在内。此外，地图数据不仅仅是道路本身，还能包括天气，弧坡，斜坡，道路与铁轨交接处和城市限制，能让司机根据情况调整速度。<br><br>内置导航系统也会使用信息，这些信息收集自汽车的传感器和定位一辆小道上的汽车的摄像头，其精度在8英寸范围内。<br><br>“我们的传感器技术会让我们以最快的速度告诉驾驶员公路的某条行驶线内的遗留物体，”任职于福特的Butler先生说。<br><br>TomTom的技术允许司机们决定他们是否找到了最快的路线，或者红绿灯最少的路线，并据此构建。当有一辆使用HERO技术的汽车经过一个凹坑时，它会记录下来且后续的车将绕开它。<br><br>HERE正在以被动的方式收集来自世界各地的50万辆道路原始数据。现在，这家公司只与它的三个德国大老板共享数据。在美国，大约有，道路上14%的车必须有这种传感器来发送道路状况，Bulter先生说。<br><br>随着自动驾驶汽车的发展，信息的筛选变得更加重要，使汽车能从其他交通工具上了解道路状况并远离事故，上班高峰期，凹坑及大量人流等状况来安全地导航。<br><br>“当前，我们的内置导航系统与智能手机App相比，仍处劣势，”Bulter说。“但是很快，我们将会取得优势。”<br></font>
 
@@ -105,7 +243,7 @@
     <link href="https://www.donote.tk/BBS/2018/02/01/congress-train-accident/"/>
     <id>https://www.donote.tk/BBS/2018/02/01/congress-train-accident/</id>
     <published>2018-02-01T14:47:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="https://edition.cnn.com/2018/01/31/politics/congress-train-accident/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Lauren Fox, Jeremy Diamond,MJ Lee 和Deirdre Walsh<br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><font size="4"><br>（CNN）一辆载有12名国会共和党议员（包括前去参加西维吉尼亚州立法院的会议，白宫发言人Paul Ryan。在周三，这辆列车撞向了一辆卡车，造成至少1人死亡。<br><br>总统川普·唐纳德在周三说道，卡车司机遇难。六名伤者被送到UVA医疗中心，这家医疗中心带重症病房。这六名伤者，有一名已经出院，而其他四人的状况则还在评估。<br><br>多方消息源提到，火车上的国会所有成员及其家属状态还好，除了少数人受轻伤。一名助理确认Ryan状态良好。“今天的事故是一场可怕的灾难，”Wisconsin共和党人之后发推文称。“我们感谢首批冲到现场的救助者们，我们为受害者和他们的家人祈祷。或许，他们现在都在我们心里。”<br><br>来自Minnesota的救助者Jason Lewis，因潜在的病症被送到医院。“与遇难的卡车司机相比，我还算好，非常感谢我们的救助者们，” Lewis在陈述中（应该是类似，事故之后，举办听证会所做的陈述）说道。Lewis的发言人随后说，他出院了，并且继续在GOP内工作。<br><br>Amtrak在陈述中说道，火车在早上11:20（此处为一串地名，不翻译）撞上了那里在轨道上的卡车。在那辆离开华盛顿联合站的火车上的共和党成员是去往位于西维吉尼亚的会议办事处。这场会议周三开始，周五结束。并未在这辆火车上的副主席Mike Pence计划在周三晚些时候向成员们发表演说，并且川普总统计划在周四解决事物。周三，一名GOP（大概是一个政党吧）议员告诉CNN，这个会议将会按计划进行。<br><br>议会的许多成员有过医疗急救训练并且已经帮助了那些受伤的人。救助者Roger Marshall说堪萨斯议员及医生帮助了那些需要医疗救助的人，包括实施心肺复苏。<br><br>Pence发推文称，他正在观察情况并仍然计划在会议上演讲。根据国家运输安全委员会官方推特账号的推文，该委员会正在派遣一个团队到事故发生现场，随着消息的获取，更多的信息会被发布出来。美国首都警察说，国会官员，包括USCP在内，都在现场并且和那些负责事故法律方面的机构密切合作。<br><br>应对者John Faso ，一名纽约共和党人，他也在那辆发生事故的的火车上，他说，他能看到卡车撞向火车，接着被告知伤者是卡车上的人，并不是火车上的。“看起来像是一辆运垃圾的拖拉机被火车给撞了，”Faso告诉CNN，并自称在火车的第三车厢。<br><br>一份GOP消息源告知其成员“下车”，其他的国会共和党成员发推文表示那场事故之后，他们的状态都好。<br><br>“我安好，并未搭乘那辆西维吉尼亚的火车。对于伸出援手的那些人，谢谢你们，也请为卷入其中的所有人的安全祈祷，”Elise Stefanik，一位纽约共和党人发推文道。<br><br>“我们那辆驶向GOP会议地的火车已经卷入到事故当中。我很安全，而救助者正在救助火车上的少数伤员，并救护卡车司机。保佑。。。。，”James参议员发推道。<br><br>“我们都好，但我们的火车撞上了运垃圾的卡车。有过急救训练的成员正在救助卡车司机，”Greg Walden，一名Oregon共和党人发推文称。<br><br></font>
 
@@ -131,7 +269,7 @@
     <link href="https://www.donote.tk/BBS/2018/01/31/nuro-self-driving-delivery/"/>
     <id>https://www.donote.tk/BBS/2018/01/31/nuro-self-driving-delivery/</id>
     <published>2018-01-31T14:47:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://money.cnn.com/2018/01/30/technology/nuro-self-driving-delivery/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Matt McFarland<br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><font size="4"><br>两名前谷歌工程师已经制造了一辆个性化的小汽车，可用来运送你的货物，批萨或者干洗衣物。<br><br>Nuro，一家位于加利福尼亚州Mountain view的基础创业公司，周二揭晓了一辆自动驾驶交通工具，这辆车被设计用来本地商业物流。<br>这家公司计划在本年年末让许多这种汽车在公路上运送货物。现在也正在开发这种汽车的另一种类型，这种类型能够适应大量产品。<br>当前原型车大概是一辆SUV的高度，但相较于一般汽车而言，更加拥挤。这辆电动汽车以两个外部隔间（汽车两边都有两个隔间）为特色。<br>对于特定的用法，比如煎披萨、或者冰冻一包东西，来定制每一个隔间。这家公司尚未将其告诉想要使用这项服务的合作公司。<br>这俩汽车大概是标准汽车重量的三分之一，是为适应城市和郊区环境而开发的。这家公司并不指望它在高速公路上行驶。合伙人是谷歌自动驾驶汽车项目的早期成员，为创建Nuro公司，在2016年年中离开了谷歌。<br>“基本上，我们能够使用自动驾驶技术为所有的货物及服务商在任何时间，任何地点，运送任何的货物，”Nuro合伙人Dave Ferguson告诉CNN科技专栏。过去，消费者使用两周的付费物流，这种物流逐渐演变为一周，两天和当天。现在，当日送货对于某些消费者而言，还不够快。”<br>Nuro不是唯一一家为本地商业物流研发机器人（即自动驾驶汽车，原文换了一种说法，保持语言表达多样性）的公司。这个月的早些时候，在拉斯维加斯举行的电子消费展览上，丰田公司披露了一款概念车，这款车被用于箱包运输，移动商店或者共享骑行服务。一大批新创企业–包括Starship科技，Marble和Dispatch正在测试走在小道上的运输机器人。<br><br>Nuro公司的汽车可能会面对法律困境。现在，在加利福尼亚，作为没有合格驾驶员的全自动汽车是非法的，并且许多公司已经将测试转移到那些法规制定者对自动驾驶汽车更欢迎的国家，比如Arizona。<br><br>根据Ferguson，Nuro公司认为要面对的阻力会更小，因为他们的汽车并不运送乘客。当在街上巡航并避开人行道时，Nuro的狭窄尺寸也可能有帮助。他甚至会撞向停着的汽车或者树木，以此来牺牲自己保护行人（停着的汽车有人咋办？-_-||）。<br><br>这俩汽车并不具备与行人或其它道路使用者（比如，各种司机）交流的任何特殊功能。一些公司已经测试出解决方案，并申请了专利，比如，指示自动驾驶汽车下一步行动的数字屏幕。Ferguson说他的团队做过研究并发现这样的技术会使人困惑。Nuro认为他们的汽车能更好地确保汽车行进的可预测性，使得人类驾驶员从自动驾驶汽车知道预期的行进路线。<br><br>尽管对自动化有着普遍忧虑，即工作的替代，但是Ferguson认为Nuro的角色并不会对应聘产生负面影响。<br><br>“凭借这项将会激发新物流的技术，我们感到，我们创造出新的市场，并且做从前不可能做的事，”Ferguson说道。这并不会是用机器人来完成的工作。它正在创造新市场。显然，将会有新的工作机会。”<br></font>
 
@@ -157,7 +295,7 @@
     <link href="https://www.donote.tk/BBS/2018/01/29/flu-vaccine-design-study/"/>
     <id>https://www.donote.tk/BBS/2018/01/29/flu-vaccine-design-study/</id>
     <published>2018-01-29T14:47:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="https://edition.cnn.com/2018/01/18/health/flu-vaccine-design-study/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Jacqueline Howard<br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><font size="4"><br>照片:显微镜下的流感病菌(图片进入CNN网站查看)<br><br>根据疾病控制与预防中心，这是一个流感病毒微粒，也叫病毒粒子。病毒粒子有外层蛋白质外壳和核酸内核：在这个案例中，有8个单RNA片段。<br><br>CNN-随着致命的流感季节继续肆虐美国，科学家们争取找到新的抗击病毒的办法，包括制造疫苗，这种疫苗提供针对最具严重性的流感品种的更加有效的防护且持续时间比一个季度还长。<br><br>一份新的研究提供了开发这种疫苗的新方法。<br><br>根据周四发表在科学邮报上的研究，科学家们使用了成熟的流感病毒A去开发疫苗，这种疫苗给了老鼠和ferrets（跟老鼠差不多类型的动物)的免疫系统明显的提升。这种新研发的疫苗仅仅在实验室中进行了动物检测，需要更多的研究调查来决定它对于人类而言，是否能有效且安全的使用。<br><br>研究者们仍然希望，一旦做出更多的研究，这种疫苗能减少流感病毒在世界范围内的传播，Ren sun说道，这是一个在加州大学洛杉矶分校，医学院的，从事分子与医药科学的教授并且还是本项研究的高级作者。<br><br>“我们期望它对人是有效的，但是仍然有潜在的，出人意料的后果发生的可能性，”Sun说道，还补充道，如果证明是有效的，这种潜在的疫苗就可能作为鼻腔喷剂那样被管制（结合下文，意思大概是说流感的症状更轻了）。“更多的人将更容易获得流感疫苗，”，他说道，只要它作为家用的鼻腔喷剂而不是专业的健康医疗注射剂。但是，它在进入许可流程之前，可能需要许多时间。（有一种受批准的鼻腔季节性流感疫苗，FluMist,然而它现在并未被美国疾病控制与预防中心所推荐，因为它并未比注射疫苗来得有效果。）<br><br>根据CDC,这份新研究照亮了制造强健流感疫苗的新兴方法的道路，在美国正在经历流行性的严重的流感活动的时期里。<br><br>相关文章：流感席卷这个国度，正在淹没病房并造成20名儿童死亡<br><br>根据世界卫生组织最新的流感报告，侦测到流感病毒H3N2，今年在北美明显地加快了流感活动频率。在欧洲，以其北部和西南部的国家为基线，流感活动增加了。在这些地区频繁侦测到流感B型病毒。<br><br>根据CDC，除了抵抗H3N2 A型流感病毒，一般的流感疫苗对抵抗H1N1流感病毒的A型或B型会更好。<br><br>新研究最主要的限制包括，它仅在老鼠和ferrets上进行，并且这项实验仅针对A型流感病毒。<br><br>“针对同样会引发流感的B型流感病毒，我们需要进行类似的研究。”Sun说道。<br><br>变种病毒制疫苗<br><br>在那项涉及H1N1流感A型病毒的新研究中，研究者们在基因层面上进行规划和构建，以融合变种病毒，使这些病毒对抗体敏感，这些抗体就是一种能够对病毒的入侵触发免疫系统的蛋白质。<br><br>相关视频：新的疫苗技术几乎无注射针<br>研究者们检测了病毒是如何对老鼠和ferrets起作用的，这（老鼠和ferrets）是流感研究中最常用的动物模型，这些受接种的动物通过鼻子输入了原生的病毒或者不同剂量的变种病毒。<br><br>研究者们发现新开发的就像动物体内十分细长的疫苗那样起作用，相较于原生病毒，产生了更多的抗体。<br><br>换句话说，通过调查病毒基因序列并引入变种，使得病毒对抗体敏感–这是抗击病毒入侵的第一道防线，研究者通过放射性的方法来开发疫苗，这种疫苗促使抗体大量增长。<br><br>相关视频：流感如何传播？<br>细长的或鲜活的疫苗使用的是一种弱化的细菌，比如本项新研究的防御入侵的变种病毒。根据美国健康与人类服务部，由于这些细长疫苗与自然入侵相似，只要一或两个剂量就能免疫终生。<br><br>活性疫苗存在某些限制。因为他们包含少量弱化活性病毒，对于那些免疫系统薄弱的，有长期健康问题的活着做过器官移植的人群而言，他们可能并不安全。活性病毒还需要保持冷冻，因此，无法很好地运输。这意味着它们不能在一些地区使用。比如对冰箱有限制的地方。<br><br>一般，使用未激活的疫苗来防御流感。这种疫苗与杀死的病毒类型有关并且通常不提供和活性疫苗一样强度的免疫力，这就是为什么在某些案例中，你可能隔段时间就需要相当多的剂量，比如更大量的注射。<br><br>“今天，开发流感疫苗公认的方法是在全球范围内实施观测，”　纽约流感中心主任及纽约Rochester大学微生物与免疫学教授David Topham说道。<br><br>“我们收集那些正在影响人们的病毒，”Topham说道，这个人并未参与到这项新研究当中。然后，这些病毒一般会在ferrets上进行实验研究，他说道。<br><br>“我们给每个病毒创建了表位映射(生物学术语，吾亦不了解)并且与当前疫苗种类对比，辨别出其相似处或者不同处。要是与当前的疫苗种类有着充分的不同，那么我们将选择这种疫苗作为下一代疫苗，”Topham说道。也就是说，基于观测数据，研究者们可以对最有可能传播并导致疾病的品类，做出最佳的猜测。<br><br>另一方面，新研究建议“使用高位插序法及基因工程来合理地设计一种病毒用于研制疫苗，”他说道。“我认为这是非常具有创新性的且周到的方法。”<br><br>这项新研究用于开发疫苗，与公认的方法相比，有着突飞猛进的发展，他说道。<br><br><br>[原文后面的内容是关于世界各国对流感疫苗调查研究的进展，这一节就不翻译了。]<br></font>
 
@@ -183,7 +321,7 @@
     <link href="https://www.donote.tk/BBS/2017/10/28/sexual-harassment-tech-industry/"/>
     <id>https://www.donote.tk/BBS/2017/10/28/sexual-harassment-tech-industry/</id>
     <published>2017-10-28T14:47:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://money.cnn.com/2017/10/27/technology/culture/sexual-harassment-tech-industry/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Sara Ashley O’Brien<br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><font size="4"><br><br><b>早在好莱坞之前，硅谷便有性骚扰危机</b><br>四个月前，一群科技业界的女职员分享她们的故事，从一个投资者在会议期间暴露自己，到另一个投资者在未取得同意的情况下亲吻一名女企业家。<br><br>一些公司承诺进行调查，一些投资者辞职了。人们提出一些制裁办法，比如更多的界定不适当行为的细则。但是多个月后，妇女们认为，权力机关并没有带来明显的变化。<br><br>问题远没有得到解决。(注意:这里的问题，是指企业面临的妇女控诉，并不是在说妇女的权益，一开始我也认为是讲妇女权益的，但后文的语境明显与这个设想矛盾，只好转换立场去想了)。比如，就在上周，VC公司Draper Fisher Jurvetson同意CNN科技频道针对去年夏天所披露的围绕一位基金合伙人的指控，进行一次持续的独立调查。<br><br>尽管十分愤怒，但是企业家Denise Brosseau也认为科技产业并没有做出足够多的变化来对妇女在这个由男人主导的产业提供系统性的支持。<br><br>“存在着太大的权力，太多的金力和太少的理由而无法去改变(局面),”妇女网络Sprindboard联合发起人兼咨询公司Thought Leadership Lab的CEO的Brosseau说道。<br><br>同Weinstein以及控告他骚扰的好莱坞女星的事情发展动态相似，在科技界，常常存在着非正式的雇主－雇员关系。但是(这种关系)存在这巨大的权力不平衡。<br><br><b>调查结果如何？</b><br>根据Baloonr，一个用于收集匿名反馈的app，所做的调查。大约35%的回应者认为要处理科技产业的(性骚扰)问题，最好的方法是让更多妇女担任领导岗位。这项研究由大约90名女风投资本家及为他们的创业募集资金的基金人所做。<br><br>这项研究进17％的参与者认为一种“行为模式”可能会使那些必要的变化来得更加顺利。<br><br><b>相关:Ellen Pao:”为了讲述我的遭遇，我拒绝了数百万元” </b><br><br>Baloonr一般是公司用来给他们的雇员投票的。但是app开发者Amanda Greenberg却在随后的性骚扰指控中，发起了一项更广泛的调查。<br><br><b>越来越多的女性风投资本家</b><br>一些分享了骚扰经历的女性们认为他们并不信服在权力中的那群人————即投资合伙人和控制基金的有限合伙人————会准备作出任何实质性的改变。<br><br>“只有在他们必须以实际行动来证明他们所言的时候，他们每一个人才是有帮助的。”SheWorx的联合发起人，在CNN科技频道的金钱，权力，性骚扰专刊中发表演说的Lisa Wang说道。<br><br>Journy的发起人兼在6月发表演说反对Caldbeck的六个妇女之一的Susan Ho,说道，投资者们曾经问过他们要怎么去帮助(被投资对象)。更多的女性加入到投资合伙人当中或者投资更多女性(企业)初创人，这样的努力可能有帮助，但要达到这种程度，许多公司却耻于做出正式的承诺。<br><br>“我认为，除非人们认识到他们正在干抑价发行的蠢事(leave money on the table是金融术语，我不是很理解。毕竟不是干这行的。)，否则我们不会看到有意义的变化(发生)。”Ho补充道。<br><br><b>方针策略</b><br>长期以来，风险资本行业自行制定方针策略，但是其中的一份希望这会发生改变。<br><br>国家风险资本联合会，一个科技贸易组织，已经致力于方针范式和训练的工作当中。在9月份，这个联合会宣布了一个被成为风险前向的首创项目，这个项目致力于解决科技界的性骚扰，多样性及内含问题。<br><br>该联合会主席Boby Franklin强调，风险资本行业并没有高度的管制规则，这和那些因不当行为被注销律师资格的律师不同。<br><br>“你能阻止一些人成为风投家吗？不能。那么，这就是我们尝试着谨慎起来的理由。”Franklin说道。<br><br>“我们做的事情就是去帮助那些有益的项目，这些项目是关于性骚乱培训的，关于常规形式的性骚扰，我们希望我们的成员利用这些工具去教育他们自己的公司。”一个在风险资本公司Canaan Partners的且活跃在国家风险资本联合会并积极参与风险前向项目的主要合伙人，Maha lbrahim说道。<br><br>在八月，国家风险资本联合会举办了一个大约60名参加者(包括Brosseau和帮助Malaysian启动地图生态项目的企业家Cheryl Yeoh)4小时的性骚扰研讨会.Yeoh发表演讲反对投资者Dave McClure（这个人意识到骚扰报道时，从他合伙创办的公司500Startups中辞职。）。McClure登报为他的行为道歉。<br><br>之后，很快，国家风险资本联合会为进一步推进，发布了它的框架。这包括了发展中行业的标准人力资源策略和初创企业的最好实践(范例)。<br></font>
 
@@ -209,7 +347,7 @@
     <link href="https://www.donote.tk/BBS/2017/10/05/eyedetect-lies-polygraph/"/>
     <id>https://www.donote.tk/BBS/2017/10/05/eyedetect-lies-polygraph/</id>
     <published>2017-10-05T05:56:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://money.cnn.com/2017/10/04/technology/business/eyedetect-lies-polygraph/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Matt McFarland<br></font><br><a id="more"></a></p>
 <audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
@@ -237,7 +375,7 @@
     <link href="https://www.donote.tk/BBS/2017/10/04/return-trip-italy/"/>
     <id>https://www.donote.tk/BBS/2017/10/04/return-trip-italy/</id>
     <published>2017-10-04T12:36:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://edition.cnn.com/travel/article/return-trip-italy/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Jeanne Bonner</font></p>
 <p><br><a id="more"></a></p>
@@ -269,7 +407,7 @@
     <link href="https://www.donote.tk/BBS/2017/10/01/taiwan-whisky-kavalan/"/>
     <id>https://www.donote.tk/BBS/2017/10/01/taiwan-whisky-kavalan/</id>
     <published>2017-10-01T14:26:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://edition.cnn.com/travel/article/taiwan-whisky-kavalan/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Marian Liu</font></p>
 <p><br><a id="more"></a></p>
@@ -299,7 +437,7 @@
     <link href="https://www.donote.tk/BBS/2017/10/01/QQmood9/"/>
     <id>https://www.donote.tk/BBS/2017/10/01/QQmood9/</id>
     <published>2017-10-01T06:25:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
 <p><br><a id="more"></a></p>
@@ -351,7 +489,7 @@
     <link href="https://www.donote.tk/BBS/2017/08/27/google-debpression-questionnaire/"/>
     <id>https://www.donote.tk/BBS/2017/08/27/google-debpression-questionnaire/</id>
     <published>2017-08-27T08:26:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://money.cnn.com/2017/08/24/technology/google-depression-questionnaire/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Alanna Petroff</font></p>
 <p><br><a id="more"></a></p>
@@ -393,7 +531,7 @@
     <link href="https://www.donote.tk/BBS/2017/08/20/HowToCreatHttpProxyOnPi/"/>
     <id>https://www.donote.tk/BBS/2017/08/20/HowToCreatHttpProxyOnPi/</id>
     <published>2017-08-20T01:30:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br><br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><strong><em>
 
@@ -420,7 +558,7 @@
     <link href="https://www.donote.tk/BBS/2017/07/18/English_Article_health-care-mcconnell-trump/"/>
     <id>https://www.donote.tk/BBS/2017/07/18/English_Article_health-care-mcconnell-trump/</id>
     <published>2017-07-18T14:48:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://edition.cnn.com/2017/07/18/politics/health-care-mcconnell-trump/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Chris Cillizza<br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><strong><em>
 
@@ -448,7 +586,7 @@
     <link href="https://www.donote.tk/BBS/2017/07/17/Excel_Automation_Debug/"/>
     <id>https://www.donote.tk/BBS/2017/07/17/Excel_Automation_Debug/</id>
     <published>2017-07-17T13:18:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><strong><em>
 
@@ -475,7 +613,7 @@
     <link href="https://www.donote.tk/BBS/2017/07/16/English_Article_the_New_Figure_in_the_Trump-Russia_controversy/"/>
     <id>https://www.donote.tk/BBS/2017/07/16/English_Article_the_New_Figure_in_the_Trump-Russia_controversy/</id>
     <published>2017-07-16T02:29:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://edition.cnn.com/2017/07/15/politics/who-is-rinat-akhmetshin/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Marshall Cohen,Tai Kopan and Adam Chan,CNN<br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><strong><em>
 
@@ -503,7 +641,7 @@
     <link href="https://www.donote.tk/BBS/2017/07/15/Excel_Automation/"/>
     <id>https://www.donote.tk/BBS/2017/07/15/Excel_Automation/</id>
     <published>2017-07-15T19:30:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.085Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br><br>  最近，因工作需要，特意去折腾了一下Excel。基本上，就是实现自己想要的功能.至于熟练的玩转Excel,那还没到这种地步。权且把自己所实现的功能记录下来，供以后参考之用。<br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><em>*</em><br><font size="4"><br><br>  先附上三张效果图:<br>  <img src="/pictures/post_1102Excel_Automation.png" alt="Excel自动化"><img src="/pictures/post_1102Excel_Automation2.png" alt="Excel自动化"><img src="/pictures/post_1102Excel_Automation3.png" alt="Excel自动化"><br>  再放出我制作的表单范本(右键另存）:<br>  <a href="/data/Example.xlsx">Example.xlsx</a> <a href="/data/Excel_Example.rar">Excel_Example.rar</a><br>  <a href="/data/VBA_Example.rar">VBA_Example.rar</a><br><br>  先说说我想实现的功能：1.依照固定的格式内容模板，自动建立并格式化一个总表单；2.依照型号列的单元格内容，自动依照分表单模板创建所有对应型号的分表单（人工作业那要做到猴年马月啊，所以要用代码）；3.总表单要链接到分表单，方便跳转到分表录入数据，在修改完分表单之后，总表单在执行程式之后，能够更新剩余数量列项单元格的数据，如果需要更新总数量数据，执行完指定程序之后，总表的剩余数量列项要能够覆盖到总数量列项；4.分表单的型号项、总数量的内容要自动从总表的对应项获取填充，要能返回到总表。<br><br><br>  下面对应说明一下，实现这些功能所做的工作及应用的素材:<br><br>  一、创建带格式的模板，VBA程序语言基础，Excel中工具宏的使用。来谈谈VBA这个东东, 即Visual Basic Application。也就说使用的是VB编程语言。<del>这门编程语言，我基本上没有接触过，大学修的计算机语言是C,毕业之后，有了解过一点点C++。各语言方面的基础元素也有相似的地方。（这些废话不重要。）</del>　代码的话就网上搜索吧，当然要学会修改代码的参数。总表单的模板和分表单的模板可以一起做，拷贝一份代码，重命名一下子程序，删减一些语句就能做成另外一个模板了。Excel宏录制是用来自动生成VBA代码的。宏录制，制作表格，宏停止，再修改一下VBA代码，就能够制作出一份完美的表格模板，以后只要单击运行宏，就能一键建立表格(当然拷贝出另一个已作成的表格也行。如果制作的表格不多的话，可以用拷贝的方法)。<br><br><br>  二、用宏录制配合VBA制作分表单模板，创建批量建立表单的子程序，运用循环语句，自动依照模板，建立表格。利用循环语句，自动使用型号列内容命名分表单，并且自动引用目标表格中的数据，将其填充到分表。所有的操作均可以利用宏录制，来获取代码，通过观察代码，修改实现功能。<br><br>  三、在总表单建立之后，可在总表单上选一单元格，在单元格上使用超链接函数,<font color="red">=Hyperlink(“#”&amp;B2&amp;”!a1”)</font> ,左键双击单元格句柄，就能建立所有以B列单元格内容为名称的且相对应的表单链接，通过在分表单设定特定单元格来更新最新的剩余量数据，所有分表格在同一位置均有这个数据，就能利用循环语句更新总表的剩余量数据项。<br><br>  四、控制选取单元格操作，利用Cells对象属性来指定单元格的特定位置，指定Sheets对象的索引ID，这样就明确了指定了总表中的特定单元格。分表D2的单元格要运用函数=B2－C2，B3的单元格要取用D2的数据,取用数量的数据初始化为0;单列一个单元格填入最新的剩余数量数据，该单元格数据供总表更新剩余数量项的程序作为参数使用,分表单要链接到总表，提供返回入口。(通过宏录制可获取到链接操作的代码)<br><br><br><br>  光使用文字描述的话实在太过抽象，下面给出代码，方便理解。..<br></font>
 
@@ -537,7 +675,7 @@
     <link href="https://www.donote.tk/BBS/2017/07/13/EnglishNews_LiuXiaobo/"/>
     <id>https://www.donote.tk/BBS/2017/07/13/EnglishNews_LiuXiaobo/</id>
     <published>2017-07-13T15:08:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
+    <updated>2019-02-11T13:24:13.081Z</updated>
     
     <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://edition.cnn.com/2017/07/13/asia/china-liu-xiaobo/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Steven Jiang<br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><strong><em>
 </em></strong><br><br><font size="4"><br><img src="/pictures/post_1101LiuXiaobo1.jpg" alt="刘晓波"><br>中国异见者刘晓波因”煽动颠覆国家权力罪”,被判11年徒刑.<br><br>北京(CNN)- 尽管作为中国最著名的政治异见者,但是刘晓波却很少与将他视为叛乱者的人抗争.由于他的原因(改善中国人权),诺贝尔和平奖获得者所具有的和善礼节与平和的倡议却不能证明他的罪行是错误的.<br><br>刘晓波和其他活动人士在2007年的一次会谈上提到:“我认为,在专政体制中,如果你想要成为一个受尊重的、诚实的人，那么你必须为人权和言论自由而战。如果入狱成为这场战斗的一部分，那么我也无怨无悔。”　7月13日，刘晓波在中国东北部沈阳的一家医院中死于肝癌。这时，他61岁。<br><br>他在狱中收到诊断报告之后，被获准保外就医，尽管刘有意愿以及国际的舆论压力，但是北京政府并不让他寻求海外医疗。<br><br>最终，官方答应邀请西方医生加入他的医疗团队。<br><br><br><strong>无心的烈士</strong><br>刘晓波的许多朋友以及支持者在他假释的时候认为恐怕这个异见者已经接近死亡了——共产党的掌权者制造了一个烈士。<br><br>“不论是粗心大意的疏忽还是政治谋杀，他们都犯下了史无前例的罪行，至今，世界上还没有一个政府眼睁睁看着诺贝尔奖获得者死在他们的牢里。”，当刘第一次假释时，一个中国人权活动者胡佳说道。<br><br>胡由于自身的政治主张而被捕，在服刑期间，胡认识了刘的妻子。<br><br>在89年的那场血腥暴乱之后，刘因在89年的民主运动中所扮演的角色而首度入狱。随后提出了一份倾向于台湾政治体制的政治改革与联名文件，这与政府的立场是相悖的。<br><br>他最近的一次牢狱是在2009年12月，起源于他编写的《08宪章》，一份在中国呼吁人权和政治体制改革的宣言。令人吃惊的是，他因煽动颠覆国家权力罪，被判11年徒刑。<br><br>2010年10月，他在沈阳锦州监狱服刑时，由于他为中国人权长期的、非暴力的抗争，他被提名为诺贝尔和平奖的胜出者。<br><br>刘的妻子发推特到：在监狱探访期间，刘从妻子那儿得知获提名的消息的那一刻，他开始哭了起来，说道：“这是给广场上的烈士的。”<br><br>刘霞，在刘晓波早期服刑的时候，即1996年，与刘晓波结婚。2009年，她对CNN说道：“他这20年来的不懈努力并未改变这个社会，但许多人都对他有影响。越来越多的人和他有相同的观点，越来越多人无所<br>畏惧——我相信这些就表明他的努力是值得的。”<br><br><img src="/pictures/post_1101LiuXiaobo2.jpg" alt="刘晓波"><br><br>愤怒的北京试图封锁消息并且抵制这个奖项，主张刘是常规意义上的罪犯且这个奖仅仅是西方反对中国的一个阴谋。<br><br>尽管中国拒绝让刘或其代理人去接受这个奖项，但是在挪威Oslo，2010年12月，诺贝尔仪式组织者，还是把刘的证书和奖章放在了空的领奖台上，这是一件辛酸的事。<br></font>
@@ -556,111 +694,6 @@
     
     
       <category term="诺贝尔 政治 中国" scheme="https://www.donote.tk/BBS/tags/%E8%AF%BA%E8%B4%9D%E5%B0%94-%E6%94%BF%E6%B2%BB-%E4%B8%AD%E5%9B%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QQ空间说说（八）</title>
-    <link href="https://www.donote.tk/BBS/2017/07/12/QQmood8/"/>
-    <id>https://www.donote.tk/BBS/2017/07/12/QQmood8/</id>
-    <published>2017-07-12T14:51:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>从QQ空间说说搬运过来的日常感想 </strong></p>
-<p><font size="4"><br>翻墙后，可评论博文。<br></font><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
-
-
-<hr>
-<p><font size="4"><br>2017-07-12 22:51<br>我们不知道什么时候会出现新的证据，或许就会推翻我们现在所相信的事实。<br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:52<br>我已经说了，不要推新闻，不要推兴趣圈，为何还推！老实说qq的功能过于臃肿，如果每个app的干吧所有功能集成一身的事儿，那手机就放不了几个app了。最好的用户体验是没有广告，没有多余的功能（多余的功能耗流量）没有流氓行为。。。<br><img width="600" src="/pictures/post_1008TencentAD.jpeg"><br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:54<br>教育的价值在于训练思维，而不在于传授事实——爱因斯坦<br></font></p>
-<hr>
-<p><font size="4"><br>健康的人能够获得更多的财富，然而更多的财富未必能买到健康。<br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:56<br>Where there is a will, there is a way.<br>Two heads are better than one.<br>Every dog has its day.<br>A chain is no stronger than its weakest link.<br>Put your shoulder to the wheel .<br>Elbow grease gives the best polish.<br>Don’t rest on your laurels.<br>Life is not all roses .<br>Death is the great leveler .<br>Birds of a feather flock together .Barking dogs never bite.</font></p>
-<p></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:59<br>Remember !For our parents , all of us are the apple of their eye now. But don’t forget !For us ,we will all be the salt of the earth in the future .<br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 23:00<br>回顾过去，大多数人会认为自己以前太不成熟、很傻、太天真;展望未来，却视当下的自己已然成熟，之后的岁月中便不会再有太大的变化。这一观念常在成长的过程中，带来相应的代价。<br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 23:00<br>重装系统把硬盘分区表损坏了，顿时手脚冰凉，眼前一片黑暗。惨痛的教训呢，现在得备份分区表了，以备不时之需<br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 23:01<br>美国在线教育的盛行，使得传统教育机构（各种大学）也来分一杯羹，重点大学也开放了起在线教育，这是否会使常规在校生失去了原有的优越感?<br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 23:04<br>愿作落花随风去，春江寒水任自流。<br></font></p>
-<hr>
-<p><font size="6"><br>就搬到这就停下吧，再往前面搬的话，感觉以前的自己太蠢，还是不放出来丢人了。<br></font></p>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;从QQ空间说说搬运过来的日常感想 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，可评论博文。&lt;br&gt;&lt;/font&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
-    
-    
-      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QQ空间说说（七）</title>
-    <link href="https://www.donote.tk/BBS/2017/07/12/QQmood7/"/>
-    <id>https://www.donote.tk/BBS/2017/07/12/QQmood7/</id>
-    <published>2017-07-12T14:24:00.000Z</published>
-    <updated>2018-10-03T20:17:47.937Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>从QQ空间说说搬运过来的日常感想 </strong></p>
-<p><font size="4"><br>翻墙后，可评论博文。<br></font><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
-
-
-<hr>
-<p><font size="4"><br>2017-07-12 22:28<br>如果网盘没有了，我们还有p2p，也就是分布式技术，这种技术不依赖于某一个公司的服务器，做到了去中心化，避免了单点故障。目前来看，网盘的前景很不妙，有司如果做得太绝，网民便不得不做技术升级。封掉服务器的做法在p2p上可就不会有效了。审查的成本将比现在提升得更多。<br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:28<br>漫游2年意味着所有人的聊天记录在腾讯服务器上的保存期是2年，一般，只要是会员就给你开通同步权限。也就是说2年里面的聊天内容其实是可以让人看到的。<br><img width="600" src="/pictures/post_1007TencentRecord.jpeg"><br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:31<br>好像不是第一次了，血友病好像没过多久吧。从此拒绝使用百度社交平台。。。。。减少使用该引擎的使用频率。。。宁愿多麻烦一些。<br><img width="600" src="/pictures/post_1007BaiduDoEvil.png"><br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:34<br>这些图很珍贵，微博应该是搜不到了<br><img width="600" src="/pictures/post_1007PuTian1.jpeg"> <img width="600" src="/pictures/post_1007PuTian2.jpeg"> <img src="/pictures/post_1007PuTian3.jpeg" alt="莆田系"> <img src="/pictures/post_1007PuTian4.jpeg" alt="莆田系"><br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:40<br>小伙子，快滚回来好好建设社会主义，跑外面瞎撩妹！<br><img src="/pictures/post_1007Society.png" alt="Society"><br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:42<br>在我看来，这种统计调查，必须像歌唱比赛那样。去掉极端高的以及极端低的，这样才能体现真正的平均水平，因为这两头都是少数人。然而，我们的专家已经为我们代言了。<br><img src="/pictures/post_1007wealth.png" alt="人均财富"><br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:44<br>消费与收入。没有收入让人消费是笑话；有收入不让人消费也不可能。企业所生产的产品，最终必须被消费（必要条件，这是企业立场，消费者就不会这么想了），这样，其收回的成本以及获得的利润才有可能投入新一轮的生产。否则，其经济活动只能终止。<br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:47<br>我想这里面应该没有陈冠希的照片吧？<br>真是。。。。。<br><img src="/pictures/post_1007PanamaPaper.jpeg" alt="巴拿马文件"><br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:48<br>你要按你所想的去生活; 否则, 你迟早会按你所生活的去想!——佚名<br></font></p>
-<hr>
-<p><font size="4"><br>2017-07-12 22:48<br>国内有着14亿人的庞大市场，看起来是个巨大的蛋糕。其实，也必须认真考察一下这个市场的质量。在这个庞大的市场中，其价值应该体现在消费力上，指标是有多少人有充足的消费力，充足的消费力要达到什么样的指标上。最近提倡农民进城购房，农民的消费力应该是可想而知的，这购房估计也只能以按揭形式来进行了。但是，高涨的房价，较低的消费力如何能承受？真的购房，银行最终能收回贷款吗？<br></font></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;从QQ空间说说搬运过来的日常感想 &lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，可评论博文。&lt;br&gt;&lt;/font&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
-    
-    
-      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
     
   </entry>
   
