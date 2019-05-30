@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.donote.tk/BBS/"/>
-  <updated>2019-05-29T19:04:06.077Z</updated>
+  <updated>2019-05-30T13:36:00.000Z</updated>
   <id>https://www.donote.tk/BBS/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://www.donote.tk/BBS/2019/05/30/HowToCompileOpenWRTimageForVM/"/>
     <id>https://www.donote.tk/BBS/2019/05/30/HowToCompileOpenWRTimageForVM/</id>
     <published>2019-05-30T13:26:00.000Z</published>
-    <updated>2019-05-29T19:04:06.077Z</updated>
+    <updated>2019-05-30T13:36:00.000Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>之前一篇博文记录关于虚拟机路由器的搭建过程，使用了KoolShare家的固件进行搭建。由于KoolShare固件并不是开源的，运行这个固件只有二进制代码，非常不透明，我们并不知道这个固件是否会有后门，偷偷的将我们的精神出国工具收集上传到所谓的酷软中心服务器。为了避免这种可能性，选择了开源的适合国内网络环境的LEDE代码仓库，自行编译定制属于自己的软路由固件。本篇博文出于这个目的，来记录软路由固件的编译过程。待重新编译时，可回顾一下这个过程。<br>编译过程使用了恩山社区L大的源码包进行编译，在此基础上，汇整了ChinaDNS,Koolproxy源码包，解除ssr-plus插件的解锁代码，纠正一处Makefile错误，使得SSR-plus可以顺利编译。<br>因amule和softetherVPN在编译过程中出错，无法解决问题，只能放弃了这两个包。<br>因硬件路由性能并不如软路由，而且需要考虑各种架构问题。因此只编译x86_amd64的固件。<br></font><br><a id="more"></a></p>
 <p><audio controls="controls" name="media" style="width:264px" autoplay loop="true"> <source src="/musics/huimengyouxian.mp3"> </audio></p>
