@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.donote.tk/BBS/"/>
-  <updated>2019-05-30T13:36:00.000Z</updated>
+  <updated>2019-08-18T09:21:18.269Z</updated>
   <id>https://www.donote.tk/BBS/</id>
   
   <author>
@@ -14,6 +14,266 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>QQ空间说说（十）</title>
+    <link href="https://www.donote.tk/BBS/2019/08/19/QQmood13/"/>
+    <id>https://www.donote.tk/BBS/2019/08/19/QQmood13/</id>
+    <published>2019-08-19T09:25:00.000Z</published>
+    <updated>2019-08-18T09:21:18.269Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
+
+<hr>
+<p><font size="4"><br>开了个大坑，基于KVM(qemu+virt，及Linux系统内核)的虚拟路由器系统搭建,虚拟路由相比硬件路由功能及性能强大得不止一点点。还有一种方案是基于硬件的虚拟机ESXi，不过这个平台不是开源的，需要版权许可，暂时不折腾了，KVM下的虚拟机路由系统，OpenWRT，V2Ray等等一大堆东西已经够玩了，待调校出一个更加好用的系统，就把它打包 ，提交Github做备份。ESXi以后再研究研究。之前的一个Mini硬件路由性能太差，需重灌固件，单纯做无线AP。<br></font></p>
+<hr>
+<p><font size="4"><br>双软路由服务器搭建方案：<br>目的：充分利用网络传输速率<br>-硬体<br>Intel 545 SSD ¥158<br>Intel i5 3570t(45W功耗） ¥600<br>华硕P8B75-MLE主板+风扇+挡片 ¥278+50+20<br>戴尔3010中机箱 ¥200<br>台达电源300TFX（80plus铜牌认证，节能） ¥100<br>海力士8G 1600（ESXi要求至少4G内存） ¥170<br>intel 82580 i340-t4（4口千兆网卡，选择其中两个口，在虚拟路由系统中一个分配为wan口，另一个分配为LAN口） ¥200<br>-软体<br>Esxi server VM Ware<br>Vsphere Center Client<br>ROS（RouterOS,用于拨号，并给所有连接的设备分配ip)<br>LEDE(实现无障碍上网，过滤广告，在网络中作为网关存在)<br>如果还要在服务器搭建虚拟NAS，那么还需要freenas系统或nas4free<br></font></p>
+<hr>
+<p><font size="4"><br>如何使用闲置无线路由扩展WiFi信号？<br>两种方法：<br>1、交换机模式<br>关闭无线路由的dhcp服务，要关闭该服务，先单独连接该路由，登录路由后台，关闭dhcp，重启后，就能作为交换机使用了。这个时候闲置路由器与主路由的连接方式是LAN接LAN，不能接闲置路由的wan口，因为交换机只起到扩展网口的作用，并不涉及网段隔离。<br>2、路由模式<br>路由器的功能在于变更网段比如从一个ip为192.168.1.1的主路由器的LAN口接到一个次级路由器的WAN口，那么该次级路由经过手动设置ip：192.168.2.1，那么就实现了网段隔离，即次级路由器下连接的设备无法访问连接主路由的设备，比如连接在主路由的文件服务器或者NAS，这可以用作访客网络，实现客人访问时，保障个人隐私。【因此，如果要使用闲置路由作为信号扩展器的话，必须更改路由器的网段，将路由器的默认ip地址192.168.1.1改为192.168.2.1或者192.168.x.1，x为除1以外不超过254的数字，与主路由的连接方式是次级路由WAN接主路由LAN。】<br>注：如果家里面的网络布线中配置有交换机（这个要查线路布局图），那么该闲置路由的wan口可以直接连接到墙壁上的网口，如果使用的是交换机模式，则连接路由器的LAN口。<br>重点：路由器的功能在于变更网段，交换机的功能在于扩展网口。<br></font></p>
+<hr>
+<p><font size="4"><br>关于nmap端口扫描工具：使用nmap 45.76.<em>.</em> &gt;&gt;report.txt ;可以扫描到45.76ip网段下共65,025台主机的端口开放信息。如果一台服务器开放了80、443端口，那么这台主机上就有可供我们浏览的网页了，但是443端口是证书加密端口，无法使用ip访问，必须使用域名，因为域名与SSL证书绑定了。所以只能使用透明的80端口浏览了。<br></font></p>
+<hr>
+<p><font size="4"><br>bing.com被屏蔽了。。。。。。即便如此，我也不去用垃圾百毒，信噪比奇高，搜索精确率低，劣币驱逐良币。。。。它能存活在于配合审查，以及强权的需要。<br></font></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+<font size="4">
+
+<p></p></font><p></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QQ空间说说（十）</title>
+    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood12/"/>
+    <id>https://www.donote.tk/BBS/2019/08/18/QQmood12/</id>
+    <published>2019-08-18T09:25:00.000Z</published>
+    <updated>2019-08-18T09:21:18.269Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
+
+<hr>
+<p><font size="4"><br>相比起个人主义的西方来，我们对孩子的尊重与爱护程度，实在是差太远。听上去，“一切都为了孩子”，而且很多家长也真的是牺牲太多，但他们要换取的，是孩子“一切都得听父母的”。——《巨婴国》 为什么中国社会鼓励听话的孩子？或许一切为了孩子就是答案，听话的孩子是中国的家庭政治正确，不容反对。<br></font></p>
+<hr>
+<p><font size="4"><br>长久以来，我们的文化将利他和集体主义捧上神坛，而一直将利己和个人主义视为邪恶。我们认为，利己和个人主义意味着自私自利和自我中心，而利他和集体主义则意味着自我牺牲和奉献。<br>这个逻辑具体到生活中，就成了这样的人生观：我要为别人活着。<br>但问题出来了。我为你活着，你配得上吗？于是，我会紧紧地盯着你，看看你是否值得我付出。因此，我势必会变得很挑剔，而且我们会轻易地看到，我都把一切付出给你了，但看看你，缺点到处都是啊！那么，反过来，你既然也是为我活着，一样会挑剔我。<br>结果，我们这个社会，大家都非常挑剔，很容易盯着其他人的道德缺陷，说三道四，而我们也特别爱凑到一起讲其他人的流言。这个逻辑进入家庭，就发展出了我们最常说的一句话：一切都为了孩子。—《巨婴国》<br></font></p>
+<hr>
+<p><font size="4"><br>父母一心培养个上大学的、学问好的，就算大学毕业没几年，父母催着结婚嫁人，生孩子，然后这个被父母培养的人又开始把希望寄托在下一代，开始培养，哪有心思和精力去做自己该做的？——《巨婴国》恐怕这样的轮回要不断地进行了，不断地重置归零。<br></font></p>
+<hr>
+<p><font size="4"><br>现在连外媒都可以是山寨的了…………<br></font></p>
+<hr>
+<p><font size="4"><br>用树莓派带移动硬盘开车，果然翻车了。。。。。1TB的资源没了，从零开始树莓派USB接口电源带不动移动硬盘，插上去咯吱咯吱响。吸取教训了。<br></font></p>
+<hr>
+<p><font size="4"><br>【做做调查研究，得出自己的结论，别把任何人的话当成圣经。】新闻、广告、文章、宣传、学术。。。。一切的信息流都需要思考质疑，才能决定采不采信。 在信息流动受到审查管制的社会，有可能借着保护防御为名，删除对与舆论媒体垄断者不利的信息，只允许发出一种声音。而这时候，媒体名义上称客观，实际上已经有了立场，在这种立场之下，选择性的报道，镜头之内的，是媒体想让观众看到的，至于镜头之外的。。。。在只能有一种声音的情况下，这是看不到的，互补是不可能的。【所以，切勿认为媒体就是客观公正的，公权力就是正确的（在专制国家，公权力偏向于统治集团的立场，注定未必会是客观的】<br></font></p>
+<hr>
+<p><font size="4"><br>似乎后端的数据类型用错了呢。。。。无法输入代理协议、主机、端口。改成hostport，ipaddrport，但缺了http或socks5的协议名。。。。。。只能寄望于项目作者修改Bug了<br></font></p>
+<hr>
+<p><font size="4"><br>结合内网穿透，从公网也能访问到内网服务器的资源了。图示使用测试账号 test 在线播放音乐，可以丢掉酷我音乐盒等APP了。<br>不过现在好像不能后台自动切歌呢，应该跟带宽限制，相应慢有关系吧，看一下内网会不会也一样。<br>在Emby客户端上登录可能就没有web浏览器上这个问题了。<br></font></p>
+<hr>
+<p><font size="4"><br>使用Emby 在Linux上建了个局域网媒体服务器，大量的音乐及视频可以直接从局域网访问，收看收听了。正好下了100多GB的无损音乐。<br></font></p>
+<hr>
+<p><font size="4"><br>更新了一下视频贴，图片贴,新帖文增加了一首背景音乐….服务器主机硬盘小，开不了车呢。<br>sed + 正则表达式所编写的脚本，可以很容易的将目录中的文件资源大批量转换成Markdown标记语言下的链接标签呢，不过命名就比较麻烦了。<br>图片贴里的大量贴图就是这样做成的。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> [[ -n <span class="string">"<span class="variable">$1</span>"</span> ]]; <span class="keyword">do</span></div><div class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></div><div class="line">-h|--<span class="built_in">help</span>)</div><div class="line">usage</div><div class="line"><span class="built_in">exit</span> 0</div><div class="line">;;</div><div class="line">--version)</div><div class="line"><span class="built_in">echo</span> <span class="variable">$VERSION</span></div><div class="line"><span class="built_in">exit</span> 0</div><div class="line">;;</div><div class="line">-i|--image)</div><div class="line">ls <span class="variable">$2</span>|sed <span class="string">'s/^.*/&lt;img width=\"600\" src="\\'</span><span class="variable">$2</span><span class="string">'\\&amp;"&gt;/'</span>&gt;<span class="variable">$3</span></div><div class="line"><span class="built_in">exit</span> 0</div><div class="line">;;</div><div class="line">-m|--html)</div><div class="line"><span class="built_in">echo</span> <span class="string">'&lt;html&gt;&lt;body&gt;'</span>&gt;&gt;<span class="variable">$3</span></div><div class="line">ls <span class="variable">$2</span>|sed <span class="string">'s/^.*/&lt;a href="\\'</span><span class="variable">$2</span><span class="string">'\\&amp;"&gt;&amp;&lt;\/a&gt;&lt;br\/&gt;/'</span>&gt;&gt;<span class="variable">$3</span></div><div class="line"><span class="built_in">echo</span> <span class="string">'&lt;/body&gt;&lt;/html&gt;'</span>&gt;&gt;<span class="variable">$3</span></div><div class="line"><span class="built_in">exit</span> 0</div><div class="line">;;</div><div class="line">-a|--audio)</div><div class="line">ls <span class="variable">$2</span> sed <span class="string">'s/^.*/&lt;audio controls="controls" name="media" style='</span>width:264px<span class="string">' autoplay loop=true&gt; &lt;source src="&amp;&amp;\\'</span><span class="variable">$2</span><span class="string">'\\&amp;"&gt; &lt;/audio&gt;/'</span>&gt;<span class="variable">$3</span></div><div class="line"><span class="built_in">exit</span> 0</div><div class="line">;;</div><div class="line">-v|--video)</div><div class="line">ls <span class="variable">$2</span>|sed <span class="string">'s/^.*/&lt;video width="600" height="450" controls&gt; &lt;source src="\\'</span><span class="variable">$2</span><span class="string">'\\&amp;" type="video/mp4"&gt; &lt;source src="\\'</span><span class="variable">$2</span><span class="string">'\\&amp;" type="video/ogg"&gt; 您的浏览器不支持Video标签。&lt;/video&gt;'</span></div><div class="line"><span class="built_in">exit</span> 0</div><div class="line">;;</div></pre></td></tr></table></figure></font></p>
+<p></p>
+<hr>
+<p><font size="4"><br>Gamble rumble</font></p>
+<p>Life goes on 満足(まんぞく)してた少(すこ)しの希望(きぼう)だけで</p>
+<p>待(ま)ってれば誰(だれ)かが未来(みらい)決(き)めてくれていた</p>
+<p>なんて小さい自分(じぶん)なんだろう？bust it up!</p>
+<p>move it up and break it! 今(いま)すぐ夢(ゆめ)まで走(はし)ろう</p>
+<p>Gamble ,you gotta chance to make a Rumble!</p>
+<p>ギリギリのステージ</p>
+<p>Gamble,you gotta dive in to a scramble !</p>
+<p>一(いち)ミリも迷(まよ)わず</p>
+<p>守(まも)るべきモノなんて実はそんなに無い</p>
+<p>少(すこ)しだけ強(つよ)がって賭(か)けましょう全部(ぜんぶ) play the game !</p>
+<p>…<br>…</p>
+<p>boy can’t you see ? 自分(じぶん)らしさを削(けず)って過(す)ごしていた</p>
+<p>代償(だいしょう)に手(て)に入(い)れたのは古(ふる)くさいモラル</p>
+<p>臆病(おくびょう)なこの群(む)れから今(いま) bust it up!</p>
+<p>move it up and break it</p>
+<p>何(なに)も持(も)たないで飛(と)び出(だ)そう</p>
+<p>Gamble ,you gotta chance to make a Rumble!</p>
+<p>研(と)ぎ澄(す)まされていく</p>
+<p>Gamble,you gotta dive in to a scramble !</p>
+<p>直感(ちょっかん)を信(しん)じて</p>
+<p>本命(ほんめい)の君(きみ)の愛(あい)以外(いがい)はいらなくて</p>
+<p>少(すこ)しでも迷(まよ)うもの捨(す)てましょう it’s gonna feel so fine!</p>
+<p>Gamble ,you gotta chance to make a Rumble!</p>
+<p>溢(あふ)れ出(だ)す目眩(めまい)が</p>
+<p>Gamble,you gotta dive in to a scramble !</p>
+<p>ハジけそうな last game</p>
+<p>Gamble ,you gotta chance to make a Rumble!</p>
+<p>キリキリのステージ</p>
+<p>Gamble,you gotta dive in to a scramble !</p>
+<p>一(いち)ミリも迷(まよ)わず</p>
+<p>一瞬(いっしゅん))の選択(せんたく)ですべてを失(な)くしても</p>
+<p>後悔(こうかい)は見(み)せないで明(あか)るく負(ま)けて泣(な)きましょう<br></p>
+<hr>
+<p><font size="4"><br>造成信息不对称的因素： 1、个人价值观偏向以及立场，这使人们仅愿意听取与自己价值观相近，并靠近自身立场的信息，而对与自己的价值观相对立的信息则会触发自我防御机制。天然排斥这类信息。 2、个人文化背景的不同，因文化的不同，对各事物的概念上的建立有所不同，对信息产生的曲解造成一定程度的信息不对称。 3、有组织的、有目的性、使用技术手段的信息封锁，刻意让人无渠道了解不同的信息以及不同的观点。让人们只能接受单一的、维护并有利于利益集团的信息。 4、垄断媒体、新闻采编、互联网传媒的行为、制度及规章。对信息流通造成阻碍，也产生了信息的不对称。<br></font></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QQ空间说说（十）</title>
+    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood10/"/>
+    <id>https://www.donote.tk/BBS/2019/08/18/QQmood10/</id>
+    <published>2019-08-18T08:25:00.000Z</published>
+    <updated>2019-08-18T09:21:18.265Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
+
+<hr>
+<p><font size="4"><br>日語語法特點的總結：以い結尾的單詞通常為一類形容詞。<br>詞典裡的動詞以基本形展現，一般以う段結尾。<br>を通常是提示賓語的助詞<br>へ是提示目的地的助詞<br>に是提示場所的助詞<br>は是提示主語的助詞<br>動詞還有て及た形，這些變形並不充當句子的謂語。<br></font></p>
+<hr>
+<p><font size="4"><br>lay on a knife edge.這大概可以對應漢語裡的如履薄冰吧。<br>thefreedictionary網站對此的解釋是：<br>Very anxious or worried about a difficult or stressful situation.<br></font></p>
+<hr>
+<p><font size="4"></font></p>
+<blockquote>
+<blockquote>
+<p>“我头上的这根辫子，是有形的，很容易剪掉。但拴在你们心中的辫子，是无形的，你们很难将其剪除。”—清末 辜鸿铭<br></p>
+<hr>
+<p><font size="4"><br>内网穿透成功了。。。。以后可以通过手机网络来控制那台挂在路由器下，处于内网环境的主机了，必须说一下：ngrok大法好！！！！，什么花生壳动态域名太麻烦了。有vps+ngrok都解决了。现在只是实现了ssh控制，有空研究一下vnc远程桌面控制。<br>frp也是内网穿透应用,配置更简单–20190818<br></font></p>
+<hr>
+<p><font size="4"><br>最讨厌各种各样的口号了，以及大街墙壁上的各类宣传标语。谎话说一千遍也不会改变本质。<br></font></p>
+<hr>
+<p><font size="4"><br>GitHub也许是应该被G/F/W封杀的，这样才能倒逼程序员造梯子。程序员的推墙力量不可小觑。没GitHub，要怎么查代码？看资料？吃饭的家伙都没了。岂有不拼命的道理。<br>PS：最近G/F/W升级，i2p是必备的，虽然速度慢，但能出去，总还有机会。自建的梯子并不会比i2p坚挺，只要G/F/W封杀掉VPS服务提供商所有机房的IP段，梯子就废了（现代科技用来围困民众，阻止百姓获取信息，垄断造谣权，呜呼哀哉。）吾已配在树莓派上，24小时不间断运转，不怕节点信息过期。<br></font></p>
+<hr>
+<p><font size="4"><br>給自己的站點配置了HTTPS訪問協議<br>現在，這個協議越來越容易配置了。<br>幾條命令就搞定。<br></font></p>
+<hr>
+<p><font size="4"><br><a href="http://dzcsite.simplesite.com/" target="_blank" rel="external">链接</a>这个站点还在？使用第三方网站框架的缺点就是没法定制站点框架。当然，这种方案省事，因为不用搞Web前端，之前自己搭建的站点，整个框架都是抄别人的，除了自己改一下站点色调以及编辑的内容之外。<br>这个网站是开始接触运维知识的第一步，回忆起来，玩这个，还是别人怂恿的。一开始也没了解许多。等到有端倪的时候，却也没那个需求了。<br>又接触了去中心化的ZeroNet，在那儿，把别人的样式改改，就变成了自己的站点了,然后，再建了个什么框架都没有，仅几条标签语句、丑爆了的网页。而别人的站点搞得挺漂亮的，而且精致。真心羡慕那些能够熟练运用前端技术的人啊。<br>内心里并不赞同中心化的建站模式，只是为了不浪费现有的资源，于是建了个博客站点。<br>IPFS 是一个去中心化的协议。据说使用使用这种协议搭建网站，仅需要花钱买域名了哦。<br>去中心化大法好！！！！<br></font></p>
+<hr>
+<p><font size="4"><br>用中文词典来记忆解释单词，实在太过简单暴力。记忆的最终结果仍然是中文思维。Collins 还是不错的，并不难懂。ordered and arranged 就是排序的意思，一看就懂的解释，似乎都不用翻译了，permutations is之后就是它的解释。<br></font></p>
+<hr>
+<p><font size="4"><br>人是万物之灵长，与万物之区别在于人类有着丰富的精神世界。而文字符号，书籍就是这丰富的精神世界之抽象物质载体。文字，书籍所能承载的信息量非音像所能比。<br></font></p>
+<hr>
+<p><font size="4"><br> 探探App将我的名字说出来作为一种宣传手段，对我这种注重个人信息保护、隐私意识特别强的人而言，给我的是一种吃惊：这些是从哪里泄漏的？中国的企业什么时候开始那么没有节操，出卖用户数据？这种环境，电信诈骗的骗子都不够用，即使我们自己不中招，但由于信息的不对称，或许有别人种招呢？<br>吾从来不将自己的通信录权限开放给任何的App，快递单号只要是自己能控制的，都是立马销毁。就是这样也依然要遭受信息泄露的局面。<br>回想起来，多年前，高考之后，父母收到的诈骗电话，把我名字报出来了，所幸与我确认。那么问题来了：那时，作为学生，与社会的交集并不多，需要填写信息的，只有一个地方：学校。那么信息如何落到电信诈骗犯的手中呢？<br></font></p>
+<hr>
+<p><font size="4"><br>关于nas的硬件配置。<br>nas的重点工作是数据的存储与分享。<br>所以nas的硬件选配偏向的重点是网络的传输速率，硬盘的读写速率。接口的传输速率。<br>也就是说，跟图形运算与逻辑运算关注不大，所以CPU以及内存选型都不重要了。<br>网卡那是要配千兆滴（当然也得配上千兆的路由或交换机），接口要有多个sata3的（这样才能组成磁盘阵列，一块带4个SATA3接口的硬盘，配上4块8T硬盘，32T的空间，想想就high，不过那是土豪才玩得起），CPU要集成的（因为要24小时不间断运行），功耗是必须考虑的。<br></font></p>
+<hr>
+</blockquote>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QQ空间说说（十）</title>
+    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
+    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
+    <published>2019-08-18T08:25:00.000Z</published>
+    <updated>2019-08-18T09:21:18.269Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
+
+<hr>
+<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
+<hr>
+<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
+<hr>
+<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
+<hr>
+<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
+<hr>
+<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
+<hr>
+<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
+<hr>
+<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
+<hr>
+<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
+<hr>
+<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
+<hr>
+<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
+<hr>
+<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
+<hr>
+<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
   
   <entry>
     <title>如何为软路由编译OpenWRT固件</title>
@@ -177,82 +437,6 @@
     
     
       <category term="OpenWRT KOOLSHARE QEMU KVM 虚拟机" scheme="https://www.donote.tk/BBS/tags/OpenWRT-KOOLSHARE-QEMU-KVM-%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QQ空间说说（十）</title>
-    <link href="https://www.donote.tk/BBS/2018/11/25/QQmood10/"/>
-    <id>https://www.donote.tk/BBS/2018/11/25/QQmood10/</id>
-    <published>2018-11-25T05:25:00.000Z</published>
-    <updated>2019-05-28T17:44:40.590Z</updated>
-    
-    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
-<p><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
-
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
-    
-    
-      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
     
   </entry>
   
@@ -652,95 +836,6 @@
     
     
       <category term="美国 政治　医改" scheme="https://www.donote.tk/BBS/tags/%E7%BE%8E%E5%9B%BD-%E6%94%BF%E6%B2%BB-%E5%8C%BB%E6%94%B9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「原创」Excel批量生成表单调试与完善</title>
-    <link href="https://www.donote.tk/BBS/2017/07/17/Excel_Automation_Debug/"/>
-    <id>https://www.donote.tk/BBS/2017/07/17/Excel_Automation_Debug/</id>
-    <published>2017-07-17T13:18:00.000Z</published>
-    <updated>2019-05-28T17:44:40.586Z</updated>
-    
-    <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><strong><em>
-
-</em></strong><br><br><font size="4"><br>  先放出根据调试结果，修改的代码，由于公司的技术保密限制，在公司调试好的代码没办法直接拷贝。另外，上一篇博文中的代码块，遇到中文会显示乱码，由于我使用的是Linux系统，使用的编码跟Windows的是不一样的，再加上自己懒，只把重要的代码作注释：<br>  <a href="/data/VBA_Example.rar">VBA_Example.rar</a><br><br>  开篇先吐吐苦水。由于事先知道公司的电脑有数据使用限制，所以就没有带U盘和数据线，而是把做好的Excel表格发到同事的邮箱，通过内部邮件下载，公司的电脑就有了我作好的Excel。然而，问题在于我测试的时候，并不知道Excel表格的代码其实是单独存放在个人电脑里的某个路径路径下的，拷贝表格是没有用的，要导出代码才行。导致，我在公司里做测试的时候，所有的代码都得重新码一遍，那个痛苦啊，更悲剧的是，我忘了代码不能用当前的工作簿保存，而要用个人宏工作簿，导致我关闭表格的时候，代码又没了。于是又码了一遍。码完之后，才开始正式测试代码。<br><br>  现在，谈一谈测试过程中遇到的Bug及完善方法：<br><br>  首先遇到的问题是分表重名的冲突，同事在制作表格的时候，不小心弄了两个一模一样的设备型号，导致了该问题的出现，于是就要修改表格了。<br><br>  改完表格之后，遇到的Bug就是总表链接到分表的超链接失效，先后检查了表格的函数hyperlink是否有误，VBA重命名是否有错。最终修改型号列的一格数据，把型号里的”-“号去掉（设备的型号里带“－”是很常见的），再链接一次，发现成功了，问题找到了:”在建立超链接的过程中，‘－’是作为运算符使用的，不能用于超链接。”　那么，如何解决呢，方法是为每一行表格建立序号索引，序号索引具有唯一性，不会重名（当然，这就没法发现型号重复的问题了），序号不涉及运算符号，不会使超链接失效。<br><br>  接下来遇到的问题是总表剩余项无法更新，为了说明问题的原因，先把代码搬出来：<br><br>  <figure class="highlight vb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Sub</span> 更新总表剩余数量项状态()</div><div class="line">’更新剩余数量单元格</div><div class="line"></div><div class="line">  <span class="comment">'重要常量</span></div><div class="line"></div><div class="line">  <span class="keyword">Const</span> sht_Cell_Beg = <span class="number">2</span> <span class="comment">'单元列中数据块的起点行号</span></div><div class="line">  <span class="keyword">Const</span> sht_Cell_End = <span class="number">6</span> <span class="comment">'单元列中数据块的终点行号</span></div><div class="line">  <span class="keyword">Const</span> sht_Cell_Rest = <span class="number">4</span> <span class="comment">'总表中剩余数量项所在列数</span></div><div class="line">  <span class="keyword">Const</span> sub_sht_Cell_Rest_Row = <span class="number">8</span> <span class="comment">'分表中剩余数量实时更新状态单元格所在列数</span></div><div class="line">  <span class="keyword">Const</span> sub_sht_Cell_Rest_Col = <span class="number">2</span> <span class="comment">'分表中剩余数量实时更新状态单元格所在行数</span></div><div class="line">  <span class="keyword">Const</span> sht_Main_ID = <span class="number">1</span> <span class="comment">'总表顺序ID</span></div><div class="line"></div><div class="line">  <span class="keyword">For</span> i = sht_Cell_Beg <span class="keyword">To</span> sht_Cell_End <span class="comment">'i遍历所有整个数据块，同时也是循环变量</span></div><div class="line">  Cells(i,sht_Cell_Rest).<span class="keyword">Select</span> <span class="comment">'选中单元格剩余列的第ｉ行单元格</span></div><div class="line">  ActiveCell.FormulaR1C1 = Sheets(i).Cells(sub_sht_Cell_Rest_Col,sub_sht_Cell_Rest_Row)</div><div class="line">  <span class="keyword">Next</span></div><div class="line">  <span class="keyword">End</span> <span class="keyword">Sub</span></div></pre></td></tr></table></figure><br><br>  再附上，建分表的节选代码:<br>  <figure class="highlight vb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">For</span> i = sht_Cell_Beg <span class="keyword">to</span> sht_Cell_End</div><div class="line">    Sheets.Add After:=Sheets(Sheets.Count)</div><div class="line">    Sheets(Sheets.Count).Name = Sheets(sht_Main_ID).Cells(i,sht_Data_Rel_Index)</div></pre></td></tr></table></figure><br><br>  在编程的时候，通常是建议重要常量定义为一个常变量名，这样以后这个程序就可以作为模板，只要情况差不多，那就只要改参数，基本上就能达到效果了，不用一个一个的去找变量修改，那样很累。<br><br>  问题的关键在于总表顺序ID上，我在进行实际运用之前，所有做的测试基于总表顺序ID=1的情况下进行的。<br><br>  那么，在这种情况，仍然测试通过的原因，是什么呢？原因就是分表顺序ID与表格数据列是同步的。即当我的表格从行号2时就有数据时，在总表顺序ID=1的情况下，建立的下一个表格即分表，其顺序ID也是2。<br><br>  但是，当总表ID=2时，情况就发生了变化，这也是我在公司进行实际运用的情景，于是就出现了BUG,很明显，前一种条件下，程序运行逻辑成立的原因是总表顺序号ID=1,导致分表ID恰巧与表格数据块的起点行号同步。对这个原因取非逻辑，就是出现Bug的原因，即总顺序表ID不等于1,导致分表ID与数据块的序列不同步。<br><br>  要如何解决这种问题呢？既然不同步，也就是说两者存在差值，两者有差值的原因在于总表顺序ID,那么解决方案就是数据块指向变量i与总顺序表ID作运算，使得Sheets()函数索引到正确的分表。<br><br>  假设总表顺序ID=2,数据块由行号2开始，即sht_Cell_Beg=2<br>  那么在建立分表之后，头一个分表的顺序ID＝3<br>  “Sheets(i).Cells(sub_sht_Cell_Rest_Col,sub_sht_Cell_Rest_Row)”这条语句是要索引分表中某一单元格的数据，但是ｉ＝2的情况下，索引到的是总表的表格，这就发生了矛盾了，我们要做的事情是将分表的数据传到总表，并不是要总表数据传到总表。<br><br>  这个时候，只有ID=3的表格才有我们所需要的数据。也就是说Sheets(N)中的N不等于i;<br>  如果N=3,又由于有 i = 2 , sht_Main_ID=2,<br>  那么,求 N = i + sht_Main_ID + x ;<br>  得　x = 3 - 2 -2 = -1<br>  所以正确的索引方式是 Sheets(i + sht_Main_ID -1)<br><br>  在建分表的程序段中有常变量sht_Data_Rel_Index,这个变量用于指明我们在表格中所建立的索引顺序列，通过索引号给分表命名，就能有效地保证超链接的使用。<br><br></font>
-
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="原创博文" scheme="https://www.donote.tk/BBS/categories/%E5%8E%9F%E5%88%9B%E5%8D%9A%E6%96%87/"/>
-    
-    
-      <category term="Excel自动化　快速创建表单 Excel模版创建　" scheme="https://www.donote.tk/BBS/tags/Excel%E8%87%AA%E5%8A%A8%E5%8C%96-%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%8D%95-Excel%E6%A8%A1%E7%89%88%E5%88%9B%E5%BB%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「译文」川普－俄罗斯争论中的新角色:Rinat Akhmetshin</title>
-    <link href="https://www.donote.tk/BBS/2017/07/16/English_Article_the_New_Figure_in_the_Trump-Russia_controversy/"/>
-    <id>https://www.donote.tk/BBS/2017/07/16/English_Article_the_New_Figure_in_the_Trump-Russia_controversy/</id>
-    <published>2017-07-16T02:29:00.000Z</published>
-    <updated>2019-05-28T17:44:40.582Z</updated>
-    
-    <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://edition.cnn.com/2017/07/15/politics/who-is-rinat-akhmetshin/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Marshall Cohen,Tai Kopan and Adam Chan,CNN<br><br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><strong><em>
-
-</em></strong><br><font size="4"><br><br>  华盛顿(CNN)-大约在2016年6月，川普高级竞选团队与一名俄罗斯律师相会的事件，在周五，这一事件发生了变化。周五的时候，泄露出了事件的其他参与者们，这些参与者包括一名面向美国的俄罗斯说客，这名说客曾经在苏维埃军方机构服役，现在则负责扩大克里姆林宫在华盛顿布置的利益格局。<br><br>  一个美国公民，说客以及前苏维埃军方长官，Rinat Akhmetshin出现于在川普私人处所进行的闭门会议，这已经引起了对于这场会议的意图发起的的新的政治调查。这一会面被定调为唐纳德　川普的机遇。即从俄罗斯政府那里收到了关于希拉里　克林顿的有罪情报。<br><br>  根据 Trump Jr　，这项针对莫斯科的报复性举措出现在之后的美国Magnitsky方案的段落中，这项2012年的法律将一些俄罗斯人列入有破换人权嫌疑的黑名单中。<br><br>  现在，CＮＮ已经确证了至少有8个人出现在那场会面当中。包括 Trump Jr.，川普的女婿 Jared Kushner，川普的竞选团队主席 Paul Manafort，Akhmetshin,俄罗斯律师Natalia Veselnitskaya,时评员Rob Goldstone（他负责安排会议），一个翻译，显赫的俄罗斯家族的代理人（负责启动会议）。　这个情报来源与对这场会议细节熟悉的人，这个人并未提供所有与会人员的姓名。<br><br>  CNN针对Akhmetshin进行评论。根据游说记录，他是一个在Veselnitskaya的机构中有注册登记的说客，主要致力于游说华盛顿推翻Magnitsky制裁案。<br><br>  Akhmetshin已经呆在美国超过20年，他的历史已经成了数个月来阴谋的源头。在大法官的委员会调查一项申诉时（即Akhmetshin,Veselnitskaya和其他人参与的一项不为人知的，为克里母林宫的利益而弱化Magnitsky法案的游说行动），参议院大法官Chuck Grassley 要求更多关于他在4月份的移民记录。<br><br>  <strong>服役于俄罗斯军方</strong><br><br>  至关重要的是，Akhmetshin的背景和在苏联军方机构服役的历史促成了他在美国一系列活动的阴谋。<br><br>  Akhmetshin出生在苏联。根据他提供给自由欧洲电台的陈述，1994年他来到美国，在2009,他成为美国公民。<br><br>  在一项与俄罗斯调查无关的公民诉讼中，他被描述为”一名前苏联军方反间谍长官。”在由Magnisk联盟提交的与DOJ有关的申诉案中，针对他被怀疑为克里母林宫进行秘密游说的行动，他被成为“俄罗斯军方情报局的一名前成员。”<br><br>  Steve LeVine,一个供职于Axios的编辑，这个人说他在1998年起就认识Akhmetshin,他宣称Akhmetshin公开讲述他在苏联军方情报机构、驻阿富汗军方陆军情报机构，担任长官的岁月。<br><br>  但是在最近的采访中，Akhmetshin却否认了他经历中的担任的角色，并说他的经历平淡无奇。根据相关报纸，报道说他在1986年到1988年，作为招募兵入伍苏联军队，他的单位在Baltics进行调查，他的单位是一个松散的反间谍部门。<br><br>  在周五华盛顿邮报的采访中，Akhmetshin认为他从来没有为俄罗斯军方情报机构效力，或者也从未为俄罗斯政府效力过。但是他承认他的军事单位被卷入”法律实施为题”和“某些反间谍案件。”<br><br>  他告诉邮报:”我作为士兵服役了2年，和那些成千上万名被征召入伍的年轻俄罗斯人是一样的。我很自豪于自己有军队服役的经历。但是，我从未为俄罗斯政府或者其其他的代理机构效力过，我不是一个情报长官。从来都不是！”<br><br>  Axios公司的LeVine报道说，他并没有Akhmetshin仍然在为俄罗斯情报部门工作的印象。“在无数我参与的与Akhmetshin过去数年来的经历（在前苏联和美国）有关的深入报道中。没有任何线索提及到与当前情况有关的联系。”<br><br>  在2016年7月的，对自由欧洲电台所在的陈述中，Akhmetshin坚持认为他对美国是忠诚的:”我从2009年起，就是一名纳税的美国公民，从1994年起，居住在美国，随后获取了公民身份。并且宣誓向美联邦宣誓忠诚。”<br><br>  <strong>在美国的游说活动</strong><br>  围绕Akhmetshin的诸多调查已经聚焦于这样的问题。就是：他在美国的20多年间，究竟是向谁进行游说或者他反对谁。<br><br>  Akhmetshin的游说活动已使他在华盛顿扮演了一个角色，并且正如GrGrassley所体积的，一份针对他的外国代理注册法案申诉案已经怀疑他的游说活动超越了公开的以及以俄罗斯政府为代表，作为外国代理人所采取的行动的边界。<br><br>  去年，美国财长Bill Browder提交了这份申诉。财长的公司与俄罗斯律师Sergey Magnitsky在2000年有过合作。在俄罗斯，揭露了23亿美元税务欺诈计划的Magnitsky被捕入狱，随后在疑云笼罩下，死于莫斯科监狱。美国法律制定者们在2012年通过了Magnitsky法案，以示对对俄罗斯致其死亡之嫌疑的惩罚。<br><br>  去年，Akhmetshin和Veselnitskaya发起的推翻运动，针对的正是这项立法。<br><br>  根据Politico提供的内部邮件，在Akhmetshin去年出现在他们的一次听证会的时候，一个白宫外交委员会的职员便与此相关联。这位职员的电子邮件将Akhmetshin描述为“以发起运动为专长的前间谍。”在2016年6月14日所举办的听证会是关于美国的对俄政策的。Akhmetshin和Veselnitskaya都有参与。正好是两人参与Trump闭门会面的那天。<br><br>  Akhmetshin否认他为莫斯科在美国秘密从事间谍活动。<br><br>  “仅仅因为我出生在俄罗斯，并不意味着我是克里母林宫的间谍，”Akhmetshin向Politico说道。<br><br>  他的活动，并不是全部都与克里母林宫的利益有疑点。根据2006，纽约时报对他的采访和那个认识他20多年的Axios记者的描述，他曾经代表Kazeakh在美国工作，　Kazakh是一个反面角色，他反对在Kazakhstan的亲俄政府。<br><br>  透过他的职业生涯，Akhmetshin已经代理了一系列的客户，包括俄罗斯寡头政治家。<br><br>  根据自由欧洲电台，”我的一些客户是政府机构或者在这些政府机构中工作的高级官员，”Akhmetshin在2012年8月的法庭宣誓中说道。“我的政府机构客户在我的邮件中，涉及在前苏联地区的美国军方基地的位置，有过高度敏感的讨论。”<br></font>
-
-<hr>
-<p>就翻译到这里。下文是Kazakhstan与Veselnitskaya的关联，以及Kazakhstan卷入的黑客案件。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;br&gt;文章来源于CNN网站 : &lt;a href=&quot;http://edition.cnn.com/2017/07/15/politics/who-is-rinat-akhmetshin/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击查看原文&lt;/a&gt;&lt;br&gt;可能需要翻墙才能查阅。&lt;br&gt;作者:Marshall Cohen,Tai Kopan and Adam Chan,CNN&lt;br&gt;&lt;br&gt;&lt;/font&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="外文翻译" scheme="https://www.donote.tk/BBS/categories/%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91/"/>
-    
-    
-      <category term="美国 俄罗斯 政治　" scheme="https://www.donote.tk/BBS/tags/%E7%BE%8E%E5%9B%BD-%E4%BF%84%E7%BD%97%E6%96%AF-%E6%94%BF%E6%B2%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「原创」Excel自动化</title>
-    <link href="https://www.donote.tk/BBS/2017/07/15/Excel_Automation/"/>
-    <id>https://www.donote.tk/BBS/2017/07/15/Excel_Automation/</id>
-    <published>2017-07-15T19:30:00.000Z</published>
-    <updated>2019-05-28T17:44:40.582Z</updated>
-    
-    <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br><br>  最近，因工作需要，特意去折腾了一下Excel。基本上，就是实现自己想要的功能.至于熟练的玩转Excel,那还没到这种地步。权且把自己所实现的功能记录下来，供以后参考之用。<br></font><br><a id="more"></a><br><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio><br><br><em>*</em><br><font size="4"><br><br>  先附上三张效果图:<br>  <img src="/pictures/post_1102Excel_Automation.png" alt="Excel自动化"><img src="/pictures/post_1102Excel_Automation2.png" alt="Excel自动化"><img src="/pictures/post_1102Excel_Automation3.png" alt="Excel自动化"><br>  再放出我制作的表单范本(右键另存）:<br>  <a href="/data/Example.xlsx">Example.xlsx</a> <a href="/data/Excel_Example.rar">Excel_Example.rar</a><br>  <a href="/data/VBA_Example.rar">VBA_Example.rar</a><br><br>  先说说我想实现的功能：1.依照固定的格式内容模板，自动建立并格式化一个总表单；2.依照型号列的单元格内容，自动依照分表单模板创建所有对应型号的分表单（人工作业那要做到猴年马月啊，所以要用代码）；3.总表单要链接到分表单，方便跳转到分表录入数据，在修改完分表单之后，总表单在执行程式之后，能够更新剩余数量列项单元格的数据，如果需要更新总数量数据，执行完指定程序之后，总表的剩余数量列项要能够覆盖到总数量列项；4.分表单的型号项、总数量的内容要自动从总表的对应项获取填充，要能返回到总表。<br><br><br>  下面对应说明一下，实现这些功能所做的工作及应用的素材:<br><br>  一、创建带格式的模板，VBA程序语言基础，Excel中工具宏的使用。来谈谈VBA这个东东, 即Visual Basic Application。也就说使用的是VB编程语言。<del>这门编程语言，我基本上没有接触过，大学修的计算机语言是C,毕业之后，有了解过一点点C++。各语言方面的基础元素也有相似的地方。（这些废话不重要。）</del>　代码的话就网上搜索吧，当然要学会修改代码的参数。总表单的模板和分表单的模板可以一起做，拷贝一份代码，重命名一下子程序，删减一些语句就能做成另外一个模板了。Excel宏录制是用来自动生成VBA代码的。宏录制，制作表格，宏停止，再修改一下VBA代码，就能够制作出一份完美的表格模板，以后只要单击运行宏，就能一键建立表格(当然拷贝出另一个已作成的表格也行。如果制作的表格不多的话，可以用拷贝的方法)。<br><br><br>  二、用宏录制配合VBA制作分表单模板，创建批量建立表单的子程序，运用循环语句，自动依照模板，建立表格。利用循环语句，自动使用型号列内容命名分表单，并且自动引用目标表格中的数据，将其填充到分表。所有的操作均可以利用宏录制，来获取代码，通过观察代码，修改实现功能。<br><br>  三、在总表单建立之后，可在总表单上选一单元格，在单元格上使用超链接函数,<font color="red">=Hyperlink(“#”&amp;B2&amp;”!a1”)</font> ,左键双击单元格句柄，就能建立所有以B列单元格内容为名称的且相对应的表单链接，通过在分表单设定特定单元格来更新最新的剩余量数据，所有分表格在同一位置均有这个数据，就能利用循环语句更新总表的剩余量数据项。<br><br>  四、控制选取单元格操作，利用Cells对象属性来指定单元格的特定位置，指定Sheets对象的索引ID，这样就明确了指定了总表中的特定单元格。分表D2的单元格要运用函数=B2－C2，B3的单元格要取用D2的数据,取用数量的数据初始化为0;单列一个单元格填入最新的剩余数量数据，该单元格数据供总表更新剩余数量项的程序作为参数使用,分表单要链接到总表，提供返回入口。(通过宏录制可获取到链接操作的代码)<br><br><br><br>  光使用文字描述的话实在太过抽象，下面给出代码，方便理解。..<br></font>
-
-<pre><code>总表模板代码:
-</code></pre>  <figure class="highlight vb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">  <span class="keyword">Sub</span> 总表模板()</div><div class="line"><span class="comment">'</span></div><div class="line"><span class="comment">' 工作总表模板　Macro</span></div><div class="line"><span class="comment">'</span></div><div class="line"></div><div class="line"><span class="comment">'程序控制常量设定，在程序头使用常量，可以方便程序修改，不用到处找参数变量。</span></div><div class="line">    <span class="keyword">Const</span> sht_Main_Name = <span class="string">"test"</span> <span class="comment">'总表名称</span></div><div class="line">    <span class="keyword">Const</span> sht_Order_Begin = <span class="number">2</span> <span class="comment">'新建表格起始ID</span></div><div class="line">    <span class="keyword">Const</span> sht_Order_End = <span class="number">6</span> <span class="comment">'新建表格终止ID</span></div><div class="line"></div><div class="line">    <span class="keyword">Const</span> sht_A_ColumnWidth = <span class="number">20</span> <span class="comment">'A列单元格宽度参数</span></div><div class="line">    <span class="keyword">Const</span> sht_B_ColumnWidth = <span class="number">14</span></div><div class="line">    <span class="keyword">Const</span> sht_C_ColumnWidth = <span class="number">14</span></div><div class="line">    <span class="keyword">Const</span> sht_D_ColumnWidth = <span class="number">14</span></div><div class="line">    <span class="keyword">Const</span> sht_E_ColumnWidth = <span class="number">40</span></div><div class="line">    <span class="comment">'Const sht_F_ColumnWidth = 12　’关闭F,G,H列常量参数</span></div><div class="line">    <span class="comment">' Const sht_G_ColumnWidth = 14</span></div><div class="line">    <span class="comment">' Const sht_H_ColumnWidth = 14</span></div><div class="line"></div><div class="line">           <span class="keyword">Const</span> sht_Main_ID = <span class="number">1</span> <span class="comment">'总表顺序ID</span></div><div class="line"></div><div class="line"><span class="comment">'</span></div><div class="line">               Sheets(sht_Main_ID ).Name = sht_Main_Name</div><div class="line"><span class="comment">'总表模板代码，该代码是在宏录制模式下，制作表格生成的代码。              </span></div><div class="line">               Range(<span class="string">"A1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"项目"</span></div><div class="line">               Range(<span class="string">"B1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"型号"</span></div><div class="line">               Range(<span class="string">"C1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"总数量"</span></div><div class="line">               Range(<span class="string">"D1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"剩余数量"</span></div><div class="line">               Range(<span class="string">"E1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"分表"</span></div><div class="line">               <span class="comment">'Range("F1").Select</span></div><div class="line">               <span class="comment">'ActiveCell.FormulaR1C1 = "领取人"</span></div><div class="line">               <span class="comment">'Range("G1").Select</span></div><div class="line">               <span class="comment">'ActiveCell.FormulaR1C1 = "领取时间"</span></div><div class="line">               Columns(<span class="string">"B:B"</span>).<span class="keyword">Select</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.00_);[ºìÉ«](0.00)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.0_);[ºìÉ«](0.0)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0_);[ºìÉ«](0)"</span></div><div class="line">               Columns(<span class="string">"C:C"</span>).<span class="keyword">Select</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.00_);[ºìÉ«](0.00)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.0_);[ºìÉ«](0.0)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0_);[ºìÉ«](0)"</span></div><div class="line">               Columns(<span class="string">"D:D"</span>).<span class="keyword">Select</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.00_);[ºìÉ«](0.00)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.0_);[ºìÉ«](0.0)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0_);[ºìÉ«](0)"</span></div><div class="line">               <span class="comment">'Columns("E:E").Select</span></div><div class="line">               <span class="comment">'Selection.NumberFormatLocal = "@"</span></div><div class="line">               <span class="comment">'Columns("F:F").Select</span></div><div class="line">               <span class="comment">'Selection.NumberFormatLocal = "@"</span></div><div class="line">               <span class="comment">'Columns("G:G").Select</span></div><div class="line">               <span class="comment">'Selection.NumberFormatLocal = "[$-F800]dddd, mmmm dd, yyyy"</span></div><div class="line">               Columns(<span class="string">"A:A"</span>).ColumnWidth = sht_A_ColumnWidth</div><div class="line">               Columns(<span class="string">"B:B"</span>).ColumnWidth = sht_B_ColumnWidth</div><div class="line">               Columns(<span class="string">"C:C"</span>).ColumnWidth = sht_C_ColumnWidth</div><div class="line">               Columns(<span class="string">"D:D"</span>).ColumnWidth = sht_D_ColumnWidth</div><div class="line">               Columns(<span class="string">"E:E"</span>).ColumnWidth = sht_E_ColumnWidth</div><div class="line">               <span class="comment">'Columns("F:F").ColumnWidth = sht_F_ColumnWidth</span></div><div class="line">               Selection.ColumnWidth = <span class="number">18</span></div><div class="line">               Cells.<span class="keyword">Select</span></div><div class="line">               <span class="keyword">With</span> Selection</div><div class="line">                   .HorizontalAlignment = xlCenter</div><div class="line">                   .VerticalAlignment = xlCenter</div><div class="line">                   .WrapText = <span class="literal">False</span></div><div class="line">                   .Orientation = <span class="number">0</span></div><div class="line">                   .AddIndent = <span class="literal">False</span></div><div class="line">                   .IndentLevel = <span class="number">0</span></div><div class="line">                   .ShrinkToFit = <span class="literal">False</span></div><div class="line">                   .ReadingOrder = xlContext</div><div class="line">                   .MergeCells = <span class="literal">False</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">               Columns(<span class="string">"B:B"</span>).<span class="keyword">Select</span></div><div class="line">               <span class="keyword">With</span> Selection.Interior</div><div class="line">                   .Pattern = xlSolid</div><div class="line">                   .PatternColorIndex = xlAutomatic</div><div class="line">                   .Color = <span class="number">5296274</span></div><div class="line">                   .TintAndShade = <span class="number">0</span></div><div class="line">                   .PatternTintAndShade = <span class="number">0</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">               <span class="keyword">With</span> Selection.Interior</div><div class="line">                   .Pattern = xlSolid</div><div class="line">                   .PatternColorIndex = xlAutomatic</div><div class="line">                   .Color = <span class="number">5296274</span></div><div class="line">                   .TintAndShade = <span class="number">0</span></div><div class="line">                   .PatternTintAndShade = <span class="number">0</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">               <span class="keyword">With</span> Selection.Interior</div><div class="line">                   .Pattern = xlSolid</div><div class="line">                   .PatternColorIndex = xlAutomatic</div><div class="line">                   .Color = <span class="number">5296274</span></div><div class="line">                   .TintAndShade = <span class="number">0</span></div><div class="line">                   .PatternTintAndShade = <span class="number">0</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">               Columns(<span class="string">"D:D"</span>).<span class="keyword">Select</span></div><div class="line">               <span class="keyword">With</span> Selection.Interior</div><div class="line">                   .Pattern = xlSolid</div><div class="line">                   .PatternColorIndex = xlAutomatic</div><div class="line">                   .Color = <span class="number">65535</span></div><div class="line">                   .TintAndShade = <span class="number">0</span></div><div class="line">                   .PatternTintAndShade = <span class="number">0</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">             <span class="comment">'  Columns("F:F").Select</span></div><div class="line">             <span class="comment">'  With Selection.Interior</span></div><div class="line">             <span class="comment">'      .Pattern = xlSolid</span></div><div class="line">             <span class="comment">'      .PatternColorIndex = xlAutomatic</span></div><div class="line">             <span class="comment">'      .Color = 15773696</span></div><div class="line">             <span class="comment">'      .TintAndShade = 0</span></div><div class="line">             <span class="comment">'      .PatternTintAndShade = 0</span></div><div class="line">             <span class="comment">'  End With</span></div><div class="line"></div><div class="line">                Columns(<span class="string">"A:E"</span>).<span class="keyword">Select</span></div><div class="line">                Selection.Borders(xlDiagonalDown).LineStyle = xlNone</div><div class="line">                Selection.Borders(xlDiagonalUp).LineStyle = xlNone</div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlEdgeLeft)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlEdgeTop)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlEdgeBottom)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlEdgeRight)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlInsideVertical)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlInsideHorizontal)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line"></div><div class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></div></pre></td></tr></table></figure>
-<p>建立全部分表:<br>  <figure class="highlight vb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">Sub</span> 建立全部分表()</div><div class="line"><span class="comment">'</span></div><div class="line"><span class="comment">' 新增工作表 Macro</span></div><div class="line"><span class="comment">'</span></div><div class="line"></div><div class="line"><span class="comment">'程序常量参数设定</span></div><div class="line">    <span class="keyword">Const</span> sht_Order_Begin = <span class="number">2</span> <span class="comment">'新建表格起始ID</span></div><div class="line">    <span class="keyword">Const</span> sht_Order_End = <span class="number">6</span> <span class="comment">'新建表格终止 ID</span></div><div class="line"></div><div class="line">    <span class="keyword">Const</span> sht_A_ColumnWidth = <span class="number">20</span> <span class="comment">'A列单元格宽度</span></div><div class="line">    <span class="keyword">Const</span> sht_B_ColumnWidth = <span class="number">14</span></div><div class="line">    <span class="keyword">Const</span> sht_C_ColumnWidth = <span class="number">14</span></div><div class="line">    <span class="keyword">Const</span> sht_D_ColumnWidth = <span class="number">14</span></div><div class="line">    <span class="keyword">Const</span> sht_E_ColumnWidth = <span class="number">40</span></div><div class="line">    <span class="keyword">Const</span> sht_F_ColumnWidth = <span class="number">12</span></div><div class="line">    <span class="comment">' Const sht_G_ColumnWidth = 14</span></div><div class="line">     <span class="keyword">Const</span> sht_H_ColumnWidth = <span class="number">14</span></div><div class="line"></div><div class="line">    <span class="keyword">Const</span> sht_Main_URL_Address <span class="keyword">As</span> <span class="built_in">String</span> = <span class="string">"test!A1"</span> <span class="comment">'总表超链接地址</span></div><div class="line">    <span class="keyword">Const</span> sht_Main_URL_Text <span class="keyword">As</span> <span class="built_in">String</span> = <span class="string">"返回总表"</span> <span class="comment">'超链接文字显示</span></div><div class="line"></div><div class="line">    <span class="keyword">Const</span> sht_Main_ID = <span class="number">1</span> <span class="comment">'总表顺序ＩＤ　</span></div><div class="line">    <span class="keyword">Const</span> sht_Data_Rel_One = <span class="number">2</span> <span class="comment">'总表型号项数据所在列数</span></div><div class="line">    <span class="keyword">Const</span> sht_Data_Rel_Two = <span class="number">3</span> <span class="comment">'总表总数项数据所在列数</span></div><div class="line"></div><div class="line"></div><div class="line">    <span class="keyword">For</span> i = sht_Order_Begin <span class="keyword">To</span> sht_Order_End</div><div class="line">        Sheets.Add After:=Sheets(Sheets.Count)  <span class="comment">'循环创建表单语句。</span></div><div class="line">        Sheets(Sheets.Count).Name = Sheets(sht_Main_ID).Cells(i, <span class="number">2</span>) <span class="comment">'循环命名分表名称，赋值号左边制定了总表的第2列数据，通过变量i遍历该列数据，填充到分表名陈属性。</span></div><div class="line"></div><div class="line">    <span class="comment">'表格函数的使用，以及获取总表数据填充到指定单元格。</span></div><div class="line">        Range(<span class="string">"A2"</span>).<span class="keyword">Select</span> <span class="comment">'选中当前循环下，所建表格中的A2单元格</span></div><div class="line">        ActiveCell.FormulaR1C1 = Sheets(sht_Main_ID).Cells(i, sht_Data_Rel_One)</div><div class="line">        <span class="comment">'将总表指定的数据填充到选中的单元格</span></div><div class="line">        Range(<span class="string">"B2"</span>).<span class="keyword">Select</span></div><div class="line">        ActiveCell.FormulaR1C1 = Sheets(sht_Main_ID).Cells(i, sht_Data_Rel_Two)</div><div class="line">        ’同上</div><div class="line">        Range(<span class="string">"C2"</span>).<span class="keyword">Select</span></div><div class="line">        ActiveCell.FormulaR1C1 = <span class="string">"0"</span></div><div class="line">        Range(<span class="string">"D2"</span>).<span class="keyword">Select</span></div><div class="line">        ActiveCell.FormulaR1C1 = <span class="string">"=RC[-2]-RC[-1]"</span></div><div class="line">        ‘单元格运用函数</div><div class="line">        Range(<span class="string">"B3"</span>).<span class="keyword">Select</span></div><div class="line">        ActiveCell.FormulaR1C1 = <span class="string">"=R[-1]C[2]"</span></div><div class="line">        Range(<span class="string">"C3"</span>).<span class="keyword">Select</span></div><div class="line">        ActiveCell.FormulaR1C1 = <span class="string">"0"</span></div><div class="line">        Range(<span class="string">"D2"</span>).<span class="keyword">Select</span></div><div class="line">        Selection.AutoFill Destination:=Range(<span class="string">"D2:D3"</span>), Type:=xlFillDefault</div><div class="line">        Range(<span class="string">"H1"</span>).<span class="keyword">Select</span></div><div class="line">        ActiveSheet.Hyperlinks.Add Anchor:=Selection, Address:=<span class="string">""</span>, SubAddress:= _</div><div class="line">        sht_Main_URL_Address, TextToDisplay:=sht_Main_URL_Text</div><div class="line">        Range(<span class="string">"H2"</span>).<span class="keyword">Select</span></div><div class="line">        ActiveCell.FormulaR1C1 = <span class="string">"=LOOKUP(9E+307,C[-4])"</span></div><div class="line">        ‘单元格运用函数，并实时更新变化了的数据，C[<span class="number">-4</span>]为指定列</div><div class="line">        Columns(<span class="string">"H:H"</span>).ColumnWidth = sht_H_ColumnWidth</div><div class="line"></div><div class="line">               <span class="comment">'工作表模板</span></div><div class="line">               Range(<span class="string">"A1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"型号"</span></div><div class="line">               Range(<span class="string">"B1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"总数量"</span></div><div class="line">               Range(<span class="string">"C1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"取用数量"</span></div><div class="line">               Range(<span class="string">"D1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"剩余数量"</span></div><div class="line">               Range(<span class="string">"E1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"用途"</span></div><div class="line">               Range(<span class="string">"F1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"领取人"</span></div><div class="line">               Range(<span class="string">"G1"</span>).<span class="keyword">Select</span></div><div class="line">               ActiveCell.FormulaR1C1 = <span class="string">"领取时间"</span></div><div class="line">               Columns(<span class="string">"B:B"</span>).<span class="keyword">Select</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.00_);[ºìÉ«](0.00)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.0_);[ºìÉ«](0.0)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0_);[ºìÉ«](0)"</span></div><div class="line">               Columns(<span class="string">"C:C"</span>).<span class="keyword">Select</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.00_);[ºìÉ«](0.00)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.0_);[ºìÉ«](0.0)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0_);[ºìÉ«](0)"</span></div><div class="line">               Columns(<span class="string">"D:D"</span>).<span class="keyword">Select</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.00_);[ºìÉ«](0.00)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0.0_);[ºìÉ«](0.0)"</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"0_);[ºìÉ«](0)"</span></div><div class="line">               Columns(<span class="string">"E:E"</span>).<span class="keyword">Select</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"@"</span></div><div class="line">               Columns(<span class="string">"F:F"</span>).<span class="keyword">Select</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"@"</span></div><div class="line">               Columns(<span class="string">"G:G"</span>).<span class="keyword">Select</span></div><div class="line">               Selection.NumberFormatLocal = <span class="string">"[$-F800]dddd, mmmm dd, yyyy"</span></div><div class="line">               Columns(<span class="string">"A:A"</span>).ColumnWidth = sht_A_ColumnWidth</div><div class="line">               Columns(<span class="string">"B:B"</span>).ColumnWidth = sht_B_ColumnWidth</div><div class="line">               Columns(<span class="string">"C:C"</span>).ColumnWidth = sht_C_ColumnWidth</div><div class="line">               Columns(<span class="string">"D:D"</span>).ColumnWidth = sht_D_ColumnWidth</div><div class="line">               Columns(<span class="string">"E:E"</span>).ColumnWidth = sht_E_ColumnWidth</div><div class="line">               Columns(<span class="string">"F:F"</span>).ColumnWidth = sht_F_ColumnWidth</div><div class="line">               Selection.ColumnWidth = <span class="number">18</span></div><div class="line">               Cells.<span class="keyword">Select</span></div><div class="line">               <span class="keyword">With</span> Selection</div><div class="line">                   .HorizontalAlignment = xlCenter</div><div class="line">                   .VerticalAlignment = xlCenter</div><div class="line">                   .WrapText = <span class="literal">False</span></div><div class="line">                   .Orientation = <span class="number">0</span></div><div class="line">                   .AddIndent = <span class="literal">False</span></div><div class="line">                   .IndentLevel = <span class="number">0</span></div><div class="line">                   .ShrinkToFit = <span class="literal">False</span></div><div class="line">                   .ReadingOrder = xlContext</div><div class="line">                   .MergeCells = <span class="literal">False</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">               Columns(<span class="string">"B:B"</span>).<span class="keyword">Select</span></div><div class="line">               <span class="keyword">With</span> Selection.Interior</div><div class="line">                   .Pattern = xlSolid</div><div class="line">                   .PatternColorIndex = xlAutomatic</div><div class="line">                   .Color = <span class="number">5296274</span></div><div class="line">                   .TintAndShade = <span class="number">0</span></div><div class="line">                   .PatternTintAndShade = <span class="number">0</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">               <span class="keyword">With</span> Selection.Interior</div><div class="line">                   .Pattern = xlSolid</div><div class="line">                   .PatternColorIndex = xlAutomatic</div><div class="line">                   .Color = <span class="number">5296274</span></div><div class="line">                   .TintAndShade = <span class="number">0</span></div><div class="line">                   .PatternTintAndShade = <span class="number">0</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">               <span class="keyword">With</span> Selection.Interior</div><div class="line">                   .Pattern = xlSolid</div><div class="line">                   .PatternColorIndex = xlAutomatic</div><div class="line">                   .Color = <span class="number">5296274</span></div><div class="line">                   .TintAndShade = <span class="number">0</span></div><div class="line">                   .PatternTintAndShade = <span class="number">0</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">               Columns(<span class="string">"D:D"</span>).<span class="keyword">Select</span></div><div class="line">               <span class="keyword">With</span> Selection.Interior</div><div class="line">                   .Pattern = xlSolid</div><div class="line">                   .PatternColorIndex = xlAutomatic</div><div class="line">                   .Color = <span class="number">65535</span></div><div class="line">                   .TintAndShade = <span class="number">0</span></div><div class="line">                   .PatternTintAndShade = <span class="number">0</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">               Columns(<span class="string">"F:F"</span>).<span class="keyword">Select</span></div><div class="line">               <span class="keyword">With</span> Selection.Interior</div><div class="line">                   .Pattern = xlSolid</div><div class="line">                   .PatternColorIndex = xlAutomatic</div><div class="line">                   .Color = <span class="number">15773696</span></div><div class="line">                   .TintAndShade = <span class="number">0</span></div><div class="line">                   .PatternTintAndShade = <span class="number">0</span></div><div class="line">               <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line"></div><div class="line">                Columns(<span class="string">"A:G"</span>).<span class="keyword">Select</span></div><div class="line">                Selection.Borders(xlDiagonalDown).LineStyle = xlNone</div><div class="line">                Selection.Borders(xlDiagonalUp).LineStyle = xlNone</div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlEdgeLeft)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlEdgeTop)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlEdgeBottom)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlEdgeRight)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlInsideVertical)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line">                <span class="keyword">With</span> Selection.Borders(xlInsideHorizontal)</div><div class="line">                    .LineStyle = xlContinuous</div><div class="line">                    .ColorIndex = xlAutomatic</div><div class="line">                    .TintAndShade = <span class="number">0</span></div><div class="line">                    .Weight = xlThin</div><div class="line">                <span class="keyword">End</span> <span class="keyword">With</span></div><div class="line"></div><div class="line">    <span class="keyword">Next</span></div><div class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></div></pre></td></tr></table></figure></p>
-<p>  更新剩余数量数据单元格状态:<br>  <figure class="highlight vb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">Sub</span> 更新总表剩余数量单元格状态()</div><div class="line"><span class="comment">'更新剩余数量单元格</span></div><div class="line"><span class="comment">'程序控制常量</span></div><div class="line"><span class="comment">'</span></div><div class="line"><span class="comment">'</span></div><div class="line"><span class="keyword">Const</span> sht_Cell_Beg = <span class="number">2</span> <span class="comment">'单列中，单元格起点位置</span></div><div class="line"><span class="keyword">Const</span> sht_Cell_End = <span class="number">6</span> <span class="comment">'单列中，单元格终点位置</span></div><div class="line"><span class="keyword">Const</span> sht_Cell_Rest = <span class="number">4</span> <span class="comment">'总表中，剩余数量项所在列数</span></div><div class="line"><span class="keyword">Const</span> sub_sht_Cell_Rest_Row = <span class="number">8</span> <span class="comment">'分表中，为实现剩余数量实时更新而设的单元格列位置</span></div><div class="line"><span class="keyword">Const</span> sub_sht_Cell_Rest_Col = <span class="number">2</span> <span class="comment">'行位置</span></div><div class="line"></div><div class="line"><span class="comment">'</span></div><div class="line"><span class="comment">'</span></div><div class="line"><span class="comment">'</span></div><div class="line"></div><div class="line">    <span class="keyword">For</span> i = sht_Cell_Beg <span class="keyword">To</span> sht_Cell_End                                 <span class="comment">' ｉ为分表单ＩＤ　顺序号</span></div><div class="line">    Cells(i, sht_Cell_Rest).<span class="keyword">Select</span></div><div class="line">    ActiveCell.FormulaR1C1 = Sheets(i).Cells(sub_sht_Cell_Rest_Col, sub_sht_Cell_Rest_Row)</div><div class="line">    ’激活单元格，并填充指定分表中　实时更新所在单元格的数据，这个单元格已在分表中定义了Lookup函数</div><div class="line">     <span class="keyword">Next</span></div><div class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></div></pre></td></tr></table></figure></p>
-<p>更新总表总数量单元格状态:<br><figure class="highlight vb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">Sub</span> 更新总表总数量单元格状态()</div><div class="line"><span class="comment">'</span></div><div class="line"><span class="comment">'程序控制常量</span></div><div class="line"><span class="comment">'</span></div><div class="line"><span class="comment">'</span></div><div class="line"><span class="keyword">Const</span> sht_Cell_Beg = <span class="number">2</span> <span class="comment">'单列中，单元格列起点位置</span></div><div class="line"><span class="keyword">Const</span> sht_Cell_End = <span class="number">6</span> <span class="comment">'单列中，单元格列终点位置</span></div><div class="line"><span class="keyword">Const</span> sht_Cell_Total = <span class="number">3</span> <span class="comment">'总表中总数量项所在列数</span></div><div class="line"><span class="keyword">Const</span> sht_Cell_Rest = <span class="number">4</span> <span class="comment">'总表中剩余数量项所在列数</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">'</span></div><div class="line"><span class="comment">'</span></div><div class="line"><span class="comment">'</span></div><div class="line"></div><div class="line">    <span class="keyword">For</span> i = sht_Cell_Beg <span class="keyword">To</span> sht_Cell_End                                 </div><div class="line">    Cells(i, sht_Cell_Total).<span class="keyword">Select</span>　‘选中指定单元格</div><div class="line">    ActiveCell.FormulaR1C1 = Cells(i, sht_Cell_Rest)</div><div class="line">    <span class="keyword">Next</span></div><div class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></div></pre></td></tr></table></figure></p>
-<hr>
-<font size="4">
-
-<p></p></font><p></p>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;br&gt;&lt;br&gt;  最近，因工作需要，特意去折腾了一下Excel。基本上，就是实现自己想要的功能.至于熟练的玩转Excel,那还没到这种地步。权且把自己所实现的功能记录下来，供以后参考之用。&lt;br&gt;&lt;/font&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="原创博文" scheme="https://www.donote.tk/BBS/categories/%E5%8E%9F%E5%88%9B%E5%8D%9A%E6%96%87/"/>
-    
-    
-      <category term="Excel自动化　快速创建表单 Excel模版创建" scheme="https://www.donote.tk/BBS/tags/Excel%E8%87%AA%E5%8A%A8%E5%8C%96-%E5%BF%AB%E9%80%9F%E5%88%9B%E5%BB%BA%E8%A1%A8%E5%8D%95-Excel%E6%A8%A1%E7%89%88%E5%88%9B%E5%BB%BA/"/>
     
   </entry>
   
