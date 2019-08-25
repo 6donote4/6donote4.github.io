@@ -232,27 +232,27 @@ ga('send', 'pageview');
 <p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/qianban.mp3"> </audio></p>
 <p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/wish.mp3"> </audio> </p>
 <hr>
-<p><font size="4"></font></p>
+<font size="4">
+
 <ol>
-<li>搭建编译环境</li>
-</ol>
+<li><p>搭建编译环境</p>
 <ul>
 <li>使用任意平台的宿主机和任意一种虚拟化软件，下载Ubuntu 14 64 Bit Linux server 发行版并安装到虚拟机中，Ubuntu系统盘可只分配8Gb的硬盘空间，安装时选择ssh server,编译时需要另外创建一块40GB的虚拟磁盘，用于存放编译产生的对象文件。我选择使用Manjaro作为宿主系统平台，使用qemu+libvirt(KVM虚拟机）来搭建编译环境。</li>
 <li>安装完系统到虚拟机后，使用<code>/etc/init.d/ssh enable</code> 和 <code>/etc/init.d/ssh start</code> 启用ssh 服务。</li>
 <li>宿主机ssh登录Ubuntu虚拟机， <code>ssh username@vmip</code> ip地址可使用 <code>ifconfig</code>查看。</li>
-<li>更新系统源，并安装编译固件所需的依赖包<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint proxychains</div></pre></td></tr></table></figure>
-</li>
+<li>更新系统源，并安装编译固件所需的依赖包</li>
 </ul>
-<ol>
-<li>为编译工作配置一个通畅的网络环境<br>由于众所周知的原因，在中国下载编译某些软件源码包时，网络环境非常糟糕。这时，需要路由器提供全局代理服务。如果路由器没有全局代理的话，可以考虑使用宿主机建立代理，proxychains 让虚拟机终端命令走宿主机代理的方式。<br>现记录proxychains配置的网络环境。</li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint proxychains</div></pre></td></tr></table></figure>
+</li>
+<li><p>为编译工作配置一个通畅的网络环境<br>由于众所周知的原因，在中国下载编译某些软件源码包时，网络环境非常糟糕。这时，需要路由器提供全局代理服务。如果路由器没有全局代理的话，可以考虑使用宿主机建立代理，proxychains 让虚拟机终端命令走宿主机代理的方式。<br>现记录proxychains配置的网络环境。</p>
+</li>
 </ol>
 <ul>
 <li>宿主机使用v2ray，shadowsocks , shadowsocksr 等，使用自行搭建的远程服务器或者其他机场账号建立代理。</li>
 <li><code>echo &quot;http 192.168.10.1 3120&quot; &gt;&gt; /etc/proxychains.conf</code> ,192.168.10.1为宿主机在虚拟机网络中的IP地址，可自行设置任意ip,设置proxychains的配置文件。</li>
 </ul>
 <ol>
-<li>编译流程</li>
-</ol>
+<li><p>编译流程</p>
 <ul>
 <li><p>获取源码</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">proxychains git <span class="built_in">clone</span> https://github.com/openwrt/openwrt.git</div><div class="line">proxychains git <span class="built_in">clone</span> https://github.com/6donote4/kvmLeanWRT.git</div></pre></td></tr></table></figure>
@@ -269,15 +269,18 @@ ga('send', 'pageview');
 <li>固件烧写<br>在任意一种虚拟化平台上运行任意Linux发行版(vbox,vmware,kvm等),创建一块虚拟机空白磁盘用于烧写固件，选择固件镜像以虚拟磁盘方式挂到虚拟机中，作为烧写输入文件。<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo fdisk -l <span class="comment">#查找盘符,确认出镜像盘如(/dev/sda),目标盘如(/dev/sdb),开始烧写。</span></div><div class="line">sudo dd <span class="keyword">if</span>=/dev/sda of=/dev/sdb</div></pre></td></tr></table></figure>
 </li>
 </ul>
+</li>
+</ol>
 <p>使用gparted 调整sdb磁盘空间。 烧写完成。</p>
 <ul>
 <li><p>配置OpenWRT，软路由开始运作。<br>挂载到虚拟机实例，进入openWRT后，在openwrt虚拟机内更改密码， 启动web服务，设置LAN ip地址。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">passwd </div><div class="line">/etc/init.d/uhttpd <span class="built_in">enable</span> </div><div class="line">/etc/init.d/uhttpd start </div><div class="line">vi /etc/config/network </div><div class="line">/etc/init.d/network restart</div></pre></td></tr></table></figure>
-</li>
-<li><p>运行效果图:<br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-195634_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-195659_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-195911_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200015_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200115_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200205_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200219_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200237_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200257_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200342_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200629_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200648_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200706_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200721_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200733_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200738_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200757_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200824_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-201121_YouTube.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-201144_YouTube.jpg"><br><a href="https://github.com/6donote4/kvmLeanWRT/releases" target="_blank" rel="external">点击此处获取固件</a><br></p>
+<ul>
+<li>运行效果图:<br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-195634_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-195659_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-195911_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200015_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200115_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200205_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200219_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200237_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200257_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200342_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200629_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200648_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200706_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200721_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200733_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200738_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200757_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-200824_Firefox.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-201121_YouTube.jpg"><br><img width="600" src="/pictures/OpenWRT_Compilation/Screenshot_20190525-201144_YouTube.jpg"><br><a href="https://github.com/6donote4/kvmLeanWRT/releases" target="_blank" rel="external">点击此处获取固件</a><br></li></ul></li></ul></font>
+
 <hr>
-</li>
-</ul>
+
+
 
   </div>
   <footer class="article-footer">
