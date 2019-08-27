@@ -49,7 +49,7 @@
     <link href="https://www.donote.tk/BBS/2019/08/25/HowToConfigureAndBuildLAMP_And_inoERP/"/>
     <id>https://www.donote.tk/BBS/2019/08/25/HowToConfigureAndBuildLAMP_And_inoERP/</id>
     <published>2019-08-25T06:26:00.000Z</published>
-    <updated>2019-08-25T15:36:25.886Z</updated>
+    <updated>2019-08-27T13:18:11.859Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
 <p>本篇博文用于记录LAMP环境及ERP的部署过程。</p>
@@ -77,7 +77,11 @@
 </ul>
 </li>
 <li>安装,部署inoERP系统<br>在浏览器地址栏输入服务器IP地址不需要带端口号。笔者的地址为: <code>http://192.168.2.20</code> ,浏览器会跳转到inoERP安装页面,点击Continue,Database Type选择MySQL/MariaDB;Database Host为服务器IP地址，Database Port为3306, 数据库名称及用户名均使用第3步配置的名称。填完后，点击Save and proceed。<br>经过一段时间之后，系统便会自动安装完成，完成后，刷新页面，点击右上角的login按钮,使用admin/admin或inoerp/inoerp,并选择好语言，按login就可登陆到ERP系统<br><img width="600" src="/pictures/Screenshot_20190825-143219_VNC Viewer.jpg"><br><img width="600" src="/pictures/Screenshot_20190825-143259_VNC Viewer.jpg"><br><img width="600" src="/pictures/Screenshot_20190825-130414_VNC Viewer.jpg"><br><img width="600" src="/pictures/Screenshot_20190825-131513_VNC Viewer.jpg"><br><img width="600" src="/pictures/Screenshot_20190825-143450_VNC Viewer.jpg"></li>
-<li><p>在ERP系统内,修改管理员账号密码，创建新的用户名,并配置好权限，ERP系统就可以正式上线啦！<br><img width="600" src="/pictures/Screenshot_20190825-131652_VNC Viewer.jpg"></p>
+<li>在ERP系统内,修改管理员账号密码，创建新的用户名,并配置好权限，ERP系统就可以正式上线啦！<br><img width="600" src="/pictures/Screenshot_20190825-131652_VNC Viewer.jpg"></li>
+<li><p>变更数据库字符集以支持中文字符</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">mysql</div><div class="line">select</div><div class="line">    CONCAT(<span class="string">'alter table '</span>,a.table_name,<span class="string">' convert to character set utf8mb4 collate utf8mb4_bin;'</span>)</div><div class="line">from (select table_name from information_schema.`TABLES` <span class="built_in">where</span> TABLE_SCHEMA = <span class="string">'这里写数据库的名字其他地方不用改'</span>) a;</div></pre></td></tr></table></figure>
+<p>输入上述代码获得inoERP数据库中，替换所有数据表字符集的命令。<br>使用文本编辑器替换掉与命令无关的特殊符号。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">use 数据库名称</div><div class="line">粘贴编辑好的命令</div></pre></td></tr></table></figure>
 <p></p></li></ol></font><p></p>
 <hr>
 
@@ -253,6 +257,58 @@
   </entry>
   
   <entry>
+    <title>QQ空间说说（十一）</title>
+    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
+    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
+    <published>2019-08-18T08:25:00.000Z</published>
+    <updated>2019-08-25T15:26:14.018Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
+
+<hr>
+<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
+<hr>
+<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
+<hr>
+<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
+<hr>
+<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
+<hr>
+<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
+<hr>
+<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
+<hr>
+<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
+<hr>
+<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
+<hr>
+<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
+<hr>
+<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
+<hr>
+<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
+<hr>
+<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>QQ空间说说（十）</title>
     <link href="https://www.donote.tk/BBS/2019/08/18/QQmood10/"/>
     <id>https://www.donote.tk/BBS/2019/08/18/QQmood10/</id>
@@ -308,58 +364,6 @@
   </entry>
   
   <entry>
-    <title>QQ空间说说（十一）</title>
-    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
-    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
-    <published>2019-08-18T08:25:00.000Z</published>
-    <updated>2019-08-25T15:26:14.018Z</updated>
-    
-    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
-<p><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
-
-<hr>
-<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
-<hr>
-<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
-<hr>
-<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
-<hr>
-<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
-<hr>
-<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
-<hr>
-<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
-<hr>
-<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
-<hr>
-<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
-<hr>
-<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
-<hr>
-<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
-<hr>
-<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
-<hr>
-<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
-    
-    
-      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>「原创」如何为软路由编译OpenWRT固件</title>
     <link href="https://www.donote.tk/BBS/2019/05/30/HowToCompileOpenWRTimageForVM/"/>
     <id>https://www.donote.tk/BBS/2019/05/30/HowToCompileOpenWRTimageForVM/</id>
@@ -385,13 +389,11 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint proxychains</div></pre></td></tr></table></figure>
 </li>
 <li><p>为编译工作配置一个通畅的网络环境<br>由于众所周知的原因，在中国下载编译某些软件源码包时，网络环境非常糟糕。这时，需要路由器提供全局代理服务。如果路由器没有全局代理的话，可以考虑使用宿主机建立代理，proxychains 让虚拟机终端命令走宿主机代理的方式。<br>现记录proxychains配置的网络环境。</p>
-</li>
-</ol>
 <ul>
 <li>宿主机使用v2ray，shadowsocks , shadowsocksr 等，使用自行搭建的远程服务器或者其他机场账号建立代理。</li>
 <li><code>echo &quot;http 192.168.10.1 3120&quot; &gt;&gt; /etc/proxychains.conf</code> ,192.168.10.1为宿主机在虚拟机网络中的IP地址，可自行设置任意ip,设置proxychains的配置文件。</li>
 </ul>
-<ol>
+</li>
 <li><p>编译流程</p>
 <ul>
 <li><p>获取源码</p>

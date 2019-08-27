@@ -245,13 +245,11 @@ ga('send', 'pageview');
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div><div class="line">sudo apt-get -y install build-essential asciidoc binutils bzip2 gawk gettext git libncurses5-dev libz-dev patch unzip zlib1g-dev lib32gcc1 libc6-dev-i386 subversion flex uglifyjs git-core gcc-multilib p7zip p7zip-full msmtp libssl-dev texinfo libglib2.0-dev xmlto qemu-utils upx libelf-dev autoconf automake libtool autopoint proxychains</div></pre></td></tr></table></figure>
 </li>
 <li><p>为编译工作配置一个通畅的网络环境<br>由于众所周知的原因，在中国下载编译某些软件源码包时，网络环境非常糟糕。这时，需要路由器提供全局代理服务。如果路由器没有全局代理的话，可以考虑使用宿主机建立代理，proxychains 让虚拟机终端命令走宿主机代理的方式。<br>现记录proxychains配置的网络环境。</p>
-</li>
-</ol>
 <ul>
 <li>宿主机使用v2ray，shadowsocks , shadowsocksr 等，使用自行搭建的远程服务器或者其他机场账号建立代理。</li>
 <li><code>echo &quot;http 192.168.10.1 3120&quot; &gt;&gt; /etc/proxychains.conf</code> ,192.168.10.1为宿主机在虚拟机网络中的IP地址，可自行设置任意ip,设置proxychains的配置文件。</li>
 </ul>
-<ol>
+</li>
 <li><p>编译流程</p>
 <ul>
 <li><p>获取源码</p>
