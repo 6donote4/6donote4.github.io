@@ -49,7 +49,7 @@
     <link href="https://www.donote.tk/BBS/2019/08/25/HowToConfigureAndBuildLAMP_And_inoERP/"/>
     <id>https://www.donote.tk/BBS/2019/08/25/HowToConfigureAndBuildLAMP_And_inoERP/</id>
     <published>2019-08-25T06:26:00.000Z</published>
-    <updated>2019-08-27T13:31:44.296Z</updated>
+    <updated>2019-08-29T12:28:26.573Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
 <p>本篇博文用于记录LAMP环境及ERP的部署过程。</p>
@@ -65,7 +65,7 @@
 <ol>
 <li>下载，运行自动配置脚本，笔者已经将大部分的配置过程写成了自动脚本，运行完脚本可节省部署时间</li>
 </ol>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">apt-get install git</div><div class="line">git <span class="built_in">clone</span> https://github.com/6donote4/inoERP-0.6.1.git</div><div class="line"><span class="built_in">cd</span> inoERP-0.6.1</div><div class="line">bash configure_env.sh -c</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">apt-get install git</div><div class="line">git <span class="built_in">clone</span> https://github.com/6donote4/ERP.git</div><div class="line"><span class="built_in">cd</span> ERP</div><div class="line">bash configure_env_for_inoERP.sh -c</div></pre></td></tr></table></figure>
 <p>安装完成之后，系统就已经自动配置好了LAMP环境,并且配置了Webmin管理面板,inoERP安装文件也在web根目录中。</p>
 <ol>
 <li>打开浏览器，在地址栏输入部署了LAMP的服务器其ip地址及webmin端口:10000,笔者的地址为: <code>https://192.168.2.20:10000</code>;登录账号为root账号，密码为root账号的密码。</li>
@@ -82,6 +82,8 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql</div><div class="line">select CONCAT(<span class="string">'alter table '</span>,a.table_name,<span class="string">' convert to character set utf8mb4 collate utf8mb4_bin;'</span>)from (select table_name from information_schema.`TABLES` <span class="built_in">where</span> TABLE_SCHEMA = <span class="string">'这里写数据库的名字其他地方不用改'</span>) a;</div></pre></td></tr></table></figure>
 <p>输入上述代码获得inoERP数据库中，替换所有数据表字符集的命令。<br>使用文本编辑器替换掉与命令无关的特殊符号。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">use 数据库名称</div><div class="line">粘贴编辑好的命令</div></pre></td></tr></table></figure>
+<p>== 补充 ==<br>因inoERP开发团队已不再维护代码，且该系统缺乏说明文档，故弃掉inoERP.转向dolibarr.<br>部署代码</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/6donote4/ERP.git</div><div class="line"><span class="built_in">cd</span> ERP</div><div class="line">bash configure_env_for_dolibarr.sh -c</div></pre></td></tr></table></figure>
 <p></p></li></ol></font><p></p>
 <hr>
 
@@ -880,11 +882,11 @@
       <category term="外文翻译" scheme="https://www.donote.tk/BBS/categories/%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91/"/>
     
     
+      <category term="健康" scheme="https://www.donote.tk/BBS/tags/%E5%81%A5%E5%BA%B7/"/>
+    
       <category term="谷歌" scheme="https://www.donote.tk/BBS/tags/%E8%B0%B7%E6%AD%8C/"/>
     
       <category term="抑郁" scheme="https://www.donote.tk/BBS/tags/%E6%8A%91%E9%83%81/"/>
-    
-      <category term="健康" scheme="https://www.donote.tk/BBS/tags/%E5%81%A5%E5%BA%B7/"/>
     
   </entry>
   
