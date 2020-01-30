@@ -8,14 +8,14 @@
 
 <title>
   
-    标签: MTV
+    标签: Debian
   
 </title>
 
 <meta name="description" content="​发出自己的声音，向世界呐喊。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="​乘风踏浪破万障のブログ">
-<meta property="og:url" content="https://www.donote.tk/BBS/tags/MTV/index.html">
+<meta property="og:url" content="https://www.donote.tk/BBS/tags/Debian/index.html">
 <meta property="og:site_name" content="​乘风踏浪破万障のブログ">
 <meta property="og:description" content="​发出自己的声音，向世界呐喊。">
 <meta name="twitter:card" content="summary">
@@ -174,7 +174,7 @@ ga('send', 'pageview');
       
         <div style="max-width: 1000px">
       
-          <h1>MTV</h1>
+          <h1>Debian</h1>
 
 
   
@@ -184,37 +184,40 @@ ga('send', 'pageview');
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2017/06/14/Video/" >
-  视频博文
+        <a href="/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/" >
+  
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2017/06/14/Video/"><span class="article-date">
-  2017-06-14
+        <a href="/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/"><span class="article-date">
+  2020-01-30
 </span>
 </a>
         
 	<span class="article-category tagcloud">
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/视频/">视频</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/使用说明/">使用说明</a></li></ul>
 	</span>
 
 
         
 	<span class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MTV/">MTV</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/">Debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenWrt/">OpenWrt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shell-Script/">Shell Script</a></li></ul>
 	</span>
 
 
       </div>
       <div class="article-entry">
         
-          <p><strong>该博文用于嵌入视频 </strong></p>
-<p><font size="4"><br>翻墙后，可评论博文。<br></font><br>
+          <p><font size="4"><br>关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。<br>而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。<br>关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候，要挂载U盘系统，进入U盘系统，需不断按启动引导菜单键。</font></p>
+<p>于是，便有了安装OpenWrt/Debian10 双系统的想法，这样就能ssh登录debian系统，将所有配置文件及脚本scp传送过去，即便是在手机上，也能完成的OpenWrt的维护。</p>
+<p>实现上述需求需要使用rootfs-ext4文件镜像及vmlinuz内核文件,开篇提及的两种镜像格式则是将这两者合并起来的。只有这两者分离，才可实现双系统的部署。<br>正好，前篇博文涉及了pxe的部署，对于Linux系统的运作原理有了一定的了解，给笔者部署双系统提供了方向。即，vmlinuz 放置在”/boot”，Grub引导程序配置文件设置好内核及”/“目录路径，电脑启动时，先加载内核文件到内存运行，通过CPU，内核不断的加载相关的硬件驱动，并挂载系统更目录，然后运行相关服务，计算机启动完成。</p>
+<p>本博文用于对该部署脚本进行使用上的说明，以及相关操作的动画演示，方便以后，再次部署时，快速完成部署，节省时间。</p>
+<p><br>
           <p>
-            <a href="/2017/06/14/Video/">
+            <a href="/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/">
               阅读全文
             </a>
           </p>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.donote.tk/BBS/"/>
-  <updated>2020-01-03T20:20:57.080Z</updated>
+  <updated>2020-01-30T14:24:16.957Z</updated>
   <id>https://www.donote.tk/BBS/</id>
   
   <author>
@@ -16,11 +16,106 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>基于Linux搭建PXE网络引导环境之脚本编写与使用说明</title>
+    <title></title>
+    <link href="https://www.donote.tk/BBS/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/"/>
+    <id>https://www.donote.tk/BBS/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/</id>
+    <published>2020-01-30T14:16:00.000Z</published>
+    <updated>2020-01-30T14:24:16.957Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。<br>而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。<br>关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候，要挂载U盘系统，进入U盘系统，需不断按启动引导菜单键。</font></p>
+<p>于是，便有了安装OpenWrt/Debian10 双系统的想法，这样就能ssh登录debian系统，将所有配置文件及脚本scp传送过去，即便是在手机上，也能完成的OpenWrt的维护。</p>
+<p>实现上述需求需要使用rootfs-ext4文件镜像及vmlinuz内核文件,开篇提及的两种镜像格式则是将这两者合并起来的。只有这两者分离，才可实现双系统的部署。<br>正好，前篇博文涉及了pxe的部署，对于Linux系统的运作原理有了一定的了解，给笔者部署双系统提供了方向。即，vmlinuz 放置在”/boot”，Grub引导程序配置文件设置好内核及”/“目录路径，电脑启动时，先加载内核文件到内存运行，通过CPU，内核不断的加载相关的硬件驱动，并挂载系统更目录，然后运行相关服务，计算机启动完成。</p>
+<p>本博文用于对该部署脚本进行使用上的说明，以及相关操作的动画演示，方便以后，再次部署时，快速完成部署，节省时间。</p>
+<p><br><a id="more"></a></p>
+<p><audio controls="controls" name="media" style="width:264px" autoplay loop="true"> <source src="/musics/huimengyouxian.mp3"> </audio></p>
+<p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/lovelovelove.mp3"> </audio></p>
+<p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/qianban.mp3"> </audio></p>
+<p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/wish.mp3"> </audio></p>
+<hr>
+<p><font size="9"></font></p>
+<h1 id="基于Debian-10环境的OpenWrt镜像刷写脚本"><a href="#基于Debian-10环境的OpenWrt镜像刷写脚本" class="headerlink" title="基于Debian 10环境的OpenWrt镜像刷写脚本"></a>基于Debian 10环境的OpenWrt镜像刷写脚本</h1><p><a href="https://github.com/6donote4/OpenWrt-Debian-Grub" target="_blank" rel="external">脚本仓库地址</a></p>
+<p>使用虚拟机搭建软路由者可略过本文档说明，使用本人仓库中的脚本反而更加复杂。</p>
+<h2 id="什么样的情况需要使用本脚本"><a href="#什么样的情况需要使用本脚本" class="headerlink" title="什么样的情况需要使用本脚本 ?"></a>什么样的情况需要使用本脚本 ?</h2><ul>
+<li>不想使用rootfs-squashfs格式的系统镜像将硬盘全盘刷写,避免磁盘空间的浪费</li>
+<li>使用rootfs-ext4来避免rootfs-suqshfs格式镜像无法扩展分区容量的情况</li>
+<li>避免升级系统的时候，需要额外挂载磁盘来进行维护的情况</li>
+<li>确保上述条件下，快速搭建实体软路由系统</li>
+</ul>
+<h2 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h2><ul>
+<li>Debian 10 Linux发行版</li>
+<li>parted 分区工具</li>
+<li>update-grub2 引导启动器</li>
+<li>OpenWrt-x86-64-rootfs-ext4.img 根目录文件镜像</li>
+<li>OpenWrt-x86-64-vmlinuz 内核文件</li>
+<li>Linux发行版安装经验</li>
+<li>Linux系统分区知识</li>
+</ul>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<li>在Debian发行版环境下，刷写OpenWrt 固件到指定分区，并扩展OpenWrt的根分区</li>
+<li>在OpenWrt/Debian双系统的情况下，变更系统启动顺序，使OpenWrt为默认启动系统</li>
+<li>使用备份文件恢复OpenWrt配置</li>
+<li>使用最新的镜像及系统内核文件升级OpenWrt固件</li>
+</ul>
+<h2 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h2><ol>
+<li>给磁盘分区并格式化<ul>
+<li>划分四个分区(MBR):<br>  swap交换分区 boot(ext2)启动文件分区 root(ext4 being used to mount Debian / directory)Debian系统根分区 </li>
+<li>剩余的磁盘空间用于烧写、挂载OpenWrt根分区(ext4)</li>
+</ul>
+</li>
+<li>安装Debian 10 发行版到磁盘中</li>
+<li>复制本仓库目录，并在目录中包含OpenWrt-x86-64-rootfs-ext4.img.gz 、 OpenWrt-x86-64-vmlinuz和 OpenWrt 配置备份文件到Debian发行版所在磁盘目录(使用ssh登录机器进行操作)</li>
+<li><p>执行openwrt_grub_config.sh脚本 :</p>
+<ul>
+<li><p>完整配置:</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./openwrt_grub_config.sh -m</div></pre></td></tr></table></figure>
+</li>
+<li><p>升级OpenWrt:</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./openwrt_grub_config.sh -u</div></pre></td></tr></table></figure>
+</li>
+<li><p>恢复OpenWrt配置:</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./openwrt_grub_config.sh -r</div></pre></td></tr></table></figure>
+</li>
+<li><p>调整OpenWrt分区大小:</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">parted /dev/sda</div><div class="line">p</div><div class="line">redizepart PARTNUM END</div><div class="line">quit</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启计算机:</p>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reboot</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="操作动画"><a href="#操作动画" class="headerlink" title="操作动画:"></a>操作动画:</h2><p><img width="600" src="/pictures/Peek2020-1-30.gif"></p>
+<p></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。&lt;br&gt;而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。&lt;br&gt;关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候，要挂载U盘系统，进入U盘系统，需不断按启动引导菜单键。&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;于是，便有了安装OpenWrt/Debian10 双系统的想法，这样就能ssh登录debian系统，将所有配置文件及脚本scp传送过去，即便是在手机上，也能完成的OpenWrt的维护。&lt;/p&gt;
+&lt;p&gt;实现上述需求需要使用rootfs-ext4文件镜像及vmlinuz内核文件,开篇提及的两种镜像格式则是将这两者合并起来的。只有这两者分离，才可实现双系统的部署。&lt;br&gt;正好，前篇博文涉及了pxe的部署，对于Linux系统的运作原理有了一定的了解，给笔者部署双系统提供了方向。即，vmlinuz 放置在”/boot”，Grub引导程序配置文件设置好内核及”/“目录路径，电脑启动时，先加载内核文件到内存运行，通过CPU，内核不断的加载相关的硬件驱动，并挂载系统更目录，然后运行相关服务，计算机启动完成。&lt;/p&gt;
+&lt;p&gt;本博文用于对该部署脚本进行使用上的说明，以及相关操作的动画演示，方便以后，再次部署时，快速完成部署，节省时间。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="使用说明" scheme="https://www.donote.tk/BBS/categories/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
+    
+    
+      <category term="OpenWrt" scheme="https://www.donote.tk/BBS/tags/OpenWrt/"/>
+    
+      <category term="Shell Script" scheme="https://www.donote.tk/BBS/tags/Shell-Script/"/>
+    
+      <category term="Debian" scheme="https://www.donote.tk/BBS/tags/Debian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title></title>
     <link href="https://www.donote.tk/BBS/2020/01/04/HowToBuildPXEonLinux/"/>
     <id>https://www.donote.tk/BBS/2020/01/04/HowToBuildPXEonLinux/</id>
     <published>2020-01-04T08:26:00.000Z</published>
-    <updated>2020-01-03T20:20:57.080Z</updated>
+    <updated>2020-01-30T14:24:16.957Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>PXE是一种可以提供网络引导启动的服务，主要用于通过网络硬盘启动计算机，即被启动的计算机内部没有硬盘，类似于网吧的运用情形。集群式的虚拟机安装操作系统的运用场景也适用（不过，一般只要安装创建了一个虚拟机之后，只要复制虚拟机就可以了，运用PXE，个人认为比较吃力费事），因笔者非专业人士，仅仅是好奇瞎折腾，在以往使用计算机的经验中，计算机启动进入操作系统的引导界面中，常常会出现网络引导的选项。笔者使用过光盘、U盘引导进入系统，现在开始试试网络引导，目前网络引导只尝试成功引导启动Linux系统网络安装镜像.<br></font><br><a id="more"></a></p>
 <p><audio controls="controls" name="media" style="width:264px" autoplay loop="true"> <source src="/musics/huimengyouxian.mp3"> </audio></p>
@@ -28,7 +123,7 @@
 <p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/qianban.mp3"> </audio></p>
 <p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/wish.mp3"> </audio></p>
 <hr>
-<p><font size="4"><br>通过互联网检索资料，PXE网络引导服务的搭建需要两种服务的服务的配合，DHCP服务负责分配网络地址(这其实是路由器的功能，但普通的路由器是提供不了PXE服务的，需要使用更强大的路由系统，OpenWRT或者任意的Linux发行版)，并且DHCP通过配置能够识别网络引导请求，并通过文件传输服务，如tftp,nfs网络文件传输协议，来分发操作系统内核及启动文件。</font></p>
+<p><font size="9"><br>通过互联网检索资料，PXE网络引导服务的搭建需要两种服务的服务的配合，DHCP服务负责分配网络地址，并且DHCP通过配置能够识别网络引导请求，并通过文件传输服务，如tftp,nfs网络文件传输协议，来分发操作系统内核及启动文件。</font></p>
 <p>在计算机获取内核和启动文件的过程中（这两个文件体积都比较小），dhcp使用ftp服务来传输给计算机，网络引导的计算机上的BIOS上存在着一个pxe客户端，可以获取到网络发送过来的内核及启动文件，计算机在获得操作系统内核时，会加载到内存运行，然后内存中的内核会驱动计算机的硬件，启动文件则会启动相关的服务。然后通过nfs网络传输协议，加载网络硬盘中的完整操作系统文件。整个过程就这样结束了。</p>
 <p>本文参照网络上的配置过程，编写了一个交互式的配置脚本，方便以后再次配置，虽然是交互的脚本，但由于知识水平所限，目前还无法做到一键启用的效果，该脚本在使用之前，还有一些必要的准备操作要进行，因而，使用说明就是必要的了，防止以后遗忘了该脚本的用法，又得重新配置一遍。是必要的了，防止以后遗忘了该脚本的用法，又得重新配置一遍。</p>
 <p><a href="https://github.com/6donote4/debian-scripts/blob/master/OTHER/pxec.sh" target="_blank" rel="external">点击该仓库链接</a>,可获取到该脚本。</p>
@@ -320,6 +415,58 @@
   </entry>
   
   <entry>
+    <title>QQ空间说说（十一）</title>
+    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
+    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
+    <published>2019-08-18T08:25:00.000Z</published>
+    <updated>2019-08-25T15:26:14.019Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
+
+<hr>
+<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
+<hr>
+<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
+<hr>
+<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
+<hr>
+<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
+<hr>
+<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
+<hr>
+<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
+<hr>
+<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
+<hr>
+<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
+<hr>
+<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
+<hr>
+<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
+<hr>
+<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
+<hr>
+<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>QQ空间说说（十）</title>
     <link href="https://www.donote.tk/BBS/2019/08/18/QQmood10/"/>
     <id>https://www.donote.tk/BBS/2019/08/18/QQmood10/</id>
@@ -358,58 +505,6 @@
 <p><font size="4"><br>关于nas的硬件配置。<br>nas的重点工作是数据的存储与分享。<br>所以nas的硬件选配偏向的重点是网络的传输速率，硬盘的读写速率。接口的传输速率。<br>也就是说，跟图形运算与逻辑运算关注不大，所以CPU以及内存选型都不重要了。<br>网卡那是要配千兆滴（当然也得配上千兆的路由或交换机），接口要有多个sata3的（这样才能组成磁盘阵列，一块带4个SATA3接口的硬盘，配上4块8T硬盘，32T的空间，想想就high，不过那是土豪才玩得起），CPU要集成的（因为要24小时不间断运行），功耗是必须考虑的。<br></font></p>
 <hr>
 </blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
-    
-    
-      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QQ空间说说（十一）</title>
-    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
-    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
-    <published>2019-08-18T08:25:00.000Z</published>
-    <updated>2019-08-25T15:26:14.019Z</updated>
-    
-    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
-<p><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
-
-<hr>
-<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
-<hr>
-<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
-<hr>
-<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
-<hr>
-<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
-<hr>
-<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
-<hr>
-<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
-<hr>
-<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
-<hr>
-<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
-<hr>
-<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
-<hr>
-<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
-<hr>
-<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
-<hr>
-<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
-<hr>
 ]]></content>
     
     <summary type="html">
@@ -903,52 +998,6 @@
     
     
       <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「译文」谷歌正在提供一种抑郁测试</title>
-    <link href="https://www.donote.tk/BBS/2017/08/27/google-debpression-questionnaire/"/>
-    <id>https://www.donote.tk/BBS/2017/08/27/google-debpression-questionnaire/</id>
-    <published>2017-08-27T08:26:00.000Z</published>
-    <updated>2019-08-25T15:26:14.023Z</updated>
-    
-    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://money.cnn.com/2017/08/24/technology/google-depression-questionnaire/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Alanna Petroff</font></p>
-<p><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
-
-<p><font size="4"></font></p>
-<hr>
-<p><b>谷歌搜索引擎已设计出的新特性可帮助人们免受抑郁症折磨。</b></p>
-<p>现在，在美国的谷歌用户搜索“抑郁症”或者“临床抑郁症”，将会得到一份检查他们抑郁程度的问卷调查<br>，并且帮助他们决定是否应当需求专家帮助。谷歌公司在其博客帖子中说道。</p>
-<p>那些搜索有关抑郁症信息的用户，会在他们的屏幕顶端看到一个盒子，这个盒子激励他们“去检查一下你<br>是否有临床抑郁症。”一个被称为“PHQ-9”的有效临床测验会问及有关精力，胃口和专注度，还有其他方<br>面的事。</p>
-<p>这个科技公司(指谷歌)说，它(即谷歌公司)承认那些信息是敏感的、私密的，并且也保证它(即搜索引擎<br>的新特性)不会存储那些用户的反馈。</p>
-<p>谷歌说，这项倡议是同合作伙伴国家精神疾病联合会共同发起的。</p>
-<p>“PHQ-9的检测结果能够帮助你和你的医生进行更有根据的交流，”国家精神疾病联合会CEO Mary Giliberti<br>写道。</p>
-<p><b>相关资讯:在医疗保健的争议中，常常忽视了女性的声音</b></p>
-<p>在美国人生活中的某个时刻，临床抑郁症大概影响了1／5的美国人。但是，根据国家精神疾病联合会，那些<br>患上抑郁症的个人，在他们寻求专家帮助之前，他们耗费了平均6到8年的时间。</p>
-<p>“我们希望通过在谷歌上获取到信息，更多的人会意识到抑郁症并且寻求康复和改善他们生活质量的疗法，”<br>Giliberti解释道。</p>
-<p>在周五发布的调查发现，在美国，因自杀念头或者行为而住院的小孩子和青少年的比率，近几年来已经翻倍<br>了。</p>
-<p></p>
-<hr>
-<p>就翻译到这里。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;br&gt;文章来源于CNN网站 : &lt;a href=&quot;http://money.cnn.com/2017/08/24/technology/google-depression-questionnaire/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击查看原文&lt;/a&gt;&lt;br&gt;可能需要翻墙才能查阅。&lt;br&gt;作者:Alanna Petroff&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="外文翻译" scheme="https://www.donote.tk/BBS/categories/%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91/"/>
-    
-    
-      <category term="谷歌" scheme="https://www.donote.tk/BBS/tags/%E8%B0%B7%E6%AD%8C/"/>
-    
-      <category term="抑郁" scheme="https://www.donote.tk/BBS/tags/%E6%8A%91%E9%83%81/"/>
-    
-      <category term="健康" scheme="https://www.donote.tk/BBS/tags/%E5%81%A5%E5%BA%B7/"/>
     
   </entry>
   
