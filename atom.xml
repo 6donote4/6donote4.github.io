@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.donote.tk/BBS/"/>
-  <updated>2020-01-30T14:24:16.957Z</updated>
+  <updated>2020-01-30T14:58:01.181Z</updated>
   <id>https://www.donote.tk/BBS/</id>
   
   <author>
@@ -16,17 +16,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>【原创】基于Debian10环境下搭建OpenWrt实体软路由系统之文档说明与演示</title>
     <link href="https://www.donote.tk/BBS/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/"/>
     <id>https://www.donote.tk/BBS/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/</id>
     <published>2020-01-30T14:16:00.000Z</published>
-    <updated>2020-01-30T14:24:16.957Z</updated>
+    <updated>2020-01-30T14:58:01.181Z</updated>
     
-    <content type="html"><![CDATA[<p><font size="4"><br>关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。<br>而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。<br>关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候，要挂载U盘系统，进入U盘系统，需不断按启动引导菜单键。</font></p>
+    <content type="html"><![CDATA[<font size="4">
+
+<p>关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。<br>而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。<br>关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候，要挂载U盘系统，进入U盘系统，需不断按启动引导菜单键。</p>
 <p>于是，便有了安装OpenWrt/Debian10 双系统的想法，这样就能ssh登录debian系统，将所有配置文件及脚本scp传送过去，即便是在手机上，也能完成的OpenWrt的维护。</p>
 <p>实现上述需求需要使用rootfs-ext4文件镜像及vmlinuz内核文件,开篇提及的两种镜像格式则是将这两者合并起来的。只有这两者分离，才可实现双系统的部署。<br>正好，前篇博文涉及了pxe的部署，对于Linux系统的运作原理有了一定的了解，给笔者部署双系统提供了方向。即，vmlinuz 放置在”/boot”，Grub引导程序配置文件设置好内核及”/“目录路径，电脑启动时，先加载内核文件到内存运行，通过CPU，内核不断的加载相关的硬件驱动，并挂载系统更目录，然后运行相关服务，计算机启动完成。</p>
 <p>本博文用于对该部署脚本进行使用上的说明，以及相关操作的动画演示，方便以后，再次部署时，快速完成部署，节省时间。</p>
-<p><br><a id="more"></a></p>
+<p></p></font><br><a id="more"></a><p></p>
 <p><audio controls="controls" name="media" style="width:264px" autoplay loop="true"> <source src="/musics/huimengyouxian.mp3"> </audio></p>
 <p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/lovelovelove.mp3"> </audio></p>
 <p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/qianban.mp3"> </audio></p>
@@ -91,11 +93,13 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。&lt;br&gt;而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。&lt;br&gt;关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候，要挂载U盘系统，进入U盘系统，需不断按启动引导菜单键。&lt;/font&gt;&lt;/p&gt;
+      &lt;font size=&quot;4&quot;&gt;
+
+&lt;p&gt;关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。&lt;br&gt;而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。&lt;br&gt;关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候，要挂载U盘系统，进入U盘系统，需不断按启动引导菜单键。&lt;/p&gt;
 &lt;p&gt;于是，便有了安装OpenWrt/Debian10 双系统的想法，这样就能ssh登录debian系统，将所有配置文件及脚本scp传送过去，即便是在手机上，也能完成的OpenWrt的维护。&lt;/p&gt;
 &lt;p&gt;实现上述需求需要使用rootfs-ext4文件镜像及vmlinuz内核文件,开篇提及的两种镜像格式则是将这两者合并起来的。只有这两者分离，才可实现双系统的部署。&lt;br&gt;正好，前篇博文涉及了pxe的部署，对于Linux系统的运作原理有了一定的了解，给笔者部署双系统提供了方向。即，vmlinuz 放置在”/boot”，Grub引导程序配置文件设置好内核及”/“目录路径，电脑启动时，先加载内核文件到内存运行，通过CPU，内核不断的加载相关的硬件驱动，并挂载系统更目录，然后运行相关服务，计算机启动完成。&lt;/p&gt;
 &lt;p&gt;本博文用于对该部署脚本进行使用上的说明，以及相关操作的动画演示，方便以后，再次部署时，快速完成部署，节省时间。&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/font&gt;&lt;br&gt;
     
     </summary>
     
@@ -111,11 +115,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>基于Linux搭建PXE网络引导环境之脚本编写与使用说明</title>
     <link href="https://www.donote.tk/BBS/2020/01/04/HowToBuildPXEonLinux/"/>
     <id>https://www.donote.tk/BBS/2020/01/04/HowToBuildPXEonLinux/</id>
     <published>2020-01-04T08:26:00.000Z</published>
-    <updated>2020-01-30T14:24:16.957Z</updated>
+    <updated>2020-01-30T14:58:01.181Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>PXE是一种可以提供网络引导启动的服务，主要用于通过网络硬盘启动计算机，即被启动的计算机内部没有硬盘，类似于网吧的运用情形。集群式的虚拟机安装操作系统的运用场景也适用（不过，一般只要安装创建了一个虚拟机之后，只要复制虚拟机就可以了，运用PXE，个人认为比较吃力费事），因笔者非专业人士，仅仅是好奇瞎折腾，在以往使用计算机的经验中，计算机启动进入操作系统的引导界面中，常常会出现网络引导的选项。笔者使用过光盘、U盘引导进入系统，现在开始试试网络引导，目前网络引导只尝试成功引导启动Linux系统网络安装镜像.<br></font><br><a id="more"></a></p>
 <p><audio controls="controls" name="media" style="width:264px" autoplay loop="true"> <source src="/musics/huimengyouxian.mp3"> </audio></p>
@@ -123,7 +127,7 @@
 <p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/qianban.mp3"> </audio></p>
 <p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/wish.mp3"> </audio></p>
 <hr>
-<p><font size="9"><br>通过互联网检索资料，PXE网络引导服务的搭建需要两种服务的服务的配合，DHCP服务负责分配网络地址，并且DHCP通过配置能够识别网络引导请求，并通过文件传输服务，如tftp,nfs网络文件传输协议，来分发操作系统内核及启动文件。</font></p>
+<p>通过互联网检索资料，PXE网络引导服务的搭建需要两种服务的服务的配合，DHCP服务负责分配网络地址，并且DHCP通过配置能够识别网络引导请求，并通过文件传输服务，如tftp,nfs网络文件传输协议，来分发操作系统内核及启动文件。</p>
 <p>在计算机获取内核和启动文件的过程中（这两个文件体积都比较小），dhcp使用ftp服务来传输给计算机，网络引导的计算机上的BIOS上存在着一个pxe客户端，可以获取到网络发送过来的内核及启动文件，计算机在获得操作系统内核时，会加载到内存运行，然后内存中的内核会驱动计算机的硬件，启动文件则会启动相关的服务。然后通过nfs网络传输协议，加载网络硬盘中的完整操作系统文件。整个过程就这样结束了。</p>
 <p>本文参照网络上的配置过程，编写了一个交互式的配置脚本，方便以后再次配置，虽然是交互的脚本，但由于知识水平所限，目前还无法做到一键启用的效果，该脚本在使用之前，还有一些必要的准备操作要进行，因而，使用说明就是必要的了，防止以后遗忘了该脚本的用法，又得重新配置一遍。是必要的了，防止以后遗忘了该脚本的用法，又得重新配置一遍。</p>
 <p><a href="https://github.com/6donote4/debian-scripts/blob/master/OTHER/pxec.sh" target="_blank" rel="external">点击该仓库链接</a>,可获取到该脚本。</p>
@@ -148,7 +152,6 @@
 <p>虚拟主机ipxe客户端启动界面<br><img width="600" src="/pictures/pxe/Screenshot_20200101-225338_VNC Viewer.jpg"><br><img width="600" src="/pictures/pxe/Screenshot_20200101-225358_VNC Viewer.jpg"></p>
 <p>内核及启动文件加载到虚拟主机之后的引导界面<br><img width="600" src="/pictures/pxe/Screenshot_20200101-225414_VNC Viewer.jpg"></p>
 <p>操作系统界面，这里使用的是debian安装盘的操作系统<br><img width="600" src="/pictures/pxe/Screenshot_20200101-225448_VNC Viewer.jpg"></p>
-<p></p>
 <hr>
 ]]></content>
     
