@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="​乘风踏浪破万障のブログ">
 <meta property="og:description" content="关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候">
 <meta property="og:image" content="https://www.donote.tk/pictures/Peek2020-1-30.gif">
-<meta property="og:updated_time" content="2020-01-30T14:58:01.181Z">
+<meta property="og:updated_time" content="2020-02-01T07:58:49.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【原创】基于Debian10环境下搭建OpenWrt实体软路由系统之文档说明与演示">
 <meta name="twitter:description" content="关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候">
@@ -114,7 +114,7 @@ ga('send', 'pageview');
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">24</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">24</span></li></ul>
               </li>
             
           
@@ -261,7 +261,7 @@ ga('send', 'pageview');
   <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./openwrt_grub_config.sh -r</div></pre></td></tr></table></figure>
 </li>
 <li><p>调整OpenWrt分区大小:</p>
-  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">parted /dev/sda</div><div class="line">p</div><div class="line">redizepart PARTNUM END</div><div class="line">quit</div></pre></td></tr></table></figure>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./openwrt_grub_config.sh -s</div></pre></td></tr></table></figure>
 </li>
 <li><p>重启计算机:</p>
   <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reboot</div></pre></td></tr></table></figure>

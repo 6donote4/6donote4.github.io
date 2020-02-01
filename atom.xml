@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.donote.tk/BBS/"/>
-  <updated>2020-01-30T14:58:01.181Z</updated>
+  <updated>2020-02-01T07:58:49.964Z</updated>
   <id>https://www.donote.tk/BBS/</id>
   
   <author>
@@ -16,11 +16,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hello World</title>
+    <link href="https://www.donote.tk/BBS/2020/02/01/hello-world/"/>
+    <id>https://www.donote.tk/BBS/2020/02/01/hello-world/</id>
+    <published>2020-02-01T07:58:49.964Z</published>
+    <updated>2020-02-01T07:58:49.964Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>【原创】基于Debian10环境下搭建OpenWrt实体软路由系统之文档说明与演示</title>
     <link href="https://www.donote.tk/BBS/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/"/>
     <id>https://www.donote.tk/BBS/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/</id>
     <published>2020-01-30T14:16:00.000Z</published>
-    <updated>2020-01-30T14:58:01.181Z</updated>
+    <updated>2020-02-01T07:58:49.964Z</updated>
     
     <content type="html"><![CDATA[<font size="4">
 
@@ -78,7 +107,7 @@
   <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./openwrt_grub_config.sh -r</div></pre></td></tr></table></figure>
 </li>
 <li><p>调整OpenWrt分区大小:</p>
-  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">parted /dev/sda</div><div class="line">p</div><div class="line">redizepart PARTNUM END</div><div class="line">quit</div></pre></td></tr></table></figure>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./openwrt_grub_config.sh -s</div></pre></td></tr></table></figure>
 </li>
 <li><p>重启计算机:</p>
   <figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">reboot</div></pre></td></tr></table></figure>
@@ -119,7 +148,7 @@
     <link href="https://www.donote.tk/BBS/2020/01/04/HowToBuildPXEonLinux/"/>
     <id>https://www.donote.tk/BBS/2020/01/04/HowToBuildPXEonLinux/</id>
     <published>2020-01-04T08:26:00.000Z</published>
-    <updated>2020-01-30T14:58:01.181Z</updated>
+    <updated>2020-02-01T07:58:49.960Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>PXE是一种可以提供网络引导启动的服务，主要用于通过网络硬盘启动计算机，即被启动的计算机内部没有硬盘，类似于网吧的运用情形。集群式的虚拟机安装操作系统的运用场景也适用（不过，一般只要安装创建了一个虚拟机之后，只要复制虚拟机就可以了，运用PXE，个人认为比较吃力费事），因笔者非专业人士，仅仅是好奇瞎折腾，在以往使用计算机的经验中，计算机启动进入操作系统的引导界面中，常常会出现网络引导的选项。笔者使用过光盘、U盘引导进入系统，现在开始试试网络引导，目前网络引导只尝试成功引导启动Linux系统网络安装镜像.<br></font><br><a id="more"></a></p>
 <p><audio controls="controls" name="media" style="width:264px" autoplay loop="true"> <source src="/musics/huimengyouxian.mp3"> </audio></p>
@@ -175,40 +204,11 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://www.donote.tk/BBS/2019/08/25/hello-world/"/>
-    <id>https://www.donote.tk/BBS/2019/08/25/hello-world/</id>
-    <published>2019-08-25T15:26:14.023Z</published>
-    <updated>2019-08-25T15:26:14.023Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>「原创」LAMP环境部署与ERP系统部署记录</title>
     <link href="https://www.donote.tk/BBS/2019/08/25/HowToConfigureAndBuildLAMP_And_inoERP/"/>
     <id>https://www.donote.tk/BBS/2019/08/25/HowToConfigureAndBuildLAMP_And_inoERP/</id>
     <published>2019-08-25T06:26:00.000Z</published>
-    <updated>2019-08-29T12:28:26.573Z</updated>
+    <updated>2020-02-01T07:58:49.964Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
 <p>本篇博文用于记录LAMP环境及ERP的部署过程。</p>
@@ -272,7 +272,7 @@
     <link href="https://www.donote.tk/BBS/2019/08/19/QQmood13/"/>
     <id>https://www.donote.tk/BBS/2019/08/19/QQmood13/</id>
     <published>2019-08-19T09:25:00.000Z</published>
-    <updated>2019-08-25T15:26:14.019Z</updated>
+    <updated>2020-02-01T07:58:49.964Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
 <p><br><a id="more"></a></p>
@@ -338,7 +338,7 @@
     <link href="https://www.donote.tk/BBS/2019/08/18/QQmood12/"/>
     <id>https://www.donote.tk/BBS/2019/08/18/QQmood12/</id>
     <published>2019-08-18T09:25:00.000Z</published>
-    <updated>2019-08-25T15:26:14.019Z</updated>
+    <updated>2020-02-01T07:58:49.964Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
 <p><br><a id="more"></a></p>
@@ -418,11 +418,63 @@
   </entry>
   
   <entry>
+    <title>QQ空间说说（十一）</title>
+    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
+    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
+    <published>2019-08-18T08:25:00.000Z</published>
+    <updated>2020-02-01T07:58:49.964Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
+
+<hr>
+<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
+<hr>
+<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
+<hr>
+<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
+<hr>
+<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
+<hr>
+<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
+<hr>
+<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
+<hr>
+<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
+<hr>
+<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
+<hr>
+<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
+<hr>
+<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
+<hr>
+<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
+<hr>
+<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>QQ空间说说（十）</title>
     <link href="https://www.donote.tk/BBS/2019/08/18/QQmood10/"/>
     <id>https://www.donote.tk/BBS/2019/08/18/QQmood10/</id>
     <published>2019-08-18T08:25:00.000Z</published>
-    <updated>2019-08-25T15:26:14.019Z</updated>
+    <updated>2020-02-01T07:58:49.964Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
 <p><br><a id="more"></a></p>
@@ -456,58 +508,6 @@
 <p><font size="4"><br>关于nas的硬件配置。<br>nas的重点工作是数据的存储与分享。<br>所以nas的硬件选配偏向的重点是网络的传输速率，硬盘的读写速率。接口的传输速率。<br>也就是说，跟图形运算与逻辑运算关注不大，所以CPU以及内存选型都不重要了。<br>网卡那是要配千兆滴（当然也得配上千兆的路由或交换机），接口要有多个sata3的（这样才能组成磁盘阵列，一块带4个SATA3接口的硬盘，配上4块8T硬盘，32T的空间，想想就high，不过那是土豪才玩得起），CPU要集成的（因为要24小时不间断运行），功耗是必须考虑的。<br></font></p>
 <hr>
 </blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
-    
-    
-      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QQ空间说说（十一）</title>
-    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
-    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
-    <published>2019-08-18T08:25:00.000Z</published>
-    <updated>2019-08-25T15:26:14.019Z</updated>
-    
-    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
-<p><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
-
-<hr>
-<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
-<hr>
-<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
-<hr>
-<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
-<hr>
-<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
-<hr>
-<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
-<hr>
-<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
-<hr>
-<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
-<hr>
-<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
-<hr>
-<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
-<hr>
-<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
-<hr>
-<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
-<hr>
-<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
-<hr>
 ]]></content>
     
     <summary type="html">
@@ -612,7 +612,7 @@
     <link href="https://www.donote.tk/BBS/2019/02/11/HowToCreateOpenWRT_KVM/"/>
     <id>https://www.donote.tk/BBS/2019/02/11/HowToCreateOpenWRT_KVM/</id>
     <published>2019-02-11T10:40:00.000Z</published>
-    <updated>2019-08-25T15:26:14.019Z</updated>
+    <updated>2020-02-01T07:58:49.964Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文.<br>放假这几天，把大把的时间都投入到OpenWRT虚拟机及其网络的搭建之研究中，现在已初现成果，物理设备均可连接到虚拟网络之中，也实现了物理设备的出国。趁着还没忘记搭建过程，写下这篇记录，以备虚拟机文件丢失的时候，又得花大把时间重新再搭建一遍，费时费力。把走过的路记下来，下次就不会迷路咯。<br></font><br><a id="more"></a></p>
 <audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/qianban.mp3"><br></audio>
@@ -682,7 +682,7 @@
     <link href="https://www.donote.tk/BBS/2018/09/09/MyShellScripts/"/>
     <id>https://www.donote.tk/BBS/2018/09/09/MyShellScripts/</id>
     <published>2018-09-09T15:26:00.000Z</published>
-    <updated>2019-08-25T15:26:14.019Z</updated>
+    <updated>2020-02-01T07:58:49.964Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>最近,手头上已有三个主机了,并且都配置了frp内网穿透服务以实现远程控制,随着主机的增多,便萌生了编写交互式Shell脚本来更新和登录主机的需求,以及在Linux上进行文件处理的需求。<br>登录主机的脚本是建立在内网穿透服务搭建完成之后实现的，这里的脚本并未将搭建过程编写在内，而是另外写了个服务文件，让其主机启动时自动运行，并连接远程主机。frp配置服务见<a href="https://github.com/6donote4/debian-scripts" target="_blank" rel="external">我的debian-scripts</a>中的myfrp压缩文件包，可搜索网上资料进行frp服务的搭建。<br></font><br><a id="more"></a></p>
 <audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
@@ -861,7 +861,7 @@
     <link href="https://www.donote.tk/BBS/2017/10/05/eyedetect-lies-polygraph/"/>
     <id>https://www.donote.tk/BBS/2017/10/05/eyedetect-lies-polygraph/</id>
     <published>2017-10-05T05:56:00.000Z</published>
-    <updated>2019-08-25T15:26:14.023Z</updated>
+    <updated>2020-02-01T07:58:49.964Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://money.cnn.com/2017/10/04/technology/business/eyedetect-lies-polygraph/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Matt McFarland<br></font><br><a id="more"></a></p>
 <audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
@@ -893,7 +893,7 @@
     <link href="https://www.donote.tk/BBS/2017/10/04/return-trip-italy/"/>
     <id>https://www.donote.tk/BBS/2017/10/04/return-trip-italy/</id>
     <published>2017-10-04T12:36:00.000Z</published>
-    <updated>2019-08-25T15:26:14.023Z</updated>
+    <updated>2020-02-01T07:58:49.964Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://edition.cnn.com/travel/article/return-trip-italy/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Jeanne Bonner</font></p>
 <p><br><a id="more"></a></p>
@@ -927,7 +927,7 @@
     <link href="https://www.donote.tk/BBS/2017/10/01/taiwan-whisky-kavalan/"/>
     <id>https://www.donote.tk/BBS/2017/10/01/taiwan-whisky-kavalan/</id>
     <published>2017-10-01T14:26:00.000Z</published>
-    <updated>2019-08-25T15:26:14.023Z</updated>
+    <updated>2020-02-01T07:58:49.964Z</updated>
     
     <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://edition.cnn.com/travel/article/taiwan-whisky-kavalan/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Marian Liu</font></p>
 <p><br><a id="more"></a></p>
