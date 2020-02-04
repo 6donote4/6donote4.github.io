@@ -20,7 +20,8 @@
 <meta property="og:site_name" content="​乘风踏浪破万障のブログ">
 <meta property="og:description" content="关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候">
 <meta property="og:image" content="https://www.donote.tk/pictures/Peek2020-1-30.gif">
-<meta property="og:updated_time" content="2020-02-01T07:58:49.964Z">
+<meta property="og:image" content="https://www.donote.tk/pictures/Peek2020-02-03-23-33.gif">
+<meta property="og:updated_time" content="2020-02-04T13:25:59.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【原创】基于Debian10环境下搭建OpenWrt实体软路由系统之文档说明与演示">
 <meta name="twitter:description" content="关于OpenWrt固件的升级，在虚拟机中，笔者一直倾向于使用rootfs-combined-ext4来刷写升级，然后，在另外的虚拟机系统中扩展OpenWrt 根分区容量。而rootfs-combined-squashfs 则可直接web升级，但是不能扩展分区容量。对磁盘空间来说，是一种浪费。关于实体软路由的OpenWrt 固件升级，运用在虚拟机上的方案亦是可行的,但缺点是进行升级维护操作的时候">
@@ -241,7 +242,7 @@ ga('send', 'pageview');
 <li>使用备份文件恢复OpenWrt配置</li>
 <li>使用最新的镜像及系统内核文件升级OpenWrt固件</li>
 </ul>
-<h2 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h2><ol>
+<h2 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h2><h3 id="纯命令行脚本"><a href="#纯命令行脚本" class="headerlink" title="纯命令行脚本"></a>纯命令行脚本</h3><ol>
 <li>给磁盘分区并格式化<ul>
 <li>划分四个分区(MBR):<br>  swap交换分区 boot(ext2)启动文件分区 root(ext4 being used to mount Debian / directory)Debian系统根分区 </li>
 <li>剩余的磁盘空间用于烧写、挂载OpenWrt根分区(ext4)</li>
@@ -269,8 +270,8 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ol>
-<h2 id="操作动画"><a href="#操作动画" class="headerlink" title="操作动画:"></a>操作动画:</h2><p><img width="600" src="/pictures/Peek2020-1-30.gif"></p>
-<p></p>
+<h3 id="带UI脚本，基于dialog"><a href="#带UI脚本，基于dialog" class="headerlink" title="带UI脚本，基于dialog"></a>带UI脚本，基于dialog</h3><p>  执行  <code>./openwrt_grub_config.sh</code></p>
+<h2 id="操作动画"><a href="#操作动画" class="headerlink" title="操作动画:"></a>操作动画:</h2><p><img width="600" src="/pictures/Peek2020-1-30.gif"><br><img width="600" src="/pictures/Peek2020-02-03-23-33.gif"><br></p>
 <hr>
 
   </div>

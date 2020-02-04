@@ -49,7 +49,7 @@
     <link href="https://www.donote.tk/BBS/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/"/>
     <id>https://www.donote.tk/BBS/2020/01/30/How_to_Write_OpenWrt_ImgFile_to_Partition_on_HTPC_in_Debian/</id>
     <published>2020-01-30T14:16:00.000Z</published>
-    <updated>2020-02-01T07:58:49.964Z</updated>
+    <updated>2020-02-04T13:25:59.752Z</updated>
     
     <content type="html"><![CDATA[<font size="4">
 
@@ -87,7 +87,7 @@
 <li>使用备份文件恢复OpenWrt配置</li>
 <li>使用最新的镜像及系统内核文件升级OpenWrt固件</li>
 </ul>
-<h2 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h2><ol>
+<h2 id="用法："><a href="#用法：" class="headerlink" title="用法："></a>用法：</h2><h3 id="纯命令行脚本"><a href="#纯命令行脚本" class="headerlink" title="纯命令行脚本"></a>纯命令行脚本</h3><ol>
 <li>给磁盘分区并格式化<ul>
 <li>划分四个分区(MBR):<br>  swap交换分区 boot(ext2)启动文件分区 root(ext4 being used to mount Debian / directory)Debian系统根分区 </li>
 <li>剩余的磁盘空间用于烧写、挂载OpenWrt根分区(ext4)</li>
@@ -115,8 +115,8 @@
 </ul>
 </li>
 </ol>
-<h2 id="操作动画"><a href="#操作动画" class="headerlink" title="操作动画:"></a>操作动画:</h2><p><img width="600" src="/pictures/Peek2020-1-30.gif"></p>
-<p></p>
+<h3 id="带UI脚本，基于dialog"><a href="#带UI脚本，基于dialog" class="headerlink" title="带UI脚本，基于dialog"></a>带UI脚本，基于dialog</h3><p>  执行  <code>./openwrt_grub_config.sh</code></p>
+<h2 id="操作动画"><a href="#操作动画" class="headerlink" title="操作动画:"></a>操作动画:</h2><p><img width="600" src="/pictures/Peek2020-1-30.gif"><br><img width="600" src="/pictures/Peek2020-02-03-23-33.gif"><br></p>
 <hr>
 ]]></content>
     
