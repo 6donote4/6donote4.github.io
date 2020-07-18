@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.donote.tk/BBS/"/>
-  <updated>2020-02-01T07:58:49.964Z</updated>
+  <updated>2020-07-18T19:20:20.603Z</updated>
   <id>https://www.donote.tk/BBS/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Audacity制作音乐伴奏过程</title>
+    <link href="https://www.donote.tk/BBS/2020/07/19/HowToCreateRmVocalAudiobyUsingAudacity/"/>
+    <id>https://www.donote.tk/BBS/2020/07/19/HowToCreateRmVocalAudiobyUsingAudacity/</id>
+    <published>2020-07-19T08:26:00.000Z</published>
+    <updated>2020-07-18T19:20:20.603Z</updated>
+    
+    <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br><br>本博文用于记录音乐伴奏的制作过程<br></font><br><a id="more"></a><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"> <source src="/musics/huimengyouxian.mp3"> </audio><br><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/lovelovelove.mp3"> </audio><br><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/qianban.mp3"> </audio><br><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/wish.mp3"> </audio><br><em>*</em><br><font size="9"><br>① 导入音频文件，分离音轨。<br><img width="600" src="/pictures/Audacity/audicaty1.png"><br>② 选择其中一个声道，应用反相(上下)特效。<br><img width="600" src="/pictures/Audacity/audicaty2.png"><br>③ 补正高音，再次导入源音频文件，选择音频文件的立体声轨，并运用增幅效果将幅值衰减10dB<br><img width="600" src="/pictures/Audacity/audicaty3.png"><br><img width="600" src="/pictures/Audacity/audicaty4.png"><br>④ 再次选中立体声轨，运用曲线过滤器(Filter Curve),将100Hz-5000Hz区间内的数值全部降至最低，（-∞，100]与[5000,+∞]Hz区间的数值调高至10dB<br><img width="600" src="/pictures/Audacity/audicaty5.png"><br><img width="600" src="/pictures/Audacity/audicaty6.png"><br>⑤ 导出已编辑的音频。<br><img width="600" src="/pictures/Audacity/audicaty7.png"><br></font>
+
+
+
+
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;br&gt;&lt;br&gt;本博文用于记录音乐伴奏的制作过程&lt;br&gt;&lt;/font&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="教程记录" scheme="https://www.donote.tk/BBS/categories/%E6%95%99%E7%A8%8B%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="Audacity 音乐伴奏" scheme="https://www.donote.tk/BBS/tags/Audacity-%E9%9F%B3%E4%B9%90%E4%BC%B4%E5%A5%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -418,58 +445,6 @@
   </entry>
   
   <entry>
-    <title>QQ空间说说（十一）</title>
-    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
-    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
-    <published>2019-08-18T08:25:00.000Z</published>
-    <updated>2020-02-01T07:58:49.964Z</updated>
-    
-    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
-<p><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
-
-<hr>
-<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
-<hr>
-<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
-<hr>
-<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
-<hr>
-<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
-<hr>
-<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
-<hr>
-<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
-<hr>
-<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
-<hr>
-<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
-<hr>
-<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
-<hr>
-<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
-<hr>
-<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
-<hr>
-<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
-    
-    
-      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
     <title>QQ空间说说（十）</title>
     <link href="https://www.donote.tk/BBS/2019/08/18/QQmood10/"/>
     <id>https://www.donote.tk/BBS/2019/08/18/QQmood10/</id>
@@ -508,6 +483,58 @@
 <p><font size="4"><br>关于nas的硬件配置。<br>nas的重点工作是数据的存储与分享。<br>所以nas的硬件选配偏向的重点是网络的传输速率，硬盘的读写速率。接口的传输速率。<br>也就是说，跟图形运算与逻辑运算关注不大，所以CPU以及内存选型都不重要了。<br>网卡那是要配千兆滴（当然也得配上千兆的路由或交换机），接口要有多个sata3的（这样才能组成磁盘阵列，一块带4个SATA3接口的硬盘，配上4块8T硬盘，32T的空间，想想就high，不过那是土豪才玩得起），CPU要集成的（因为要24小时不间断运行），功耗是必须考虑的。<br></font></p>
 <hr>
 </blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QQ空间说说（十一）</title>
+    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
+    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
+    <published>2019-08-18T08:25:00.000Z</published>
+    <updated>2020-02-01T07:58:49.964Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
+
+<hr>
+<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
+<hr>
+<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
+<hr>
+<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
+<hr>
+<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
+<hr>
+<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
+<hr>
+<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
+<hr>
+<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
+<hr>
+<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
+<hr>
+<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
+<hr>
+<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
+<hr>
+<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
+<hr>
+<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
+<hr>
 ]]></content>
     
     <summary type="html">
@@ -949,58 +976,6 @@
     
     
       <category term="台湾 威斯忌酒 旅行" scheme="https://www.donote.tk/BBS/tags/%E5%8F%B0%E6%B9%BE-%E5%A8%81%E6%96%AF%E5%BF%8C%E9%85%92-%E6%97%85%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QQ空间说说（九）</title>
-    <link href="https://www.donote.tk/BBS/2017/10/01/QQmood9/"/>
-    <id>https://www.donote.tk/BBS/2017/10/01/QQmood9/</id>
-    <published>2017-10-01T06:25:00.000Z</published>
-    <updated>2019-08-25T15:26:14.019Z</updated>
-    
-    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
-<p><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
-
-<hr>
-<p><font size="4"><br>不管是大明，還是大清。某種程度上，某個方面上，這些王朝的影子還是在的。不得不懷疑，人文領域裡的制度也存在自然科學領域裡的物體的慣性。<br><img width="600" src="/pictures/post_1009realnamesystem.JPG"><br></font></p>
-<hr>
-<p><font size="4"><br>似乎V2ray的抗干擾性要比Shadowsocks好些，不過V2Ray比較小眾，支持的路由器類型少，不過可以配在樹莓派上。<br></font></p>
-<hr>
-<p><font size="4"><br>很明顯，教育等社會公共資源已被房地產所綑綁。誰有權力壟斷教育資源呢？什麼樣的制度使得教育與房產相綑綁呢？—戶口制度，買房相當于買戶口。戶口制度屬於政治領域。<br></font></p>
-<hr>
-<p><font size="4"><br>在房價高漲的情形下，租購同權會對租金有影響嗎？會造成房租的哄抬嗎？拭目以待。<br></font></p>
-<hr>
-<p><font size="4"><br>看到王健林，馬雲大概會兔死狐悲吧。說到底，也就是有錢的屁民罷了。<br></font></p>
-<hr>
-<p><font size="4"><br>About English thinking. I am used to translate English to Chinese in many years. I fluently read . But rarely listen and write.That means that I do much input but less output.When we translate English to Chinese,we think the question how to explain the English sentence in Chinese. So our thinking mode is Chinese.But in reverse direction,it’s English. It’s high time to change the situation.It maybe not only way to train English thinking.Welcome for your method about English thinking.<br></font></p>
-<hr>
-<p><font size="4"><br>似乎出现了这样一种状况：当权者们把他们建立政权的日子称作”国庆日”，很明显的意图就是把”政权”代之以国家。这个国家不是据称有5000年的历史嘛？因此，我不会将10月1日称为”国庆日”。记住1949年的那句”中华人民共和国中央人民政府，今天成立了”，很明显建立的是一个政府，即政权。<br></font></p>
-<hr>
-<p><font size="4"><br>在我看来，从来就不存在什么国庆日，一个国家的诞生是一个过程，而不是具体的某个点。我不是专家，但在我看来，国家的形成即对身份认同、文化认同、民族认同产生共识，这种共识不是突然在某个时间点产生的，而是长期作用，自然而然的在人们的意识中产生。<br></font></p>
-<hr>
-<p><font size="4"><br>关于企业，中秋节发月饼的事情，我不得不恶意猜度一下。这一定是一种经营策略，意图留住人，让人觉得这个公司好，同时，员工的家人收到公司的月饼可能会误以为这个公司待遇不错，在员工打算辞职的时候，家人会起到阻力的作用。所以，我决定不带非自己买的月饼回去。<br></font></p>
-<hr>
-<p><font size="4"><br>有一段时间曾经看到有网友发过这样的短博文：”实在不能理解为什么明明已经到下班时间了，周边的同事还不走？”<br>我想从我观察的一些情况来看，或许能找到一点关于这个问题的线索。<br>周边的一些老同事情况是这样的：他们有家庭、有儿女、有房贷、有车贷，面对这些现实，他们当然不敢对老板说不。更精确地说：不能跟资本说不。我听到过这样的观点：心情再憋屈，也不能跟钱过不去啊。是的，他们不能跟钱过不去，不然房贷、车贷、老婆、孩子、怎么办？资本家已经牢牢地掌握了这些老员工的弱点，当然是选择压榨他们啦。<br>而那位提出这个问题的网友情况是这样的：单身、无房贷、无车贷、他不需要沦为金钱的奴隶，他当然可以按自己的想法想法下班，他还是自由的，所以可能就不能深刻理解那些老员工的行为。<br>而身边的一位单身的同事则很大胆地说，老板要是不爽，大可以把他辞退，普遍对他的看法就是：潇洒二字，他也没房贷、车贷。<br></font></p>
-<hr>
-<p><font size="4"><br>关于成熟<br>曾经有段时间听到一种观点：如果一个人还没结婚，那在父母眼里依旧还是个孩子（意思就是还没成熟）<br>首先我要说的是：这仅仅是一个观点，还没有提供任何实际依据来说服别人。我不接受这种不经拷问的观点。<br>关于成熟，应当说明的是，这是一个很抽象的概念，所以，先具体化，成熟指的是什么？是生理上的成熟，还是心智上的成熟？我想应该指心智上的成熟，因为生理学方面的成熟已无异议。<br>接下来该问了：心智指的是什么？心智跟结婚有必然的联系吗？还是仅仅是相关性的联系？由于家庭的因素驱使我们去认为心智与结婚有必然的联系。我们应当清楚的是心智跟结婚完全是风马牛不相及的。<br>还需要问的是：心智的成熟是不是有唯一固定的某种标准？如果是，结婚真的是心智成熟的标准吗？如果不是，有没有至少2种标准？<br>我必须声明自己的立场跟观点，以表示我的观念未受到毫无论证过的观念的控制：我认为心智的成熟有这样的标准：对自己的情绪能够做到适当地控制。按照我的标准，有些人即使结婚了，也不能算是成熟的，他们会向家人发泄情绪，特别是怒的情绪，面对家庭出现的问题，如果不能冷静思考，而是依赖发泄情绪，那问题是解决不了的。<br>所以，我最后要说的是结婚与成熟没有必然的联系，我反对结婚即成熟的观点。<br></font></p>
-<hr>
-<p><font size="4"><br>iOS<br>动车上，几乎所有人的iPhone RingTone 主题几乎都是OPENING，让我不得不怀疑是不是大家懒得更改iOS的缺省设置（包括我也是），为了能分辨出是否是我的电话响了，于是更改了设定。<br>另，iOS上已有了可以访问tor暗网的APP：tob。<br><img width="600" src="/pictures/post_1009iOS.JPG"><br><img width="600" src="/pictures/post_1009tob.JPG"><br></font></p>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
-    
-    
-      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
     
   </entry>
   
