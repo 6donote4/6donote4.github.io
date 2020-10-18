@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.donote.tk/BBS/"/>
-  <updated>2020-07-18T19:20:20.603Z</updated>
+  <updated>2020-10-18T15:31:44.675Z</updated>
   <id>https://www.donote.tk/BBS/</id>
   
   <author>
@@ -16,22 +16,202 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用Audacity制作音乐伴奏过程</title>
-    <link href="https://www.donote.tk/BBS/2020/07/19/HowToCreateRmVocalAudiobyUsingAudacity/"/>
-    <id>https://www.donote.tk/BBS/2020/07/19/HowToCreateRmVocalAudiobyUsingAudacity/</id>
-    <published>2020-07-19T08:26:00.000Z</published>
-    <updated>2020-07-18T19:20:20.603Z</updated>
+    <title>日语语法记忆例句</title>
+    <link href="https://www.donote.tk/BBS/2020/10/18/JapaneseGrammarSentenceExamples/"/>
+    <id>https://www.donote.tk/BBS/2020/10/18/JapaneseGrammarSentenceExamples/</id>
+    <published>2020-10-18T15:26:00.000Z</published>
+    <updated>2020-10-18T15:31:44.675Z</updated>
     
-    <content type="html"><![CDATA[<font size="4"><br>翻墙后，即可评论博文<br><br>本博文用于记录音乐伴奏的制作过程<br></font><br><a id="more"></a><br><audio controls="controls" name="media" style="width:264px" autoplay loop="true"> <source src="/musics/huimengyouxian.mp3"> </audio><br><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/lovelovelove.mp3"> </audio><br><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/qianban.mp3"> </audio><br><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/wish.mp3"> </audio><br><em>*</em><br><font size="9"><br>① 导入音频文件，分离音轨。<br><img width="600" src="/pictures/Audacity/audicaty1.png"><br>② 选择其中一个声道，应用反相(上下)特效。<br><img width="600" src="/pictures/Audacity/audicaty2.png"><br>③ 补正高音，再次导入源音频文件，选择音频文件的立体声轨，并运用增幅效果将幅值衰减10dB<br><img width="600" src="/pictures/Audacity/audicaty3.png"><br><img width="600" src="/pictures/Audacity/audicaty4.png"><br>④ 再次选中立体声轨，运用曲线过滤器(Filter Curve),将100Hz-5000Hz区间内的数值全部降至最低，（-∞，100]与[5000,+∞]Hz区间的数值调高至10dB<br><img width="600" src="/pictures/Audacity/audicaty5.png"><br><img width="600" src="/pictures/Audacity/audicaty6.png"><br>⑤ 导出已编辑的音频。<br><img width="600" src="/pictures/Audacity/audicaty7.png"><br></font>
-
-
-
-
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p>本博文用于记录日语语法例句，辅助学习语法。</p>
+<p><br><a id="more"></a></p>
+<p><audio controls="controls" name="media" style="width:264px" autoplay loop="true"> <source src="/musics/huimengyouxian.mp3"> </audio></p>
+<p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/lovelovelove.mp3"> </audio></p>
+<p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/qianban.mp3"> </audio></p>
+<p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/wish.mp3"> </audio></p>
+<hr>
+<p><font size="4"></font></p>
+<h1 id="日语语法记忆例句"><a href="#日语语法记忆例句" class="headerlink" title="日语语法记忆例句"></a>日语语法记忆例句</h1><h2 id="一、形式名词"><a href="#一、形式名词" class="headerlink" title="一、形式名词"></a>一、形式名词</h2><p>⒈  こと　事情<br>ほっかいどうへいったことがあります。<br>北海道へ行っ<strong>たことがあります</strong>。<br>我<strong>曾去过</strong>北海道。  </p>
+<p>かいしゃがおわったご、どうりょうといっしょにのむことがあります。<br>会社が終わった後、同僚と一緒に飲む<strong>ことがあります</strong>。<br>下班后，<strong>有时</strong>和同事一起去喝一杯。  </p>
+<p>よんさいのいもうとじぶんではしでごはんをたべることができます。<br>4歳の妹は自分で箸でごはんを食べる<strong>ことができます</strong>。<br>四岁的妹妹<strong>会</strong>自己用筷子吃饭。  </p>
+<p>かぜですから、おさけをのがこたができません。<br>ですから、お酒を飲が<strong>ことができません</strong>。<br>因为感冒了，所以<strong>不能</strong>喝酒。  </p>
+<p>こんどのびょうきをきっかけにして、たばこをやめることにした(ことにする)。<br>今度の病気をきっかけにして、たばこを止める<strong>ことにした</strong>。<br>趁着这次生病，<strong>决定</strong>戒烟。（对行为形成决定）きっかけにして：以……开始，利用…..  </p>
+<p>がっこうはあしたからやすむことになる。<br>学校は明日から休む<strong>ことになる</strong>。<br>学校<strong>决定</strong>明天放假。  </p>
+<p>かいわのじゅぎょうじゅう、にほごしかはなせることになっている。<br>会話の授業中、日本語しか話せる<strong>事になっている</strong>。<br>会话课上<strong>规定</strong>只能说日语。（约定，规<br>定）  </p>
+<p>だれにもしられたくないとおもったが。ざんねんなことにしられた。<br>誰にも知られたくないと思ったが、残念な<strong>ことに</strong>知られた。<br>本不想让别人知道，但是遗憾<strong>的是</strong>被人知道了。（情感接续，。。。的是）  </p>
+<p>まだこどもだから、わるいことをしてもさんざんにあくばをなげつけることはない。<br>まだ子供だから、悪いことをしてもさんざんに悪罵をなげつける<strong>ことはない</strong>。<br>还是小孩子，即使做了错事也<strong>没有必要</strong>狠狠地骂一顿。  </p>
+<p>さいのうがあるかれのことだから、こんどのしごとはきっとうまくいく。<br>才能がある彼の<strong>ことだから</strong>、今度の仕事はきっとうまく行く。<br><strong>正因为</strong>他那么有才能，<strong>所以</strong>这次的工作一定进行得很顺利。（前向成立，后项的结果理所当然，正因为……所以）  </p>
+<p>おさないときからひとりぼっちのことから、なんのことでもじぶんでやるしゅうかんがつた。<br>幼い時から一人ぼっちの<strong>ことから</strong>、何の事でも自分でやる習慣がつた。<br>因为从小就是一个人，所以养成了无论什么事都自己做的习惯。（原因，理由）  </p>
+<p>⒉  もの　 物、人<br>うんめいはつかまえにくいものだ。<br>運命は捕まえにくい<strong>もの</strong>だ。<br>命运是难以捕捉的<strong>东西</strong>。（抽象事物）  </p>
+<p>せいしゅんははやいものだ。<br>青春は早い<strong>もの</strong>だ。<br>青春过得真快<strong>啊</strong>！（感叹语气）  </p>
+<p>やくそくしたことはちゃんともるものだ。<br>約束したことはちゃんと守る<strong>もの</strong>だ。<br>约定好的事情<strong>要</strong>遵守。(常理及道德上应当，价值判断）  </p>
+<p>かぜをひいたものだから、からだがだるい。<br>風邪をひいた<strong>ものだから</strong>、体がだるい。<br><strong>因为</strong>感冒，身体没有力气。（原因，理由）  </p>
+<p>かってにたにんのものをとるものではない。<br>勝手に他人のものをとる<strong>ものではない</strong>。<br><strong>不要</strong>随便拿别人的东西。  </p>
+<p>せんそうはまだつずいているものの、ひとびとはへいわにいのりきもちかわらない。<br>戦争はまだ続いている<strong>ものの</strong>、人々は平和に祈りの気持ち変わらない。<br><strong>虽然</strong>战争还在继续，<strong>但是</strong>人们祈求和平的心没有改变。  </p>
+<p>やさしいかれはひととけんかしたものか。<br>優しい彼は人と喧嘩した<strong>ものか</strong>。<br>温柔的他<strong>怎么会</strong>和人打架。  </p>
+<p>⒊の<br>いつもほけんえいせいにちゅういしているのはいいしゅうかんだ。<br>いつも保健衛生に注意している<strong>の</strong>はいい習慣だ。<br>经常注意保健卫生是很好的习惯。(动词短语名词化）  </p>
+<p>あそこでたばこをすっているのはやまださんです。<br>あそこでタバコを吸っている<strong>の</strong>は山田さんです。<br>在那边吸烟的是山田。（指代）  </p>
+<p>いろいろなかつどうにさんかするのはじゅうじつしたせいかつをおくりたいからだ。<br>いろいろな活動に参加する<strong>のは</strong>充実し生活を送りたい<strong>からだ</strong>。<br><strong>之所以</strong>参加各种活动<strong>是因为</strong>想过充实的生活。  </p>
+<p>いちにちもやすまないのでは、からだがびょうきになるかもしれない。<br>一日も休まない<strong>のでは</strong>、体が病気になるかもしれない。<br><strong>如果</strong>一天也不休息的话，可能会生病。  </p>
+<p>あめがふっているのに、こどもたちはにわであそんでいる。<br>雨が降っている<strong>のに</strong>、子供たちは庭で遊んでいる。<br><strong>虽然</strong>下雨了，孩子们还在院子里玩。  </p>
+<p>にちようびなのに、またざんぎょうだ。<br>日曜日な<strong>のに</strong>、また残業だ。<br><strong>虽然</strong>是星期天，<strong>但</strong>还是要加班。  </p>
+<p>すきなのに、いやいだといった。<br>好きな<strong>のに</strong>、嫌いだと言った。<br><strong>虽然</strong>喜欢，<strong>但</strong>还是说讨厌。  </p>
+<p>でんしゃのじこがあったのだ。おそかった。<br>電車の事故があった<strong>のだ</strong>。遅かった。<br>电车发生了交通事故，所以晚了。（理由）  </p>
+<p>はんたいしても、わたしのきまりはかわらないのだ。<br>反対しても、私の決まりは変わらない<strong>のだ</strong>。<br>即使反对，我的决定也不会改变。(表决心）  </p>
+<p>⒋ ところ　场所、地方<br>こんきがあるところはちちとそっくりだ。<br>根気がある<strong>ところ</strong>は父とそっくりだ。<br>有耐性<strong>这一点</strong>我和我父亲一样。（性质、特点）  </p>
+<p>ともだちがきたとき、をたしはごはんをたべるところだった。<br>友達が来た時、私はご飯を食べる<strong>ところだ</strong>った。<br>朋友来的时候我<strong>正要</strong>吃饭。  </p>
+<p>しゃちょうはいまかいぎをしているところだ。<br>社長は今会議をし<strong>ているところだ</strong>。<br>社长<strong>正在</strong>开会。  </p>
+<p>たべたところで、またすいた。<br>食べ<strong>たところで</strong>、またすいた。<br><strong>刚刚</strong>吃过，又饿了。  </p>
+<p>きいたところではそのがわすいえいきんしだそだ。<br>聞いた<strong>ところで</strong>はその川は水泳禁止だそうだ。<br><strong>听说</strong>，这条河里不允许游泳。（信息来源，依据）  </p>
+<p>わたしのしっているところでは、かれはいまこきょうへかってきゅうようをしているそだ。<br>私の知っている<strong>ところで</strong>は、彼は今故郷へ帰って休養をしているそうだ。<br><strong>据</strong>我所知，他现在正在家乡休养。  </p>
+<p>かおをあかくなるところから、かれはのみすぎだ。<br>顔色を赤くなる<strong>ところから</strong>、彼は飲み過ぎだ。<br><strong>从</strong>脸色变红了这点<strong>来看</strong>，他喝多了。  </p>
+<p>おいそがしところをおじゃまして、ほんとうにもうしわけございません。<br>お忙し<strong>ところを</strong>お邪魔して、本当に申し訳ございません。<br>百忙<strong>之中</strong>打扰你，很抱歉。（正当…..的时候）  </p>
+<p>あのことはことわるところをうけはいれた。<br>あのことは断る<strong>ところを</strong>受け入れた。<br>那件事情<strong>本该</strong>拒绝的，<strong>却</strong>接受了。  </p>
+<p>もうすこしであぶないところだった。<br>もう少しで危ない<strong>ところだ</strong>った。<br>还差一点就到了危险的境地。  </p>
+<p> 5.　はず<br>かれにつたえたから、しっているはずだ。<br>彼に伝えたから、知っている<strong>はず</strong>だ。<br>已经告诉他了，他<strong>应该</strong>知道。（推测）  </p>
+<p>ことしのなつやすみうみにいくはずだ。<br>今年の夏休み海に行く<strong>はず</strong>だ。<br>今年夏天去海边。（表预定计划）  </p>
+<p>あおじがよくない。きゃくがすくないはずだ。<br>味がよくない。客が少ない<strong>はず</strong>だ。<br>窗户开着，<strong>怪不得</strong>会感冒。  </p>
+<p>くりかえしてれんしゅうしたから、しっぱいするはずがない。<br>繰り返して練習したから、失敗する<strong>はずがない</strong>。<br>因为反复练习了，所以<strong>不可能</strong>失败。  </p>
+<p>このたんごをべんきょうしたはずなのに、おもいだせない。<br>この単語を勉強し<strong>たはず</strong>なのに、思い出せない。<br>这个单词<strong>确实</strong>学过，但想不起来了。（与预期不符）  </p>
+<p>そんなにたくさんたべたはずではなかった。いま、おなかがいたいです<br>そんなにたくさん食べた<strong>はずではなかった</strong>。今、おあなかが痛いです。<br><strong>本不该</strong>吃那么多的，现在肚子疼了。  </p>
+<ol>
+<li>わけ　訳<br>なにかわけがあったら、はっきりいいなさい。<br>何か<strong>わけ</strong>があったら、はっきり言いなさい。<br>要是有<strong>原因</strong>的话，就说清楚吧！  </li>
+</ol>
+<p>わけがつうじないひとに、しょうがない。<br><strong>訳</strong>が通じない人に、しょうがない。<br>对于不通<strong>情理</strong>的人，真没办法。  </p>
+<p>ならったから、こんなにくわしくしっているわけだ。<br>習ったから、こんなに詳しく知っているわけだ。  </p>
+<p>いろいろなくふうをして、ひみつをがいぶにもらすわけがない。<br>いろいろな工夫をして、秘密を外部に漏らすわけがない。  </p>
+<p>あやまりをおかしても、ゆるさないわけではない。<br>誤りを犯しても、許さないわけではない。  </p>
+<p>いくらおいしくても、そんなにたくさんたべるわけにはいかない。<br>いくらおいしくても、そんなにたくさん食べるわけには行かない。  </p>
+<p>じぶんのみらいにかかわるから、まじめにしないわけにはいかない。<br>自分の未来に関わるから、真面目にしないわけにはいかない。  </p>
+<ol>
+<li>ため　<br>れんじつのこうおんのため、うえものはかれている。<br>連日の高温のため、植物は枯れている。  </li>
+</ol>
+<p>しょうひしゃのこえにみみをかたむけるために、アンケートがおこなわれている。<br>消費者の声に耳を傾けるために、アンケートが行われている。  </p>
+<p>りょうしんはこどものため、できるだけいいものをあたえる。<br>両親は子供のため、できるだけいいものを与える  </p>
+<p>こどもをすくわんがためいのちをおとしました。<br>子供を救わんがため命を落としました。  </p>
+<p>ねむいのはかぜくすりをのんためだ<br>眠いのは風邪薬を飲んためだ。  </p>
+<p>8.　とおり<br>もうしこみしょはいわれたとおりにきんようびのまえにでさなければならない。<br>申し込み書は言われたとおりに金曜日の前に出さなければならない。  </p>
+<p>けっかはおもったとおりです。<br>結果は思ったとおりです。  </p>
+<p>なんとおりのよみかたがあるか。おしえてください。<br>何通りの読み方があるか。教えてください。  </p>
+<p>9.つもり<br>あなたはいったいどういうつもりですか。おしえてくれないか。<br>あなたは一体どういうつもりですか。教えてくれないか。  </p>
+<p>じぶんのいえにもどったつもりで、えんりょしないで。<br>自分の家に戻ったつもりで、遠慮しないで。  </p>
+<p>しんだつもりだが、きせきてきにいきまだ。<br>死んだつもりだが、奇跡的に生きだ。  </p>
+<p>10.　うえ　上<br>せいかつはめちゃくちゃですが、しごとのうえではのうりきがすぐれている。<br>生活はめちゃくちゃですが、仕事のうえでは能力が優れている。  </p>
+<p>どろぼうにぬすまれたうえに、みちにまよった。さんざんなめにあった<br>泥棒に盗まれた上に、道に迷った。さんざんな目にあった  </p>
+<p>しごとはうまくいくが、くらすうえはめちゃくちゃ。<br>仕事はうまく行くが、暮らすうえはめちゃくちゃだ。  </p>
+<p>ひきうけたうえは、さいごまでやりぬく。<br>引き受けた上は、最後までやりぬく。  </p>
+<p>あめにぬれた、そのうえ、みちにまよった。<br>雨に濡れた、その上、道に迷った。  </p>
+<p>11.　ほう　方<br>あのせんせいはいがくのほうではけんいがある。<br>あの先生は医学のほうでは権威がある。  </p>
+<p>どろぼうはえきのほうへにげた。<br>泥棒は駅のほうへ逃げた  </p>
+<p>きのうのことはわたしのほうがわるいです。きにならないでください<br>昨日のことは私のほうが悪いです。気にならないでください。  </p>
+<p>まちよりいなかのほうがくうきがきれいです。<br>町より田舎のほうが空気がきれいです。  </p>
+<p>いやなら、あきらめたほうがいいです。<br>嫌なら、諦めたほうがいいです。  </p>
+<p>12.　しだい　次第<br>こんどのことはあなたのうでしだいだ。<br>今度のことはあなたの腕次第だ。  </p>
+<p>うちのこはいえへかえりしだい、てれびをつけます。<br>うちの子は家へ帰りしだい、テレビをつけます。  </p>
+<ol>
+<li>かぎり　限り<br>なつのいなかはみわたすかぎりみどりだ。<br>夏の田舎は見渡すかぎり緑だ。  </li>
+</ol>
+<p>わたしがいるかぎり、このしごとはとちゅうでちゅうしするはずがない<br>私がいるかぎり、この仕事は途中で中止するはずがない。  </p>
+<p>きょうをかぎりにうちきりとなります。<br>今日を限りに打ち切りとなります。  </p>
+<p>かわいがっているいぬがしんで、かなしかぎりだ。<br>可愛がっている犬が死んで、悲しい限りだ。  </p>
+<p>しけんにごうかくするために、たべてつやしようとおもったが、でんきをつけたままねてしました。<br>試験に合格するために、タベ徹夜しようと思ったが、電気をつけたまま寝てしまった  </p>
+<p>おもうままにするのはだめです。たにんのことをかんがえるべきだ。<br>思うままにするのはだめです。他人のことを考えるべきだ。  </p>
+<h2 id="二、动词"><a href="#二、动词" class="headerlink" title="二、动词"></a>二、动词</h2><p>五段动词<br>書く　かく<br>話す　はなす<br>待つ　まつ<br>死ぬ　しぬ<br>読む　よむ<br>売る　うる<br>洗う　あらう<br>急ぐ　いそぐ  </p>
+<p>一段动词<br>上一段<br>起きる　おきる<br>生きる　いきる<br>見る　　みる<br>下一段<br>出かける　でかける<br>寝る　　　ねる　<br>食べる　　たべる<br>増える　　ふえる  </p>
+<p>カ变动词<br>来る　くる  </p>
+<p>サ变动词<br>練習する　　れんしゅうする<br>卒業する　　そつぎょうする<br>故障する　　こしょうする<br>散歩する　　さんぽする  </p>
+<p>自／他动词<br>自动词　　　　他动词<br>始まる　　　　始める　　はじ<br>集まる　　　　集める　　あつ<br>閉まる　　　　閉める　　し<br>かかる　　　　かける<br>変わる　　　　変える　　か<br>止まる　　　　止める　　と<br>受かる　　　　受ける　　う<br>上がる　　　　上げる　　あ  </p>
+<p>かいぎがはじまりました。<br>会議が始まりました。  </p>
+<p>では、かいぎをはじめましょう。<br>では、会議を始めましょう。  </p>
+<p>しりょうがまとまりました。<br>資料がまとまりました。  </p>
+<p>しりょうをまとめます。<br>資料をまとめます。  </p>
+<p>やまださんからでんわがかかっています。<br>山田さんから電話が掛かっています。  </p>
+<p>やまださんはいまでんわをかかけています。<br>山田さんは今電話を掛けています。  </p>
+<p>自动词　　　　他动词<br>倒れる　　　　倒す　　　たお<br>流れる　　　　流す　　　なが<br>治る　　　　　治す　　　なお<br>残る　　　　　残す　　　のこ<br>壊れる　　　　壊す　　　こわ<br>燃える　　　　燃やす　　も<br>消える　　　　消す　　　き　け<br>落ちる　　　　落とす　　お　<br>伸びる　　　　伸ばす　　の  </p>
+<p>とこがけがれている。<br>床が汚れている。  </p>
+<p>うっかりして、とこをけがしました。<br>うっかりして、床を汚しました。  </p>
+<p>かびんがこわれました。<br>花瓶が壊れました。  </p>
+<p>かびんをこわしました。<br>花瓶を壊しました。  </p>
+<p>きのはがおちました。<br>木の葉が落ちました。  </p>
+<p>ほんをおとしました。<br>本を落としました。  </p>
+<p>自他动词不规则对应例句<br>テレビがつている。<br>テレビをつけましょう。  </p>
+<p>せんじつ、てがみがとどきました。<br>先日、手紙が届きました。  </p>
+<p>ゆうびんきょくへてがみをだしにいきます。<br>郵便局へ手紙を出しに行きます。  </p>
+<p>ほんだなにほんがならんでいる。<br>本棚に本が並んでいる。  </p>
+<p>はやくつくえをならべなさい。<br>早く机を並べなさい。  </p>
+<p>すいがわいている。<br>水が沸いている。  </p>
+<p>のどがかわいてみずをわかします。<br>喉が渇いて水を沸かします。  </p>
+<p>授受动词<br> 我／我方人员给别人某物。<br>をたしはりさんにきょうしつのかぎをあげました。<br>私は李さんに教室の鍵を上げました  </p>
+<p>はなにみずをやることをわすれないでください。<br>花に水をやることを忘れないでください。  </p>
+<p>わたしはせんせいにはなたばをさしあげました。<br>私は先生に花束を差し上げました。  </p>
+<p>我／我方人员从别人那里得到某物。<br>たなかさんからコンサートのきっぷをにまいもらいました。<br>田中さんからコンサートの切符を二枚もらいました。  </p>
+<p>せんせいににほんごのじしょをいただきました。<br>先生に日本語の辞書をいただきました。  </p>
+<p>别人给我／我方人员某物。<br>たんじょうびのひ、はははわたしにきれいなふくをくれました。<br>誕生日の日、母は私にきれいな服をくれました。  </p>
+<p>しゃちょうはわたしにぺきんのおみやげをくださいました。<br>社長は私に北京のお土産をくださいました。  </p>
+<p>授受动词变补助动词句<br>我／我方人员为别人做某事  </p>
+<p>わたしはそばにたっているこどもにせきをゆずってあげました。<br>私はそばに立っている子供に席を譲ってあげました。  </p>
+<p>あめがひどいです。じゃ、このかさをかしてあげましょう。<br>雨がひどいです。じゃ、このかさをかしてあげましょう。  </p>
+<p>おとうとははなにすいをやります。<br>弟は花に水をやります。  </p>
+<p>请求别人为我／我方人员做某事<br>りさんにぶちょうのじむしつまでつれていってもらいました。<br>李さんに部長の事務室まで連れえいってもらいました。  </p>
+<p>ちょっと、しゃちょうのいるところをおしえていただけませんか。<br>ちょっと、社長のいるところを教えていただけませんか。  </p>
+<p>别人为我／我方人员做某事<br>せんせいはわたしたちににほんのうたをおしえてくれました。<br>先生は私たちに日本のうたを教えてくれました。  </p>
+<p>こんかいのしごとについて、みんなのいけんをきかせてくださいませんか。<br>今回の仕事について、みんなの意見を聞かせてくださいませんか。  </p>
+<p>补助动词<br>おばあさんはいましんぶんをよんでいる。<br>おばあさんはいま新聞を読んでいる。  </p>
+<p>うちのねこがしんでいます。<br>うちの猫が死んでいます。  </p>
+<p>このむらはやまにかこまれている。<br>この村は山に囲まれている。  </p>
+<p>わたしはよくこのみせでりょうりをちゅうもんしている。<br>私はよくこの店で料理を注文している。  </p>
+<p>つくえにかぞのしゃしんがおいてあります。<br>机に家族の写真が置いてあります。  </p>
+<p>おきゃくさんがくるので、そうじしてあります。<br>お客さんが来るので、掃除してあります。  </p>
+<p>しゅくだいはかきおわってしまいまして。あそびにいきます。<br>宿題は書き終わってしまいました。遊びに行きます。  </p>
+<p>だいすきなかびんがこわれてしまいまして。<br>大好きな花瓶が壊れてしまいました。  </p>
+<p>りさんはきょうしつでていきます。<br>李さんは教室出ていきます。  </p>
+<p>このしごとはつずけていくつもりです。<br>この仕事は続けていくつもりです。  </p>
+<p>ふねはとおくからちかづいてきます。<br>船は遠くから近づいてきます。  </p>
+<p>このふくをきてみてください。よくにあうとおもいます。<br>この服を着てみてください。よく似合うと思います。  </p>
+<p>あしたしゅっちょうするので、ようひんをよういしておく。<br>明日出張するので、用品を用意しておく。  </p>
+<p>たんごをあんきしておきます。<br>単語を暗記しておきます。  </p>
+<p>可能动词  </p>
+<p></p>
+<hr>
 ]]></content>
     
     <summary type="html">
     
-      &lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;br&gt;&lt;br&gt;本博文用于记录音乐伴奏的制作过程&lt;br&gt;&lt;/font&gt;&lt;br&gt;
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;本博文用于记录日语语法例句，辅助学习语法。&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://www.donote.tk/BBS/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="日语语法 日语学习" scheme="https://www.donote.tk/BBS/tags/%E6%97%A5%E8%AF%AD%E8%AF%AD%E6%B3%95-%E6%97%A5%E8%AF%AD%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Audacity制作音乐伴奏过程</title>
+    <link href="https://www.donote.tk/BBS/2020/07/19/HowToCreateRmVocalAudiobyUsingAudacity/"/>
+    <id>https://www.donote.tk/BBS/2020/07/19/HowToCreateRmVocalAudiobyUsingAudacity/</id>
+    <published>2020-07-19T08:26:00.000Z</published>
+    <updated>2020-10-18T15:31:44.675Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p>本博文用于记录音乐伴奏的制作过程<br><br><a id="more"></a></p>
+<p><audio controls="controls" name="media" style="width:264px" autoplay loop="true"> <source src="/musics/huimengyouxian.mp3"> </audio></p>
+<p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/lovelovelove.mp3"> </audio></p>
+<p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/qianban.mp3"> </audio></p>
+<p><audio controls="controls" name="media" style="width:264px" loop="false"> <source src="/musics/wish.mp3"> </audio></p>
+<hr>
+<p><font size="4"><br>① 导入音频文件，分离音轨。<br><img width="600" src="/pictures/Audacity/audicaty1.png"><br>② 选择其中一个声道，应用反相(上下)特效。<br><img width="600" src="/pictures/Audacity/audicaty2.png"><br>③ 补正高音，再次导入源音频文件，选择音频文件的立体声轨，并运用增幅效果将幅值衰减10dB<br><img width="600" src="/pictures/Audacity/audicaty3.png"><br><img width="600" src="/pictures/Audacity/audicaty4.png"><br>④ 再次选中立体声轨，运用曲线过滤器(Filter Curve),将100Hz-5000Hz区间内的数值全部降至最低，（-∞，100]与[5000,+∞]Hz区间的数值调高至10dB<br><img width="600" src="/pictures/Audacity/audicaty5.png"><br><img width="600" src="/pictures/Audacity/audicaty6.png"><br>⑤ 导出已编辑的音频。<br><img width="600" src="/pictures/Audacity/audicaty7.png"><br></font></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;本博文用于记录音乐伴奏的制作过程&lt;br&gt;&lt;br&gt;
     
     </summary>
     
@@ -445,6 +625,58 @@
   </entry>
   
   <entry>
+    <title>QQ空间说说（十一）</title>
+    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
+    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
+    <published>2019-08-18T08:25:00.000Z</published>
+    <updated>2020-02-01T07:58:49.964Z</updated>
+    
+    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
+<p><br><a id="more"></a></p>
+<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
+
+<hr>
+<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
+<hr>
+<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
+<hr>
+<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
+<hr>
+<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
+<hr>
+<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
+<hr>
+<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
+<hr>
+<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
+<hr>
+<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
+<hr>
+<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
+<hr>
+<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
+<hr>
+<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
+<hr>
+<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
+    
+    
+      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
+    
+  </entry>
+  
+  <entry>
     <title>QQ空间说说（十）</title>
     <link href="https://www.donote.tk/BBS/2019/08/18/QQmood10/"/>
     <id>https://www.donote.tk/BBS/2019/08/18/QQmood10/</id>
@@ -483,58 +715,6 @@
 <p><font size="4"><br>关于nas的硬件配置。<br>nas的重点工作是数据的存储与分享。<br>所以nas的硬件选配偏向的重点是网络的传输速率，硬盘的读写速率。接口的传输速率。<br>也就是说，跟图形运算与逻辑运算关注不大，所以CPU以及内存选型都不重要了。<br>网卡那是要配千兆滴（当然也得配上千兆的路由或交换机），接口要有多个sata3的（这样才能组成磁盘阵列，一块带4个SATA3接口的硬盘，配上4块8T硬盘，32T的空间，想想就high，不过那是土豪才玩得起），CPU要集成的（因为要24小时不间断运行），功耗是必须考虑的。<br></font></p>
 <hr>
 </blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="小推文" scheme="https://www.donote.tk/BBS/categories/%E5%B0%8F%E6%8E%A8%E6%96%87/"/>
-    
-    
-      <category term="小心情" scheme="https://www.donote.tk/BBS/tags/%E5%B0%8F%E5%BF%83%E6%83%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>QQ空间说说（十一）</title>
-    <link href="https://www.donote.tk/BBS/2019/08/18/QQmood11/"/>
-    <id>https://www.donote.tk/BBS/2019/08/18/QQmood11/</id>
-    <published>2019-08-18T08:25:00.000Z</published>
-    <updated>2020-02-01T07:58:49.964Z</updated>
-    
-    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文</font></p>
-<p><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/lovelovelove.mp3"><br></audio>
-
-<hr>
-<p><font size="4"><br>看了一下NAS（network attached storage), 网络附属存储。也就是个人私有云（区别于公共的商业云）目前有三种流行的方案。 freenas , nas4free , synology(群晖），前两者是开源系统，国外玩得多，第三个是商业系统，国内玩得多。白群晖有官方的远程控制服务（其实就是DDNS），黑群晖要想远程控制的话，得搞个第三方DDNS，ngrok内网穿透比较复杂，因为群晖的基于BSD的操作系统并不像Debian、CentOS、Arch那样有包管理器，需要自己搭建编译环境，编译源码包，而且ngrok是一定要编译才能用的，因为需要将验证机制编译进去，验证机制具有唯一性。所以无法做到一劳永逸（即无法只编译二进制执行文件，然后使用配置文件验证）。要么搞个可以内网穿透的路由器，这也是个解决方案。不过话说回来一个4T的NAS专用西数红盘要800多软妹币，很想去折腾，但还是无法痛下决心剁手呀。<br></font></p>
-<hr>
-<p><font size="4"><br>iOS app ラジオ日本(rajio nipon) 英文电台也是有的，就是听不懂(￣▽￣)<br></font></p>
-<hr>
-<p><font size="4"><br>車を運転します 开车了。果然不能用国区账号，限制太多了。还是美帝人民幸福.<br></font></p>
-<hr>
-<p><font size="4"><br>关于日语中表示场所的助词に、で、を之间的区别。<br>に:用在事物存在的场所，强调的是一种【存在】或者【有无】的概念。<br>私の猫は部屋にです。<br>我的猫在房间里。（仅表示猫存在于房间的事实，但并没有对猫的动作进行描述）<br>で:用在【动作】发生的场所，这时的动作作用范围是固定的，就像照片一样是静态的。<br>私の猫は部屋で散歩します。<br>我的猫在房间里散步。（这里翻译时房间要添加定语“房门紧闭的”，用来限定猫的活动范围，这样表达是准确的）<br>を:用在【动作】发生的场所，但是这时的重要特征是：动作是动态的，动作的范围不局限于指定的场所，指定的场所只是动作必须作用的范围。<br>私の猫は部屋を散歩します。<br>我的猫在房间里散步。（但是猫可能在院子里散步进来，然后可能从后面出去了，这里表示散步的动作经过了我们指明了的场所）<br></font></p>
-<hr>
-<p><font size="4"><br>愿随子房赤松游，自在逍遥天地间。<br></font></p>
-<hr>
-<p><font size="4"><br>在中国，个人信息的泄漏是非常严重的。现在骗子认识你，但你不认识骗子。我周围根本一个妹子都没有，OK？<br></font></p>
-<hr>
-<p><font size="4"><br>去给手机套餐续命，10元月付的套餐已经没有了。。。。。发现现在的套餐好贵，月付99，虽然是流量无限，省内通话无限，但这些大大超出了我的需求。。。。网上营业厅写着老用户优惠，但实际上老用户只有一种选择，至于优惠在何处，却也不见说明。不知何时起，人们适应了电视上播着肉片翻滚的方便面广告，购买时发现牛肉方便面里没有牛肉的消费环境。 其实能不直接跟我说，老用户就只有这个套餐了，其实优不优惠是客户给商家的评定，顾客心里有把尺，现在是商家在标榜自己优惠。我为什么要相信呢？<br></font></p>
-<hr>
-<p><font size="4"><br>子论坛在网站中的目录结构其实是博客目录<br>下的子目录,仅需要在配置文件里添加一条语句即可将论坛的入口链接嵌入博客.<br>论坛是可以切换主题的,不过缺点是,新下载的主题是没有汉化的,因此,使用默认主题,论坛才会对国人友好,但就是单调些了.创建一个论坛或许很容易,但维护一个论坛却不是这样了,要维护一个论坛,需要投入时间精力.倾心培养.论坛属于公共讨论平台,一个人的论坛并未有什么大用处.如1024这种超级飚车论坛,其资源不是管理员一个或者管理团队提供的,靠的是广大的榴友会员.<br></font></p>
-<hr>
-<p><font size="4"><br>论坛搭建成功……… <a href="https://www.donote.tk/BBS">网页链接</a> 用论坛开车，很危险的吧，大概。。。。<br></font></p>
-<hr>
-<p><font size="4"><br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br></font></p>
-<hr>
-<p><font size="4"><br>给VPS续费，昨天还听说汇率是6.63，现在都6.9了，fuck！贬值了！如果有渠道，我是愿意将人民币兑换成美元的。。。。<br>尝试着去搭建一个论坛，不过，目前卡在了数据库（MySql）创建这一步，得去学习一下，先放着，有空再搞。（PS：目前流行的论坛网络程式：国内：discuz-腾讯旗下，phpwind，国外：phpBB、MyBB，国外的开源，phpBB跟我的主机环境不兼容，会有Bug，于是尝试了MyBB）<br>现在已经破7了—-20190818<br></font></p>
-<hr>
-<p><font size="4"><br>托福，能让路走得更远。ゲームのテスター-game test，オフィスワーク-official work.<br></font></p>
-<hr>
 ]]></content>
     
     <summary type="html">
@@ -946,36 +1126,6 @@
       <category term="意大利" scheme="https://www.donote.tk/BBS/tags/%E6%84%8F%E5%A4%A7%E5%88%A9/"/>
     
       <category term="旅行" scheme="https://www.donote.tk/BBS/tags/%E6%97%85%E8%A1%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>「译文」一种台湾威斯忌是如何成为一种全球喜好的</title>
-    <link href="https://www.donote.tk/BBS/2017/10/01/taiwan-whisky-kavalan/"/>
-    <id>https://www.donote.tk/BBS/2017/10/01/taiwan-whisky-kavalan/</id>
-    <published>2017-10-01T14:26:00.000Z</published>
-    <updated>2020-02-01T07:58:49.964Z</updated>
-    
-    <content type="html"><![CDATA[<p><font size="4"><br>翻墙后，即可评论博文<br>文章来源于CNN网站 : <a href="http://edition.cnn.com/travel/article/taiwan-whisky-kavalan/index.html" target="_blank" rel="external">点击查看原文</a><br>可能需要翻墙才能查阅。<br>作者:Marian Liu</font></p>
-<p><br><a id="more"></a></p>
-<audio controls="controls" name="media" style="width:264px" autoplay loop="true"><br><source src="/musics/wish.mp3"><br></audio>
-
-<hr>
-<p><font size="4"><br>台湾(CNN)－它入口丝滑，甘甜；就像蜜一样。<br>常常和果汁相比，对于那些没有经验的人而言，Kavalan是一种让人喜爱的简易威斯忌。<br>在雪梨酒桶中成熟的，这个台湾品牌中最流行的品种；特别吸引那些从红酒转向威斯忌的人。<br>金车集团，Kavalan的总公司总裁李御廷解释道:“我们并不想让我们的威斯忌尝起来跟药一样。它是很容易下肚的。”<br>在11年前，Kavalan第一次出现在全球视野的时候，他就是一匹黑马了。－－这种状态一直延续到2010年在苏格兰火焰燃烧之夜里举办的一场盲品会上，这个台湾威斯忌击败了三种苏格兰威斯忌和一个英国品牌。<br>“ 他们说这是不可能的(意思大概是这种结果实在出乎意料）” 李回忆到。<br><b>众多奖项</b><br>这个产自台湾乡村并且现在畅销60多个国家的Kavalan,至今，已斩获超过220个奖项。<br>最近几次，它获得了国际红酒与烈酒比赛2017世界威斯忌奖杯，在2016和2017年中连续两年获得国际烈酒挑战奖杯。<br>Kavalan希望今年生产9百万升威斯忌，使之成为世界上最大的单麦芽威斯忌酒厂，这个规模相当于最古老的苏格兰官方酒厂Glenlivet的规模。<br>“台湾的身份使他们与众不同，”一个来自IWSR的市场分析师Tommy Keeling,根据建在伦敦的饮用酒精市场世界数据库，分析道。<br>“在积极的方面，它给威斯忌鉴赏师提供了新的且不同的东西;而在消极的方面，要克服某些消费者偏见。”<br>早期的确是很困难的，李说道，他知道他的品牌不能与有着12-21年历史的威斯忌品牌相匹敌。<br>于是，他们立志尽他们所能学习更多的经验且不依赖本地原料。尽管产品诞生在台湾，但是酿造配方却是来自苏格兰，酿造壶来自德国而酿造桶则来自欧洲和美洲。<br>今天，Kavalan有着18个不同品种－－从甜的到干的味道。在散落在和Napa谷相似的酒厂里，一条美味的木条同一个自制的混合站组合在一起，在这里，有人能扮演带着试管的疯狂科学家，并且能瓶子与味道混合。<br><b>不起眼的开端</b><br>对于Kavalan品牌，它是从灭蚊产品开始的。在1959年，李的父亲，李添财在他的公司ChuChen销售杀虫剂，但是根据这太有限了。所以他转向了饮料行业。<br>在1979年，他(指李添财)创办了金车集团，销售根啤酒。在1982年，他开始生产Mr.Brown，一种受欢迎的带有难以忘记的八字胡人像的罐装咖啡。他的合作咖啡商是星巴克本土版，在整个台湾里音乐厅的角落能找到它。<br>从那时起，金车集团已经分化，销售从虾和兰花到瓶装酒和威斯忌的产品。2016年，添财进入福布斯排行“台湾50个最富者”名单中。<br>“从杀虫剂产品走向饮料产品是非常艰难的，”李带着微笑说道。<br><b>并非传统的苏格兰酒</b><br>Kavalan深深植根于台湾，早期的酒瓶形状就像台湾的最高建筑，台北101大厦。它的声名被常年居住在那个区域的土著人群带出来。<br>“台湾是世界最大的单麦芽市场之一－紧接在法国之后，位于美国之前－因此，这是一个非常发达的且复杂的市场，”Keeling说道。<br>这个酒厂建造在宜兰县，台湾首府台北的南方。这个区域的高温(在夏季，平均有33摄氏度)且酷热的湿度加速了酒精与木桶的相互作用。<br>从四到六年挑战它的苏格兰竞争对手的15或25年，这个成熟过程被缩短了三分之一。<br>但是，这个过程越快，生产威斯忌的总量则越少。在这个过程中，“角度的共用”或者挥发的总量则更多，这推动了Kavalan的价格往高处爬升，从70美元到600美元。苏格兰就在挥发过程中一般损失2％的量；但是，Kavalan则会损失达12%的量。<br>最近几年来，随着Kavalan加入日本的Suntory和Nikka加上印度的Paul和Amrut，亚洲已经成为威斯忌饮品的热点。<br>“亚洲风格的威斯忌如此流行是因为他们不必迎合任何的规则或者限制，”一个关于饮品文化的坐落于纽约城的网站VinePair,其创办者Adam Teeter说道。<br>“不像苏格兰酒，就真正使这种威斯忌成为一种苏格兰酒的方面而言，其有着非常精确的要求，在亚洲，生产商们能够受到还处在实验阶段的单麦芽的启发。实验产生了难以置信的结果，这就是人们感兴趣的原因。”<br>既然李已经征服了全球威斯忌市场，那么对于李而言，下一步是什么呢？<br>高度啤酒。<br>“我想要做一些新的东西，如果我们都遵从我也一样的模式，那就没有意义了。”李说道。<br>Kavalan举办了一场免费的日常酒厂观览。更多信息，请到www.kavalanwhisky.com。<br></font></p>
-<hr>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;font size=&quot;4&quot;&gt;&lt;br&gt;翻墙后，即可评论博文&lt;br&gt;文章来源于CNN网站 : &lt;a href=&quot;http://edition.cnn.com/travel/article/taiwan-whisky-kavalan/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点击查看原文&lt;/a&gt;&lt;br&gt;可能需要翻墙才能查阅。&lt;br&gt;作者:Marian Liu&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="外文翻译" scheme="https://www.donote.tk/BBS/categories/%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91/"/>
-    
-    
-      <category term="台湾 威斯忌酒 旅行" scheme="https://www.donote.tk/BBS/tags/%E5%8F%B0%E6%B9%BE-%E5%A8%81%E6%96%AF%E5%BF%8C%E9%85%92-%E6%97%85%E8%A1%8C/"/>
     
   </entry>
   
