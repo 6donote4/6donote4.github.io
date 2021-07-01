@@ -16,36 +16,36 @@
 <meta name="keywords" content="OpenWRT,固件编译,软路由,LEDE,精神出国">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「原创」如何为软路由编译OpenWRT固件">
-<meta property="og:url" content="https://www.donote.tk/BBS/2019/05/30/HowToCompileOpenWRTimageForVM/index.html">
+<meta property="og:url" content="https://www.donote.ml/BBS/2019/05/30/HowToCompileOpenWRTimageForVM/index.html">
 <meta property="og:site_name" content="​乘风踏浪破万障のブログ">
 <meta property="og:description" content="翻墙后，即可评论博文之前一篇博文记录关于虚拟机路由器的搭建过程，使用了KoolShare家的固件进行搭建。由于KoolShare固件并不是开源的，运行这个固件只有二进制代码，非常不透明，我们并不知道这个固件是否会有后门，偷偷的将我们的精神出国工具收集上传到所谓的酷软中心服务器。为了避免这种可能性，选择了开源的适合国内网络环境的LEDE代码仓库，自行编译定制属于自己的软路由固件。本篇博文出于这个目的">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-184223_VNC%20Viewer.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-184331_VNC%20Viewer.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-195634_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-195659_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-195911_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200015_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200115_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200205_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200219_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200237_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200257_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200342_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200629_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200648_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200706_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200721_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200733_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200738_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200757_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-200824_Firefox.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-201121_YouTube.jpg">
-<meta property="og:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-201144_YouTube.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-184223_VNC%20Viewer.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-184331_VNC%20Viewer.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-195634_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-195659_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-195911_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200015_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200115_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200205_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200219_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200237_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200257_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200342_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200629_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200648_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200706_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200721_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200733_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200738_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200757_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-200824_Firefox.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-201121_YouTube.jpg">
+<meta property="og:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-201144_YouTube.jpg">
 <meta property="og:updated_time" content="2019-05-30T13:36:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「原创」如何为软路由编译OpenWRT固件">
 <meta name="twitter:description" content="翻墙后，即可评论博文之前一篇博文记录关于虚拟机路由器的搭建过程，使用了KoolShare家的固件进行搭建。由于KoolShare固件并不是开源的，运行这个固件只有二进制代码，非常不透明，我们并不知道这个固件是否会有后门，偷偷的将我们的精神出国工具收集上传到所谓的酷软中心服务器。为了避免这种可能性，选择了开源的适合国内网络环境的LEDE代码仓库，自行编译定制属于自己的软路由固件。本篇博文出于这个目的">
-<meta name="twitter:image" content="https://www.donote.tk/pictures/OpenWRT_Compilation/Screenshot_20190525-184223_VNC%20Viewer.jpg">
+<meta name="twitter:image" content="https://www.donote.ml/pictures/OpenWRT_Compilation/Screenshot_20190525-184223_VNC%20Viewer.jpg">
 
 
   <link rel="alternative" href="/atom.xml" title="​乘风踏浪破万障のブログ" type="application/atom+xml">
@@ -331,7 +331,7 @@ s.setAttribute('data-timestamp', +new Date());
 
           <div class="main-footer">
   
-    © 2020 ​乘风踏浪破万障のブログ - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+    © 2021 ​乘风踏浪破万障のブログ - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
   
 </div>
 
