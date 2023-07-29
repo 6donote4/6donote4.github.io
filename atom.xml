@@ -127,11 +127,11 @@
     <category term="使用说明" scheme="http://example.com/categories/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
     
-    <category term="Debian" scheme="http://example.com/tags/Debian/"/>
-    
     <category term="OpenWrt" scheme="http://example.com/tags/OpenWrt/"/>
     
     <category term="Shell Script" scheme="http://example.com/tags/Shell-Script/"/>
+    
+    <category term="Debian" scheme="http://example.com/tags/Debian/"/>
     
   </entry>
   
@@ -153,13 +153,13 @@ PXE是一种可以提供网络引导启动的服务，主要用于通过网络�
     <category term="使用说明" scheme="http://example.com/categories/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"/>
     
     
-    <category term="OpenWrt" scheme="http://example.com/tags/OpenWrt/"/>
-    
-    <category term="Shell Script" scheme="http://example.com/tags/Shell-Script/"/>
-    
     <category term="Linux" scheme="http://example.com/tags/Linux/"/>
     
     <category term="PXE" scheme="http://example.com/tags/PXE/"/>
+    
+    <category term="OpenWrt" scheme="http://example.com/tags/OpenWrt/"/>
+    
+    <category term="Shell Script" scheme="http://example.com/tags/Shell-Script/"/>
     
   </entry>
   
